@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: 'Switzer, system-ui, sans-serif',
+        switzer: 'Switzer, system-ui, sans-serif',
+        geist: ['"Geist Mono"', 'serif'],
+        sans: ['"Montserrat"', 'serif'],
       },
       borderRadius: {
         '4xl': '2rem',

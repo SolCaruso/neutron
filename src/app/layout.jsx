@@ -21,6 +21,9 @@ export default function RootLayout({ children }) {
           title="The Radiant Blog"
           href="/blog/feed.xml"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
       </head>
       <body className="text-gray-950 antialiased">{children}</body>
     </html>
