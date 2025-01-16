@@ -7,17 +7,24 @@ import ContactButton from "./ContactButton"
 export default function MainNav({ isOpen, setIsOpen }) {
   return (
     <header className= "px-8 ">
-      <div
-        className="
-        bg-[#0B1120] text-white
-          mt-8 rounded-t-lg max-w-7xl mx-auto
-          px-3
-          py-5
-          grid
-          grid-cols-[auto_1fr_auto_auto]
-          items-center
-        "
-      >
+    <div
+      className="
+        bg-nav-gradient
+        text-white
+        mt-8
+        rounded-t-lg
+        max-w-7xl
+        mx-auto
+        px-3
+        py-5
+        grid
+        grid-cols-[auto_1fr_auto_auto]
+        items-center
+      "
+      style={{
+        background: 'linear-gradient(45deg, #000000 0%, #000000 77%, #161616 100%)'
+      }}
+    >
         <NavLogo />
 
         {/* NavLinks: hidden on screens < md */}

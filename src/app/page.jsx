@@ -1,3 +1,5 @@
+"use client"
+
 import { BentoCard } from '@/components/bento-card'
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
@@ -17,15 +19,8 @@ import { Heading, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
 import Nav from '../components/nav/Nav';
 
-
-export const metadata = {
-  description:
-    'Radiant helps you sell more by revealing sensitive information about your customers.',
-}
-
 // function Hero() {
 //   return (
-
 //     <div className="relative">
 //       <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5" />
 //       <Container className="relative">
@@ -62,20 +57,111 @@ export const metadata = {
 
 function FeatureSection() {
   return (
-    <div className="overflow-hidden">
-      <Container className="pb-24">
-        <Heading as="h2" className="max-w-3xl">
-        Where custom design powers performance.
-        </Heading>
-        <Screenshot
-          width={1216}
-          height={768}
-          src="/screenshots/app.png"
-          className="mt-16 h-[36rem] sm:h-auto sm:w-[76rem]"
-        />
-      </Container>
+    <div className="overflow-hidden text-gray-900">
+    {/* Parent Container */}
+    <div className="flex flex-col items-center gap-8 py-12">
+      <div className="text-center flex flex-col items-center gap-6">
+        <span className="inline-block px-5 py-2 bg-[#121212] text-white text-sm rounded-full font-semibold">
+          Custom Integrated Design Solutions
+        </span>
+        <h1 className="text-center text-black text-5xl font-bold uppercase leading-[1.1]">
+          Where Custom <br /> Design Powers Performance
+        </h1>
+        <p className="text-black text-lg max-w-xl mx-auto font-medium leading-6">
+          Our team of experts will accelerate your time to market by delivering
+          high-performance hardware &amp; innovative software solutions.
+        </p>
+      </div>
+
+      <div className="flex justify-center gap-4">
+        <button className="px-6 py-3 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition">
+          Event Info
+        </button>
+        <button className="px-6 py-3 bg-gray-900 text-white font-bold rounded hover:bg-gray-800 transition">
+          Book a Demo
+        </button>
+      </div>
+
+      {/* Slider Section */}
+      <div className="slider-container w-full overflow-hidden">
+        {/* Outer wrapper is 200% wide so we can hold 2 sets side-by-side */}
+        <div className="slider flex">
+          {/* First set of images */}
+          <div className="slider-images flex">
+            <SliderImages />
+          </div>
+          {/* Second set (duplicate) */}
+          <div className="slider-images flex">
+            <SliderImages />
+          </div>
+        </div>
+      </div>
+
+      <div className="text-center mt-12">
+        <p className="text-gray-700 text-sm">
+          Trusted by partners worldwide, we build relationships rooted in trust,
+          respect, and shared success.
+        </p>
+        <div className="mt-6 flex justify-center gap-6">
+          <img src="/path-to-logo1.png" alt="Infineon" className="" />
+          <img src="/path-to-logo2.png" alt="MATLAB" className="" />
+          <img src="/path-to-logo3.png" alt="Tasking" className="" />
+        </div>
+      </div>
     </div>
-  )
+
+    {/* Key CSS changes here */}
+    <style jsx>{`
+        .slider {
+          /* Force the slider to be twice the width so two copies fit side by side */
+          width: 200%;
+          animation: slide 20s linear infinite;
+        }
+
+        /* 
+          We want to go from 0% to -50%. 
+          Because there's an exact duplicate of images after the first set,
+          when the animation resets from -50% back to 0%, it visually “picks up” 
+          from the same place without skipping.
+        */
+        @keyframes slide {
+          from {
+            transform: translateX(-50%);
+          }
+          to {
+            transform: translateX(0%);
+          }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+function SliderImages() {
+  return (
+    <>
+      <img
+        src="/carousel/1.jpg"
+        alt="Custom Design Process"
+        className="rounded-xl max-w-lg mr-4"
+      />
+      <img
+        src="/carousel/2.jpg"
+        alt="ECU Design"
+        className="rounded-xl max-w-lg mr-4"
+      />
+      <img
+        src="/carousel/3.jpg"
+        alt="Engineer at Work"
+        className="rounded-xl max-w-lg mr-4"
+      />
+      <img
+        src="/carousel/4.jpg"
+        alt="Factory Floor"
+        className="rounded-xl max-w-lg mr-4"
+      />
+    </>
+  );
 }
 
 function BentoSection() {
@@ -134,7 +220,7 @@ function BentoSection() {
         />
       </div>
     </Container>
-  )
+  );
 }
 
 function DarkBentoSection() {
@@ -189,7 +275,7 @@ function DarkBentoSection() {
         </div>
       </Container>
     </div>
-  )
+  );
 }
 
 export default function Home() {
@@ -198,10 +284,10 @@ export default function Home() {
       {/* <Hero /> */}
       <Nav />
       <main>
-        <Container className="mt-10">
+        {/* <Container className="mt-10">
           <LogoCloud />
-        </Container>
-        <div className="bg-gradient-to-b from-white from-50% to-gray-100 py-32">
+        </Container> */}
+        <div className="bg-gradient-to-b from-white from-50% to-gray-100 py-24">
           <FeatureSection />
           <BentoSection />
         </div>
@@ -210,5 +296,5 @@ export default function Home() {
       <Testimonials />
       <Footer />
     </div>
-  )
+  );
 }
