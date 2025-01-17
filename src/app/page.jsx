@@ -1,66 +1,27 @@
 "use client"
 
 import { BentoCard } from '@/components/bento-card'
-import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
-import { Gradient } from '@/components/gradient'
 import { Keyboard } from '@/components/keyboard'
 import { Link } from '@/components/link'
 import { LinkedAvatars } from '@/components/linked-avatars'
-import { LogoCloud } from '@/components/logo-cloud'
 import { LogoCluster } from '@/components/logo-cluster'
 import { LogoTimeline } from '@/components/logo-timeline'
 import { Map } from '@/components/map'
-import { Navbar } from '@/components/navbar'
-import { Screenshot } from '@/components/screenshot'
 import { Testimonials } from '@/components/testimonials'
 import { Heading, Subheading } from '@/components/text'
-import { ChevronRightIcon } from '@heroicons/react/16/solid'
 import Nav from '../components/nav/Nav';
-
-// function Hero() {
-//   return (
-//     <div className="relative">
-//       <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5" />
-//       <Container className="relative">
-//         <Navbar
-//           banner={
-//             <Link
-//               href="/blog/radiant-raises-100m-series-a-from-tailwind-ventures"
-//               className="flex items-center gap-1 rounded-full bg-fuchsia-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-[hover]:bg-fuchsia-950/30"
-//             >
-//               Radiant raises $100M Series A from Tailwind Ventures
-//               <ChevronRightIcon className="size-4" />
-//             </Link>
-//           }
-//         />
-//         <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 md:pb-48 md:pt-32">
-//           <h1 className="font-display text-balance text-6xl/[0.9] font-medium tracking-tight text-gray-950 sm:text-8xl/[0.8] md:text-9xl/[0.8]">
-//             Close every deal.
-//           </h1>
-//           <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-//             Radiant helps you sell more by revealing sensitive information about
-//             your customers.
-//           </p>
-//           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-//             <Button href="#">Get started</Button>
-//             <Button variant="secondary" href="/pricing">
-//               See pricing
-//             </Button>
-//           </div>
-//         </div>
-//       </Container>
-//     </div>
-//   )
-// }
+import { motion } from "framer-motion";
+import MobileLogo from '@/components/icons/MobileLogo'
 
 function FeatureSection() {
+
   return (
     <div className="overflow-hidden text-gray-900">
     {/* Parent Container */}
-    <div className="flex flex-col items-center gap-8 py-12">
-      <div className="text-center flex flex-col items-center gap-6">
+    <div className="flex flex-col items-center gap-14 py-12">
+      <div className="text-center flex flex-col items-center gap-12">
         <span className="inline-block px-5 py-2 bg-[#121212] text-white text-sm rounded-full font-semibold">
           Custom Integrated Design Solutions
         </span>
@@ -73,94 +34,90 @@ function FeatureSection() {
         </p>
       </div>
 
-      <div className="flex justify-center gap-4">
-        <button className="px-6 py-3 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition">
-          Event Info
-        </button>
-        <button className="px-6 py-3 bg-gray-900 text-white font-bold rounded hover:bg-gray-800 transition">
-          Book a Demo
-        </button>
+      <div className="flex justify-center gap-3 p-3 bg-black rounded-xl">
+        <MobileLogo className="self-center mx-2" />
+      <Link href="/#" passHref>
+            <motion.div
+              className="
+                inline-flex 
+                items-center 
+                justify-center
+                px-5 py-3
+                text-[14px] 
+                font-bold 
+                tracking-[0.2px]
+                whitespace-nowrap
+                cursor-pointer
+                border-none
+                rounded-md
+                transition-colors
+                duration-200
+                ease-in-out
+                bg-[#E6E6E6]
+                hover:bg-[#FFF]
+                shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
+                opacity-90
+                hover:opacity-100
+                text-black
+              "
+            >
+              <span>EVENT INFO</span>
+            </motion.div>
+          </Link>
+          <Link href="/#" passHref>
+            <motion.div
+              className="
+                inline-flex 
+                items-center 
+                justify-center
+                px-5 py-3
+                text-[14px] 
+                font-bold 
+                tracking-[0.2px]
+                whitespace-nowrap
+                cursor-pointer
+                border-none
+                rounded-md
+                transition-colors
+                duration-200
+                ease-in-out
+                bg-[#435FE0]
+                hover:bg-[#3456ee]
+                shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
+                opacity-90
+                hover:opacity-100
+                text-white
+              "
+            >
+              <span>BOOK A DEMO</span>
+            </motion.div>
+          </Link>
       </div>
 
-      {/* Slider Section */}
-      <div className="slider-container w-full overflow-hidden">
-        {/* Outer wrapper is 200% wide so we can hold 2 sets side-by-side */}
-        <div className="slider flex">
-          {/* First set of images */}
-          <div className="slider-images flex">
-            <SliderImages />
-          </div>
-          {/* Second set (duplicate) */}
-          <div className="slider-images flex">
-            <SliderImages />
-          </div>
-        </div>
+
+      <div className="wrapper">
+        {/* <div className=" item item1"></div>
+        <div className="item item2"></div>
+        <div className="item item3"></div>
+        <div className="item item4"></div>
+        <div className="item item5"></div>
+        <div className="item item6"></div>
+        <div className="item item7"></div>
+        <div className="item item8"></div> */}
+        <img src="/carousel/1.jpg" alt="Custom Design Process" className=" item item1"/>
+        <img src="/carousel/2.jpg" alt="ECU Design" className="item item2"/>
+        <img src="/carousel/3.jpg" alt="Engineer at Work" className="item item3"/>
+        <img src="/carousel/4.jpg" alt="Factory Floor" className="item item4"/>
+        <img src="/carousel/1.jpg" alt="Custom Design Process" className="item item5"/>
+        <img src="/carousel/2.jpg" alt="ECU Design" className="item item6"/>
+        <img src="/carousel/3.jpg" alt="Engineer at Work" className="item item7"/>
+        <img src="/carousel/4.jpg" alt="Factory Floor" className="item item8"/> 
       </div>
 
-      <div className="text-center mt-12">
-        <p className="text-gray-700 text-sm">
-          Trusted by partners worldwide, we build relationships rooted in trust,
-          respect, and shared success.
-        </p>
-        <div className="mt-6 flex justify-center gap-6">
-          <img src="/path-to-logo1.png" alt="Infineon" className="" />
-          <img src="/path-to-logo2.png" alt="MATLAB" className="" />
-          <img src="/path-to-logo3.png" alt="Tasking" className="" />
-        </div>
-      </div>
     </div>
 
-    {/* Key CSS changes here */}
-    <style jsx>{`
-        .slider {
-          /* Force the slider to be twice the width so two copies fit side by side */
-          width: 200%;
-          animation: slide 20s linear infinite;
-        }
-
-        /* 
-          We want to go from 0% to -50%. 
-          Because there's an exact duplicate of images after the first set,
-          when the animation resets from -50% back to 0%, it visually “picks up” 
-          from the same place without skipping.
-        */
-        @keyframes slide {
-          from {
-            transform: translateX(-50%);
-          }
-          to {
-            transform: translateX(0%);
-          }
-        }
-      `}</style>
+    
     </div>
-  );
-}
-
-function SliderImages() {
-  return (
-    <>
-      <img
-        src="/carousel/1.jpg"
-        alt="Custom Design Process"
-        className="rounded-xl max-w-lg mr-4"
-      />
-      <img
-        src="/carousel/2.jpg"
-        alt="ECU Design"
-        className="rounded-xl max-w-lg mr-4"
-      />
-      <img
-        src="/carousel/3.jpg"
-        alt="Engineer at Work"
-        className="rounded-xl max-w-lg mr-4"
-      />
-      <img
-        src="/carousel/4.jpg"
-        alt="Factory Floor"
-        className="rounded-xl max-w-lg mr-4"
-      />
-    </>
   );
 }
 
@@ -287,7 +244,7 @@ export default function Home() {
         {/* <Container className="mt-10">
           <LogoCloud />
         </Container> */}
-        <div className="bg-gradient-to-b from-white from-50% to-gray-100 py-24">
+        <div className="bg-gradient-to-b from-white from-50% to-gray-100 py-16">
           <FeatureSection />
           <BentoSection />
         </div>
