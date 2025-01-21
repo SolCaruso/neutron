@@ -12,11 +12,11 @@ export default function MainNav({ isOpen, setIsOpen }) {
         bg-nav-gradient
         text-white
         mt-8
-        rounded-t-lg
+        rounded-t-xl
         max-w-7xl
         mx-auto
-        px-3
-        py-3
+        px-4
+        py-4
         grid
         grid-cols-[auto_1fr_auto_auto]
         items-center

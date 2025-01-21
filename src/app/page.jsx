@@ -28,7 +28,7 @@ function FeatureSection() {
     {/* Parent Container */}
     <div className="flex flex-col items-center gap-14 py-24">
       <div className="text-center flex flex-col items-center gap-8">
-        <span className="inline-block px-5 py-2 bg-[#121212] text-white text-sm rounded-full font-semibold">
+        <span className="inline-block px-5 py-2 bg-[#121212] text-white text-[13px] rounded-full font-semibold">
           Custom Integrated Design Solutions 
         </span>
         <h1 className="text-center text-black text-5xl font-bold uppercase leading-[1.1]">
@@ -118,7 +118,7 @@ function MaquetteSection() {
   ];
 
   const FAST_DURATION = 35;
-  const SLOW_DURATION = 105;
+  const SLOW_DURATION = 75;
 
   const [duration, setDuration] = useState(FAST_DURATION);
 

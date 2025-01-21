@@ -5,7 +5,7 @@ import TopRight from "@/components/icons/TopRight"
 export default function SecondaryNav() {
   return (
     <div className="px-8">
-      <div className="noise-bg h-8 flex items-center text-white text-sm rounded-b-lg max-w-7xl mx-auto overflow-hidden">
+      <div className="noise-bg h-8 flex items-center text-white text-sm rounded-b-xl max-w-7xl mx-auto overflow-hidden">
         <div className="marquee">
           <div className="track">
             <MarqueeText />
