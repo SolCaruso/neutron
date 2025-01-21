@@ -16,7 +16,7 @@ export default function MainNav({ isOpen, setIsOpen }) {
         max-w-7xl
         mx-auto
         px-3
-        py-5
+        py-3
         grid
         grid-cols-[auto_1fr_auto_auto]
         items-center

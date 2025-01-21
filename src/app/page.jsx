@@ -19,18 +19,17 @@ import useMeasure from "react-use-measure";
 import { animate, useMotionValue } from "framer-motion";
 import {useEffect} from "react";
 import { useState } from "react";
-
-
+import Partners from '@/components/Partners'
 
 function FeatureSection() {
 
   return (
     <div className="overflow-hidden text-gray-900">
     {/* Parent Container */}
-    <div className="flex flex-col items-center gap-14 py-12">
-      <div className="text-center flex flex-col items-center gap-12">
+    <div className="flex flex-col items-center gap-14 py-24">
+      <div className="text-center flex flex-col items-center gap-8">
         <span className="inline-block px-5 py-2 bg-[#121212] text-white text-sm rounded-full font-semibold">
-          Custom Integrated Design Solutions
+          Custom Integrated Design Solutions 
         </span>
         <h1 className="text-center text-black text-5xl font-bold uppercase leading-[1.1]">
           Where Custom <br /> Design Powers Performance
@@ -41,7 +40,7 @@ function FeatureSection() {
         </p>
       </div>
 
-      <div className="flex justify-center gap-3 p-3 bg-black rounded-xl">
+      <div className="flex justify-center gap-3 p-2.5 bg-black rounded-xl">
         <MobileLogo className="self-center mx-2" />
       <Link href="/#" passHref>
             <motion.div
@@ -49,7 +48,7 @@ function FeatureSection() {
                 inline-flex 
                 items-center 
                 justify-center
-                px-5 py-3
+                px-5 py-2.5
                 text-[14px] 
                 font-bold 
                 tracking-[0.2px]
@@ -77,7 +76,7 @@ function FeatureSection() {
                 inline-flex 
                 items-center 
                 justify-center
-                px-5 py-3
+                px-5 py-2.5
                 text-[14px] 
                 font-bold 
                 tracking-[0.2px]
@@ -118,8 +117,8 @@ function MaquetteSection() {
     { src: "/carousel/4.jpg", alt: "Factory Floor"}
   ];
 
-  const FAST_DURATION = 45;
-  const SLOW_DURATION = 85;
+  const FAST_DURATION = 35;
+  const SLOW_DURATION = 105;
 
   const [duration, setDuration] = useState(FAST_DURATION);
 
@@ -152,10 +151,7 @@ function MaquetteSection() {
         repeatDelay: 0,
       });
     }
-    
-
-
-    return controls?.stop; 
+        return controls?.stop; 
   }, [xTranslation, width, duration, rerender]);
   
   return (
@@ -304,6 +300,9 @@ export default function Home() {
           <FeatureSection />
           <MaquetteSection />
           {/* <BentoSection /> */}
+        </div>
+        <div className="py-24">
+          <Partners/>
         </div>
         
         {/* <DarkBentoSection /> */}
