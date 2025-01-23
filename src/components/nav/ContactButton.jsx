@@ -11,9 +11,10 @@ const ContactButton = () => {
                 inline-flex 
                 items-center 
                 justify-center
-                px-5 py-3
-                text-[14px] 
-                font-bold 
+                px-6 py-4
+                mr-1
+                text-[18px] 
+                font-medium
                 tracking-[0.2px]
                 whitespace-nowrap
                 cursor-pointer
@@ -30,7 +31,7 @@ const ContactButton = () => {
                 text-black
               "
             >
-              <span>CONTACT US</span>
+              <span>Contact Us</span>
             </motion.div>
           </Link>
   )

@@ -13,10 +13,10 @@ export default function MainNav({ isOpen, setIsOpen }) {
         text-white
         mt-8
         rounded-t-xl
-        max-w-7xl
+        max-w-8xl
         mx-auto
         px-4
-        py-4
+        py-6
         grid
         grid-cols-[auto_1fr_auto_auto]
         items-center

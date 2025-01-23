@@ -8,7 +8,7 @@ const NavLinks = () => {
   return (
     // Hide the entire <nav> on screens < md; show on md and larger
     <nav className="hidden md:block">
-      <ul className="flex justify-center gap-8 list-none m-0 p-0 text-[#C7C2BE]">
+      <ul className="flex justify-center gap-10 list-none m-0 p-0 text-[#C7C2BE]">
         <li className="relative">
           <a
             href="#"
@@ -33,7 +33,7 @@ const NavLinks = () => {
               <Down className="w-full h-full fill-current group-hover:text-white" />
             </motion.div>
           </a>
-          <ul className="absolute top-8 left-0 bg-white text-black hidden">
+          <ul className="absolute top-8 left-0 bg-white text-black hidden text-[16px]">
             <li>
               <a href="#" className="block px-3 py-2 hover:bg-gray-200">
                 Sub Solution 1

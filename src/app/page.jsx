@@ -28,16 +28,15 @@ function FeatureSection() {
     <div className="overflow-hidden text-gray-900">
     {/* Parent Container */}
     <div className="flex flex-col items-center gap-14 py-24">
-      <div className="text-center flex flex-col items-center gap-8">
-        <span className="inline-block px-5 py-2 bg-[#121212] text-white text-[13px] rounded-full font-semibold">
-          Custom Integrated Design Solutions 
+      <div className="text-center flex flex-col items-center gap-7">
+        <span className=" text-white text-[12px] font-semibold uppercase tracking-[2px] bg-black py-2 px-6 rounded-full">
+        ESS Solutions
         </span>
-        <h1 className="text-center text-black text-5xl font-bold uppercase leading-[1.1]">
-          Where Custom <br /> Design Powers Performance
+        <h1 className="text-center text-black text-5xl font-bold uppercase">
+          Control Your Energy
         </h1>
-        <p className="text-black text-lg max-w-xl mx-auto font-medium leading-6">
-          Our team of experts will accelerate your time to market by delivering
-          high-performance hardware &amp; innovative software solutions.
+        <p className="text-black text-[20px] max-w-xl mx-auto font-medium leading-6">
+        Where energy storage meets innovation, simplifying management and maximizing efficiency
         </p>
       </div>
 

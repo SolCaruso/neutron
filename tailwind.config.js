@@ -28,6 +28,9 @@ module.exports = {
         '-20': '-20',
         '-25': '-25',
       },
+      maxWidth: {
+        '8xl': '1450px',
+      },
     },
   },
   plugins: [],

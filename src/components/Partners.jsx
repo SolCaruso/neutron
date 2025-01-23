@@ -39,8 +39,11 @@ export default function Partners() {
 
   return (
     <div className="pb-28 relative flex flex-col items-center justify-center">
-      <p className="text-center mb-12 text-xl font-medium">
-        Trusted by partners worldwide, we build relationships rooted in trust, respect, and shared success.
+      <p className="text-center mb-1 text-2xl font-bold uppercase">
+        Trusted by partners worldwide
+      </p>
+      <p className="text-center mb-12 text-lg font-medium">
+        We build relationships rooted in trust, respect, and shared success.
       </p>
 
       {/* 
@@ -53,7 +56,7 @@ export default function Partners() {
         data-speed="slow"
         data-direction="right"
       >
-        <div className="scroller__inner flex flex-wrap gap-4 py-4">
+        <div className="scroller__inner flex flex-wrap gap-4">
           {images.map((img, idx) => (
             <PartnersLogo image={img} key={idx} />
           ))}
