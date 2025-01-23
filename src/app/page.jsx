@@ -20,7 +20,10 @@ import { animate, useMotionValue, useReducedMotion } from "framer-motion";
 import {useEffect} from "react";
 import { useState } from "react";
 import Partners from '@/components/Partners'
-
+import Control from '@/components/logos/Control'
+import Energy from '@/components/logos/Energy'
+import Your from '@/components/logos/Your'
+import CYE from '@/components/logos/CYE'
 
 function FeatureSection() {
 
@@ -28,13 +31,16 @@ function FeatureSection() {
     <div className="overflow-hidden text-gray-900">
     {/* Parent Container */}
     <div className="flex flex-col items-center gap-14 py-24">
-      <div className="text-center flex flex-col items-center gap-7">
+      <div className="text-center flex flex-col items-center ">
         <span className=" text-white text-[12px] font-semibold uppercase tracking-[2px] bg-black py-2 px-6 rounded-full">
         ESS Solutions
         </span>
-        <h1 className="text-center text-black text-5xl font-bold uppercase">
+        <div className="flex pt-2">
+          <CYE className="w-[1300px] h-auto" />
+        </div>
+        {/* <h1 className="text-center text-black text-5xl font-bold uppercase">
           Control Your Energy
-        </h1>
+        </h1> */}
         <p className="text-black text-[20px] max-w-xl mx-auto font-medium leading-6">
         Where energy storage meets innovation, simplifying management and maximizing efficiency
         </p>
