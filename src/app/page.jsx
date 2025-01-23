@@ -16,10 +16,11 @@ import { motion } from "framer-motion";
 import MobileLogo from '@/components/icons/MobileLogo'
 import Card from '@/components/card'
 import useMeasure from "react-use-measure";
-import { animate, useMotionValue } from "framer-motion";
+import { animate, useMotionValue, useReducedMotion } from "framer-motion";
 import {useEffect} from "react";
 import { useState } from "react";
 import Partners from '@/components/Partners'
+
 
 function FeatureSection() {
 
@@ -117,8 +118,11 @@ function MaquetteSection() {
     { src: "/carousel/4.jpg", alt: "Factory Floor"}
   ];
 
-  const FAST_DURATION = 35;
-  const SLOW_DURATION = 75;
+  const prefersReducedMotion = useReducedMotion();
+
+  // Adjust durations based on reduced motion preferences
+  const FAST_DURATION = prefersReducedMotion ? 0 : 50;
+  const SLOW_DURATION = prefersReducedMotion ? 0 : 120;
 
   const [duration, setDuration] = useState(FAST_DURATION);
 
@@ -130,6 +134,7 @@ function MaquetteSection() {
   const [rerender, setRender] = useState(false);
   
   useEffect(() => {
+    
     let controls;
     let finalPosition = -width / 2 - 8;
 
@@ -161,10 +166,15 @@ function MaquetteSection() {
       style={{ x:xTranslation}} 
       onHoverStart={() => {
         setMustFinish(true);
-        setDuration(SLOW_DURATION)}} 
+        setDuration(SLOW_DURATION); 
+        }
+      }
       onHoverEnd={() => {
         setMustFinish(true);
-        setDuration(FAST_DURATION)}}>
+        setDuration(FAST_DURATION);
+        }
+      }
+    >
       {[...images, ...images].map((item, idx) => (
         <Card image={item} key={idx} />
       ))}

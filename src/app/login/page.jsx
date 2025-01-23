@@ -1,7 +1,7 @@
 import { Button } from '@/components/button'
 import { GradientBackground } from '@/components/gradient'
 import { Link } from '@/components/link'
-import { Mark } from '@/components/logo'
+import { Mark } from '@/components/icons/Logo'
 import { Checkbox, Field, Input, Label } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/16/solid'
 import { clsx } from 'clsx'

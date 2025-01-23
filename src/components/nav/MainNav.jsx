@@ -1,6 +1,6 @@
 // MainNav.jsx
 import React from "react"
-import NavLogo from "./NavLogo"
+import NavLogo from "@/components/icons/Logo"
 import NavLinks from "./NavLinks"
 import ContactButton from "./ContactButton"
 

@@ -38,6 +38,8 @@ function Card({ image }) {
         alt={image.alt} 
         fill 
         style={{ objectFit: 'cover' }} 
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 20vw"
+        priority
       />
     </motion.div>
   );
