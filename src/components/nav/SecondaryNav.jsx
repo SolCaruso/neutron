@@ -25,8 +25,8 @@ export default function SecondaryNav() {
   }, []);
 
   return (
-    <div className="px-8">
-      <div className="noise-bg h-12 flex items-center text-white text-sm rounded-b-xl max-w-8xl mx-auto">
+    <div className="md/lg:px-4">
+      <div className="noise-bg h-11 flex items-center text-white text-sm md/lg:rounded-b-lg max-w-8xl mx-auto">
         {/* 
           data-speed can be "fast" (20s) or "slow" (60s). 
           data-direction can be "left" or "right".
@@ -115,7 +115,7 @@ export default function SecondaryNav() {
 
 function MarqueeItem() {
   return (
-    <li className="inline-block whitespace-nowrap font-medium text-base">
+    <li className="inline-block whitespace-nowrap font-medium text-[15px]">
       The Battery Show Europe | Event June 3–5, 2025
       <a href="#" className="underline pr-8 pl-12 font-normal" style={{ textUnderlineOffset: '6px' }}>
         Learn more <TopRight className="inline-block w-4 h-4 mb-1" />

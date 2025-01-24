@@ -13,17 +13,15 @@ import { Testimonials } from '@/components/testimonials'
 import { Heading, Subheading } from '@/components/text'
 import Nav from '../components/nav/Nav';
 import { motion } from "framer-motion";
-import MobileLogo from '@/components/icons/MobileLogo'
+import MobileLogo from '@/components/logos/MobileLogo'
 import Card from '@/components/card'
 import useMeasure from "react-use-measure";
 import { animate, useMotionValue, useReducedMotion } from "framer-motion";
 import {useEffect} from "react";
 import { useState } from "react";
 import Partners from '@/components/Partners'
-import Control from '@/components/logos/Control'
-import Energy from '@/components/logos/Energy'
-import Your from '@/components/logos/Your'
 import CYE from '@/components/logos/CYE'
+import CYEMobile from '@/components/logos/CYEMobile'
 
 function FeatureSection() {
 
@@ -35,13 +33,11 @@ function FeatureSection() {
         <span className=" text-white text-[12px] font-semibold uppercase tracking-[2px] bg-black py-2 px-6 rounded-full">
         ESS Solutions
         </span>
-        <div className="flex pt-2">
-          <CYE className="w-[1300px] h-auto" />
+        <div className="flex p-6">
+          <CYE className="2xl:w-[1300px] xl:w-[1100px] w-[1000px] h-auto hidden lg:block" />
+          <CYEMobile className="sm:w-[600px] xs:w-[400px] w-[300px] h-auto lg:hidden" />
         </div>
-        {/* <h1 className="text-center text-black text-5xl font-bold uppercase">
-          Control Your Energy
-        </h1> */}
-        <p className="text-black text-[20px] max-w-xl mx-auto font-medium leading-6">
+        <p className="text-black xs:text-[20px] max-w-xl mx-auto font-medium leading-6">
         Where energy storage meets innovation, simplifying management and maximizing efficiency
         </p>
       </div>

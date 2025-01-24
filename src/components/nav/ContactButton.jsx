@@ -11,15 +11,21 @@ const ContactButton = () => {
                 inline-flex 
                 items-center 
                 justify-center
-                px-6 py-4
+                md/lg:px-5 md/lg:py-3.5
+                py-2.5
+                px-3
+                md:px-4
                 mr-1
-                text-[18px] 
+                md:py-3
+                md/lg:text-[16px]
+                text-[14px]
+                md:text-[14px] 
                 font-medium
                 tracking-[0.2px]
                 whitespace-nowrap
                 cursor-pointer
                 border-none
-                rounded-md
+                rounded-[4px]
                 transition-colors
                 duration-200
                 ease-in-out
@@ -31,7 +37,7 @@ const ContactButton = () => {
                 text-black
               "
             >
-              <span>Contact Us</span>
+              <span>Contact <span className="hidden xs:inline">Us</span></span>
             </motion.div>
           </Link>
   )
