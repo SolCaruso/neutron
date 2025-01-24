@@ -22,35 +22,36 @@ import { useState } from "react";
 import Partners from '@/components/Partners'
 import CYE from '@/components/logos/CYE'
 import CYEMobile from '@/components/logos/CYEMobile'
+import Slider from '@/components/Slider'
 
 function FeatureSection() {
 
   return (
-    <div className="overflow-hidden text-gray-900">
+    <div className="overflow-hidden text-gray-900 px-2 max-w-full">
     {/* Parent Container */}
     <div className="flex flex-col items-center gap-14 py-24">
-      <div className="text-center flex flex-col items-center ">
+      <div className="text-center flex flex-col items-center">
         <span className=" text-white text-[12px] font-semibold uppercase tracking-[2px] bg-black py-2 px-6 rounded-full">
         ESS Solutions
         </span>
-        <div className="flex p-6">
-          <CYE className="2xl:w-[1300px] xl:w-[1100px] w-[1000px] h-auto hidden lg:block" />
-          <CYEMobile className="sm:w-[600px] xs:w-[400px] w-[300px] h-auto lg:hidden" />
+        <div className="flex p-6 ">
+          {/* <CYE className="2xl:w-[1300px] xl:w-[1100px] w-[1000px] h-auto hidden lg:block max-w-[1000px]"/> */}
+          <CYEMobile className="md:w-[600px] xs:w-[400px] w-[300px] lg:w-[700px] h-auto max-w-[1000px]"/>
         </div>
-        <p className="text-black xs:text-[20px] max-w-xl mx-auto font-medium leading-6">
+        <p className="text-black sm:text-[18px] mx-auto font-medium leading-6 lg:max-w-[700px] max-w-[500px]">
         Where energy storage meets innovation, simplifying management and maximizing efficiency
         </p>
       </div>
 
-      <div className="flex justify-center gap-3 p-2.5 bg-black rounded-xl">
-        <MobileLogo className="self-center mx-2" />
+      <div className="flex justify-center gap-3 px-2.5 py-3 bg-black rounded-2xl backdrop-blur-sm border-8 border-white/50">
+        <MobileLogo className="self-center mx-2"/>
       <Link href="/#" passHref>
             <motion.div
               className="
                 inline-flex 
                 items-center 
                 justify-center
-                px-5 py-2.5
+                px-5 py-3.5
                 text-[14px] 
                 font-bold 
                 tracking-[0.2px]
@@ -78,7 +79,7 @@ function FeatureSection() {
                 inline-flex 
                 items-center 
                 justify-center
-                px-5 py-2.5
+                px-5 py-3.5
                 text-[14px] 
                 font-bold 
                 tracking-[0.2px]
@@ -314,6 +315,7 @@ export default function Home() {
         </div>
         <div className="py-24">
           <Partners/>
+          <Slider/>
         </div>
         
         {/* <DarkBentoSection /> */}

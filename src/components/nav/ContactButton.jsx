@@ -17,10 +17,9 @@ const ContactButton = () => {
                 md:px-4
                 mr-1
                 md:py-3
-                md/lg:text-[16px]
-                text-[14px]
-                md:text-[14px] 
-                font-medium
+                md/lg:text-[14px]
+                text-[12px]
+                font-bold
                 tracking-[0.2px]
                 whitespace-nowrap
                 cursor-pointer
@@ -35,6 +34,7 @@ const ContactButton = () => {
                 opacity-90
                 hover:opacity-100
                 text-black
+                uppercase
               "
             >
               <span>Contact <span className="hidden xs:inline">Us</span></span>

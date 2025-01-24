@@ -32,6 +32,10 @@ module.exports = {
       maxWidth: {
         '8xl': '1450px',
       },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(to top right, #0C0D0F 100%, #111214 75%)',
+      },
+      
     },
   },
   plugins: [],
