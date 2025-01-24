@@ -3,6 +3,8 @@ import "keen-slider/keen-slider.min.css"
 import { useKeenSlider } from "keen-slider/react"
 import Energate from "@/components/logos/Energate"
 import Energy from "@/components/icons/Energy"
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Slider() {
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -30,43 +32,69 @@ export default function Slider() {
         {/* Keen Slider: only the content that should slide goes here */}
         <div ref={sliderRef} className="keen-slider h-full w-full relative z-10">
           {/* Slide 1 */}
-          <div className="keen-slider__slide flex items-center justify-center">
+          <div className="keen-slider__slide flex top-44 -left-32 justify-center">
             {/* Main content (e.g. the crate image + floating cards) */}
             <div className="relative">
               {/* Crate image */}
               <img
                 src="/slider/slider3.jpg"
                 alt="Energy Storage Crate"
-                className="h-auto w-[700px] max-w-full rounded-xl shadow-xl"
+                className="h-auto w-[700px] max-w-full rounded-lg shadow-xl"
               />
               {/* Floating info card */}
-              <div className="absolute top-4 right-4 lg:right-8 border-white/10 border
+              <div className="absolute top-16 -right-40 border-white/10 border
               bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/75 
-                              backdrop-blur-sm text-white p-4 w-[280px] 
-                              rounded-lg shadow-lg"
+                              backdrop-blur-sm text-white p-6 w-[380px] 
+                              rounded-md shadow-lg"
               >
                 <h3 className="text-lg font-bold flex items-center mb-2">
                   {/* Icon */}
-                  <Energy/>
+                  <Energy className="mr-3"/>
                   Energy Storage
                 </h3>
                 <p className="text-sm text-gray-200 mb-3 leading-snug">
-                  We deliver <strong>cutting-edge</strong> energy storage
-                  control solutions designed to maximize efficiency and
+                  We deliver <span className="text-[#8CD6FF] bg-[#1C445D] rounded-sm px-1">cutting-edge energy storage
+                  control solutions</span> designed to maximize efficiency and
                   reliability in energy and industrial power systems.
                 </p>
-                <button className="text-sm font-semibold bg-blue-600 
-                                   hover:bg-blue-500 transition-colors 
-                                   px-4 py-2 rounded"
-                >
-                  Learn More
-                </button>
+                  <Link href="/#" passHref>
+                  <motion.div
+                    className="
+                      inline-flex 
+                      items-center 
+                      justify-center
+                      py-2.5
+                      px-3
+                      md:px-4
+                      mr-1
+                      text-[12px]
+                      font-bold
+                      tracking-[0.2px]
+                      whitespace-nowrap
+                      cursor-pointer
+                      border-none
+                      rounded-[4px]
+                      transition-colors
+                      duration-200
+                      ease-in-out
+                      bg-[#E6E6E6]
+                      hover:bg-[#FFF]
+                      shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
+                      opacity-90
+                      hover:opacity-100
+                      text-black
+                      uppercase
+                    "
+                  >
+              <span>Learn More</span>
+            </motion.div>
+                </Link>
               </div>
             </div>
 
             {/* Small white logo card */}
-            <div className="absolute bottom-8 right-8 bg-white p-4 rounded-lg shadow-md">
-              <Energate className="h-12 w-auto" />
+            <div className="absolute bottom-32 right-8 bg-white/85 backdrop-blur-sm px-4 py-20 rounded-lg shadow-md border-white/30 ">
+              <Energate className="h-7 w-auto" />
             </div>
           </div>
 
