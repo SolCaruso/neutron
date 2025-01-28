@@ -24,6 +24,7 @@ import CYE from '@/components/logos/CYE'
 import CYEMobile from '@/components/logos/CYEMobile'
 import Slider from '@/components/Slider'
 import Bolt from '@/components/icons/Bolt'
+import Numbers from '@/components/Numbers.jsx'
 
 function FeatureSection() {
 
@@ -318,6 +319,7 @@ export default function Home() {
         <div className="py-24">
           <Partners/>
           <Slider/>
+          <Numbers/>
         </div>
         
         {/* <DarkBentoSection /> */}
