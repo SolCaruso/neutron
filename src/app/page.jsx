@@ -23,6 +23,7 @@ import Partners from '@/components/Partners'
 import CYE from '@/components/logos/CYE'
 import CYEMobile from '@/components/logos/CYEMobile'
 import Slider from '@/components/Slider'
+import Bolt from '@/components/icons/Bolt'
 
 function FeatureSection() {
 
@@ -31,12 +32,13 @@ function FeatureSection() {
     {/* Parent Container */}
     <div className="flex flex-col items-center gap-14 py-24">
       <div className="text-center flex flex-col items-center">
-        <span className=" text-white text-[12px] font-semibold uppercase tracking-[2px] bg-black py-2 px-6 rounded-full">
-        ESS Solutions
+        <span className=" text-white text-[12px] font-semibold uppercase tracking-[2px] bg-black py-2 px-6 rounded-full flex gap-2">
+        <Bolt className="w-4"/> ESS Solutions
         </span>
         <div className="flex p-6 ">
           {/* <CYE className="2xl:w-[1300px] xl:w-[1100px] w-[1000px] h-auto hidden lg:block max-w-[1000px]"/> */}
-          <CYEMobile className="md:w-[600px] xs:w-[400px] w-[300px] lg:w-[700px] h-auto max-w-[1000px]"/>
+          {/* <CYEMobile className="md:w-[600px] xs:w-[400px] w-[300px] lg:w-[700px] h-auto max-w-[1000px]"/> */}
+          <h1 className="text-[45px] font-bold">CONTROL YOUR ENERGY</h1>
         </div>
         <p className="text-black sm:text-[18px] mx-auto font-medium leading-6 lg:max-w-[700px] max-w-[500px]">
         Where energy storage meets innovation, simplifying management and maximizing efficiency

@@ -17,7 +17,7 @@ export default function Slider() {
   return (
     <div className="mx-auto w-full flex justify-center">
       {/* Outer container: static BG + Title stays put */}
-      <div className="relative w-full max-w-7xl h-[800px] bg-black overflow-hidden rounded-2xl">
+      <div className="relative w-full max-w-7xl h-[800px] bg-black overflow-hidden rounded-3xl">
         {/* Right-side background image */}
         <div
           className="absolute inset-y-0 right-0 w-[40%] bg-cover bg-no-repeat"
@@ -37,63 +37,63 @@ export default function Slider() {
             <div className="relative">
               {/* Crate image */}
               <img
-                src="/slider/slider3.jpg"
+                src="/slider/slider3.webp"
                 alt="Energy Storage Crate"
                 className="h-auto w-[700px] max-w-full rounded-lg shadow-xl"
               />
               {/* Floating info card */}
-              <div className="absolute top-16 -right-40 border-white/10 border
+              <div className="absolute top-16 -right-52 border-white/10 border
               bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/75 
-                              backdrop-blur-sm text-white p-6 w-[380px] 
+                              backdrop-blur-sm text-white p-5 pt-7 w-[440px] 
                               rounded-md shadow-lg"
               >
-                <h3 className="text-lg font-bold flex items-center mb-2">
+                <h3 className="text-lg font-bold flex items-center mb-4">
                   {/* Icon */}
-                  <Energy className="mr-3"/>
+                  <Energy className="mr-3 "/>
                   Energy Storage
                 </h3>
-                <p className="text-sm text-gray-200 mb-3 leading-snug">
+                <p className="text-sm text-gray-200 mb-6 tracking-wide ">
                   We deliver <span className="text-[#8CD6FF] bg-[#1C445D] rounded-sm px-1">cutting-edge energy storage
                   control solutions</span> designed to maximize efficiency and
                   reliability in energy and industrial power systems.
                 </p>
                   <Link href="/#" passHref>
-                  <motion.div
-                    className="
-                      inline-flex 
-                      items-center 
-                      justify-center
-                      py-2.5
-                      px-3
-                      md:px-4
-                      mr-1
-                      text-[12px]
-                      font-bold
-                      tracking-[0.2px]
-                      whitespace-nowrap
-                      cursor-pointer
-                      border-none
-                      rounded-[4px]
-                      transition-colors
-                      duration-200
-                      ease-in-out
-                      bg-[#E6E6E6]
-                      hover:bg-[#FFF]
-                      shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
-                      opacity-90
-                      hover:opacity-100
-                      text-black
-                      uppercase
-                    "
-                  >
-              <span>Learn More</span>
-            </motion.div>
+                    <motion.div
+                      className="
+                        inline-flex 
+                        items-center 
+                        justify-center
+                        py-2
+                        px-2.5
+                        md:px-3.5
+                        mr-1
+                        text-[12px]
+                        font-bold
+                        tracking-[0.2px]
+                        whitespace-nowrap
+                        cursor-pointer
+                        border-none
+                        rounded-[4px]
+                        transition-colors
+                        duration-200
+                        ease-in-out
+                        bg-[#E6E6E6]
+                        hover:bg-[#FFF]
+                        shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
+                        opacity-90
+                        hover:opacity-100
+                        text-black
+                        uppercase
+                      "
+                    >
+                    <span>Learn More</span>
+                  </motion.div>
                 </Link>
               </div>
             </div>
 
             {/* Small white logo card */}
-            <div className="absolute bottom-32 right-8 bg-white/85 backdrop-blur-sm px-4 py-20 rounded-lg shadow-md border-white/30 ">
+            <div className="absolute bottom-80 right-6 bg-white/85 backdrop-blur-sm px-4 py-[70px] rounded-lg shadow-md border-white/30 ">
               <Energate className="h-7 w-auto" />
             </div>
           </div>
