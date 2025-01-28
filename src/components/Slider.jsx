@@ -80,7 +80,7 @@ export default function Slider() {
 
   return (
     <div className="mx-auto w-full flex justify-center">
-      <div className="relative w-full max-w-7xl bg-black rounded-3xl overflow-hidden">
+      <div className="relative w-full max-w-7xl bg-black md:rounded-3xl overflow-hidden">
         {/* Right-side background image */}
         <div
           className="absolute inset-y-0 right-0 w-[40%] bg-cover bg-no-repeat"
@@ -88,7 +88,7 @@ export default function Slider() {
         />
 
         {/* Title */}
-        <h2 className="absolute top-24 w-full text-center text-white text-4xl font-bold z-10">
+        <h2 className=" w-full text-center text-white text-4xl font-bold z-10 absolute top-24">
           OUR INDUSTRY FOCUS
         </h2>
 
@@ -97,13 +97,13 @@ export default function Slider() {
           {/* Slide 1 */}
           <div className="keen-slider__slide relative">
             {/* --- DESKTOP LAYOUT (md+) --- */}
-            <div className="hidden md:flex flex-col items-center md:flex-row md:justify-center px-4 py-16 w-full h-full">
+            <div className="hidden md:flex flex-col items-center md:flex-row md:justify-center px-4 pt-44 pb-20 w-full h-full">
               {/* Image + floating card container */}
               <div className="relative">
                 <img
                   src="/slider/slider3.webp"
                   alt="Energy Storage Crate"
-                  className="h-auto w-[700px] max-w-full rounded-lg shadow-xl"
+                  className="h-auto w-[800px] max-w-full rounded-lg shadow-xl mr-32 mb-20"
                 />
 
                 {/* Floating info card */}
@@ -112,16 +112,16 @@ export default function Slider() {
                     hidden 
                     md:block 
                     absolute 
-                    top-16
-                    -right-52
+                    top-12
+                    -right-24
                     border border-white/10
-                    bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/75
+                    bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/85
                     backdrop-blur-sm 
                     text-white 
                     p-5 
                     pt-7
-                    w-[440px]
-                    rounded-md
+                    w-[460px]
+                    rounded-lg
                     shadow-lg
                   "
                 >
@@ -130,7 +130,7 @@ export default function Slider() {
                     <Energy className="mr-3" />
                     Energy Storage
                   </h3>
-                  <p className="text-sm text-gray-200 mb-6 tracking-wide">
+                  <p className="text-base text-gray-200 mb-6 tracking-wide">
                     We deliver{" "}
                     <span className="text-[#8CD6FF] bg-[#1C445D] rounded-sm px-1">
                       cutting-edge energy storage control solutions
@@ -174,7 +174,7 @@ export default function Slider() {
               </div>
 
               {/* Small white logo card (only on md+) */}
-              <div className="hidden md:block absolute bottom-80 right-6 bg-white/85 backdrop-blur-sm px-4 py-[70px] rounded-lg shadow-md border-white/30">
+              <div className="hidden md:block absolute bottom-48 right-12 bg-white/85 backdrop-blur-sm px-4 py-[70px] rounded-lg shadow-md border-white/30">
                 <Energate className="h-7 w-auto" />
               </div>
             </div>
@@ -251,7 +251,7 @@ export default function Slider() {
         </div>
 
         {/* --- Pagination Dots (absolute or wherever you prefer) --- */}
-        <div className="absolute bottom-4 w-full flex justify-center z-20">
+        <div className="absolute bottom-24 w-full flex justify-center z-20">
           <Dot index={0} />
           <Dot index={1} />
           <Dot index={2} />

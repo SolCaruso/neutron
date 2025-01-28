@@ -12,13 +12,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="text-gray-950 antialiased">
+      
+      <body
+        className="text-gray-950 antialiased"
+        style={{
+          background: "linear-gradient(to top right, #EEEEEE 55%, #ECECEC 100%)",
+        }}
+      >
         {/* The dotted/cursor mask background rendered by a client component */}
-        <DigitalBackground />
-
-        {/* Optional gradient at the bottom (can remain server-side) */}
-        <div className="fixed inset-x-0 bottom-0 h-full bg-gradient-to-b from-white to-[#e1ecf6] -z-20 dark:hidden" />
-        
+        <DigitalBackground />  
         {children}
       </body>
     </html>
