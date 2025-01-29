@@ -1,82 +1,139 @@
-import React, { useState, useEffect, useRef } from "react"
+"use client"
+
+import React, { useState, useEffect } from "react"
 import "keen-slider/keen-slider.min.css"
 import { useKeenSlider } from "keen-slider/react"
 import Energate from "@/components/logos/Energate"
 import Energy from "@/components/icons/Energy"
-import { motion } from "framer-motion"
+import { motion, useAnimationControls } from "framer-motion"
 import Link from "next/link"
 
 export default function Slider() {
-  // Track the current slide for pagination
   const [currentSlide, setCurrentSlide] = useState(0)
-  // Whether to pause auto-play when dragging
-  const [pause, setPause] = useState(false)
+  // Track if component has mounted (prevents Framer Motion SSR errors)
+  const [mounted, setMounted] = useState(false)
 
-  // A ref for the autoplay timer
-  const timerRef = useRef(null)
+  // Mark as mounted after first client render
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
-  // Initialize KeenSlider
+  // ----- Initialize Keen Slider -----
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
     slidesPerView: 1,
     mode: "snap",
     spacing: 10,
-    // Sync the current slide to state
     slideChanged(slider) {
       setCurrentSlide(slider.track.details.rel)
     },
     created(slider) {
       setCurrentSlide(slider.track.details.rel)
     },
-    dragStart: () => setPause(true),
-    dragEnd: () => setPause(false),
   })
 
-  // Autoplay effect: move to next slide every 8 seconds
-  useEffect(() => {
-    const slider = instanceRef.current
-    if (!slider) return
-
-    // Clear any previous interval
-    if (timerRef.current) clearInterval(timerRef.current)
-
-    timerRef.current = setInterval(() => {
-      if (!pause) {
-        slider.next()
-      }
-    }, 8000)
-
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current)
-    }
-  }, [pause, instanceRef])
-
-  // A small dot/pill representing each slide
-  const Dot = ({ index }) => {
+  // ----- Dot Component -----
+  function Dot({ index }) {
     const isActive = currentSlide === index
+
+    const shapeControls = useAnimationControls() // animates circle→pill→circle
+    const fillControls = useAnimationControls()  // animates fill bar
+
+    useEffect(() => {
+      // Don’t call controls.start() until after mount
+      if (!mounted) return
+
+      if (isActive) {
+        // If this dot just became active, run expand→fill→collapse
+        let canceled = false
+        ;(async () => {
+          try {
+            // 1) Expand from 10px → 40px
+            await shapeControls.start({
+              width: "40px",
+              transition: { duration: 0.3 },
+            })
+            if (canceled) return
+
+            // 2) Fill from 0% → 100% over 8s
+            await fillControls.start({
+              width: "100%",
+              transition: { duration: 8, ease: "linear" },
+            })
+            if (canceled) return
+
+            // 3) Collapse from 40px → 10px (in parallel, fill from 100% → 0%)
+            await Promise.all([
+              shapeControls.start({
+                width: "10px",
+                transition: { duration: 0.3 },
+              }),
+              fillControls.start({
+                width: "0%",
+                transition: { duration: 0.3 },
+              }),
+            ])
+            if (canceled) return
+
+            // 4) If still the active slide, advance
+            if (instanceRef.current && currentSlide === index) {
+              instanceRef.current.next()
+            }
+          } catch (err) {
+            /* swallow any unmount/interrupt errors */
+          }
+        })()
+
+        // Cleanup if we become inactive mid‐animation
+        return () => {
+          canceled = true
+        }
+
+      } else {
+        // Animate back to small circle (so we see a collapse if user drags away mid‐fill)
+        shapeControls.start({
+          width: "10px",
+          transition: { duration: 0.3 },
+        })
+        fillControls.start({
+          width: "0%",
+          transition: { duration: 0.3 },
+        })
+      }
+    }, [
+      isActive,
+      mounted,
+      shapeControls,
+      fillControls,
+      index,
+      currentSlide,
+      instanceRef,
+    ])
+
     return (
-      <div
-        className="relative mr-3 flex items-center justify-center"
-        style={{
-          width: isActive ? "40px" : "10px", // Wider "pill" when active
-          height: "10px",
-          borderRadius: "9999px",
-          backgroundColor: "#DBE1F9", // Default color
-          overflow: "hidden",
-          transition: "width 0.3s",
+      <motion.div
+        // Let user click a dot to jump to that slide
+        onClick={() => {
+          instanceRef.current?.moveToIdx(index)
         }}
+        className="relative mr-3 flex items-center justify-center
+                   h-[10px] bg-[#DBE1F9] rounded-full overflow-hidden
+                   cursor-pointer"
+        style={{ minWidth: "10px" }}
+        // Outer pill shape
+        animate={shapeControls}
+        initial={{ width: "10px" }}
       >
-        {isActive && (
-          <div
-            className="absolute left-0 top-0 h-full bg-[#566FE3]"
-            style={{
-              animation: "fillBar 8s linear forwards",
-            }}
-          />
-        )}
-      </div>
+        {/* Inner fill bar */}
+        <motion.div
+          className="absolute left-0 top-0 h-full bg-[#566FE3]"
+          animate={fillControls}
+          initial={{ width: "0%" }}
+        />
+      </motion.div>
     )
   }
+  // ----- End Dot -----
 
   return (
     <div className="mx-auto w-full flex justify-center">
@@ -88,7 +145,7 @@ export default function Slider() {
         />
 
         {/* Title */}
-        <h2 className=" w-full text-center text-white text-4xl font-bold z-10 absolute top-24">
+        <h2 className="w-full text-center text-white md:text-4xl text-2xl font-bold z-10 absolute md:top-24 top-8">
           OUR INDUSTRY FOCUS
         </h2>
 
@@ -96,17 +153,13 @@ export default function Slider() {
         <div ref={sliderRef} className="keen-slider h-full w-full relative z-10">
           {/* Slide 1 */}
           <div className="keen-slider__slide relative">
-            {/* --- DESKTOP LAYOUT (md+) --- */}
             <div className="hidden md:flex flex-col items-center md:flex-row md:justify-center px-4 pt-44 pb-20 w-full h-full">
-              {/* Image + floating card container */}
               <div className="relative">
                 <img
                   src="/slider/slider3.webp"
                   alt="Energy Storage Crate"
                   className="h-auto w-[800px] max-w-full rounded-lg shadow-xl mr-32 mb-20"
                 />
-
-                {/* Floating info card */}
                 <div
                   className="
                     hidden 
@@ -125,7 +178,6 @@ export default function Slider() {
                     shadow-lg
                   "
                 >
-                  {/* Card content (Energy icon, text, link button, etc.) */}
                   <h3 className="text-lg font-bold flex items-center mb-4">
                     <Energy className="mr-3" />
                     Energy Storage
@@ -172,23 +224,19 @@ export default function Slider() {
                   </Link>
                 </div>
               </div>
-
-              {/* Small white logo card (only on md+) */}
               <div className="hidden md:block absolute bottom-48 right-12 bg-white/85 backdrop-blur-sm px-4 py-[70px] rounded-lg shadow-md border-white/30">
                 <Energate className="h-7 w-auto" />
               </div>
             </div>
 
-            {/* --- MOBILE LAYOUT (< md) --- */}
-            <div className="md:hidden flex flex-col items-center w-full px-4 py-16">
+            {/* Mobile layout */}
+            <div className="md:hidden flex flex-col items-center w-full px-4 py-24">
               <div className="border border-white/10 rounded-md bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/75 backdrop-blur-sm shadow-lg w-full max-w-[700px] overflow-hidden">
-                {/* Image with 1px bottom border */}
                 <img
                   src="/slider/slider3.webp"
                   alt="Energy Storage Crate"
                   className="w-full h-auto block border-b border-white/10"
                 />
-                {/* Info at the bottom */}
                 <div className="text-white p-5 pt-7">
                   <h3 className="text-lg font-bold flex items-center mb-4">
                     <Energy className="mr-3" />
@@ -235,23 +283,22 @@ export default function Slider() {
                   </Link>
                 </div>
               </div>
-              {/* No small white logo card on mobile */}
             </div>
           </div>
 
           {/* Slide 2 */}
-          <div className="keen-slider__slide flex items-center justify-center">
-            <h2 className="text-white">Slide 2 Content</h2>
+          <div className="keen-slider__slide flex items-center justify-center text-white">
+            Slide 2 Content
           </div>
 
           {/* Slide 3 */}
-          <div className="keen-slider__slide flex items-center justify-center">
-            <h2 className="text-white">Slide 3 Content</h2>
+          <div className="keen-slider__slide flex items-center justify-center text-white">
+            Slide 3 Content
           </div>
         </div>
 
-        {/* --- Pagination Dots (absolute or wherever you prefer) --- */}
-        <div className="absolute bottom-24 w-full flex justify-center z-20">
+        {/* Dots */}
+        <div className="absolute bottom-10 md:bottom-24 w-full flex justify-center z-20">
           <Dot index={0} />
           <Dot index={1} />
           <Dot index={2} />

@@ -39,7 +39,7 @@ export default function Partners() {
 
   return (
     <div className="pb-28 relative flex flex-col items-center justify-center">
-      <p className="text-center mb-1 text-2xl font-bold uppercase">
+      <p className="text-center mb-1 text-2xl font-bold uppercase pb-3 sm:pb-0">
         Trusted by partners worldwide
       </p>
       <p className="text-center mb-12 text-lg font-medium">

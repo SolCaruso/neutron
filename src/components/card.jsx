@@ -10,7 +10,7 @@ function Card({ image }) {
     const [showOverlay, setShowOverlay] = useState(false);
 
   return (
-    <motion.div className="relative overflow-hidden h-[300px] min-w-[400px] bg-slate-400 rounded-xl flex justify-center item-center"
+    <motion.div className="relative overflow-hidden h-[300px] min-w-[400px] bg-slate-400 rounded-2xl flex justify-center item-center"
         onHoverStart={() => setShowOverlay(true)}
         onHoverEnd={() => setShowOverlay(false)}
     >
