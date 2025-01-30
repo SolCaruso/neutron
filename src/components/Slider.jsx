@@ -40,75 +40,32 @@ export default function Slider() {
     const fillControls = useAnimationControls()  // animates fill bar
 
     useEffect(() => {
-      // Don’t call controls.start() until after mount
-      if (!mounted) return
-
+      if (!mounted) return;
       if (isActive) {
-        // If this dot just became active, run expand→fill→collapse
-        let canceled = false
-        ;(async () => {
+        let canceled = false;
+        (async () => {
           try {
-            // 1) Expand from 10px → 40px
-            await shapeControls.start({
-              width: "40px",
-              transition: { duration: 0.3 },
-            })
-            if (canceled) return
-
-            // 2) Fill from 0% → 100% over 8s
-            await fillControls.start({
-              width: "100%",
-              transition: { duration: 8, ease: "linear" },
-            })
-            if (canceled) return
-
-            // 3) Collapse from 40px → 10px (in parallel, fill from 100% → 0%)
+            await shapeControls.start({ width: "70px", transition: { duration: 0.2 } });
+            if (canceled) return;
+            await fillControls.start({ width: "100%", transition: { duration: 6, ease: "linear" } });
+            if (canceled) return;
             await Promise.all([
-              shapeControls.start({
-                width: "10px",
-                transition: { duration: 0.3 },
-              }),
-              fillControls.start({
-                width: "0%",
-                transition: { duration: 0.3 },
-              }),
-            ])
-            if (canceled) return
-
-            // 4) If still the active slide, advance
+              shapeControls.start({ width: "10px", transition: { duration: 0.3 } }),
+              fillControls.start({ width: "0%", transition: { duration: 0.3 } }),
+            ]);
+            if (canceled) return;
             if (instanceRef.current && currentSlide === index) {
-              instanceRef.current.next()
+              instanceRef.current.next();
             }
-          } catch (err) {
-            /* swallow any unmount/interrupt errors */
-          }
-        })()
-
-        // Cleanup if we become inactive mid‐animation
-        return () => {
-          canceled = true
-        }
-
+          } catch (err) {}
+        })();
+        return () => { canceled = true; }
       } else {
-        // Animate back to small circle (so we see a collapse if user drags away mid‐fill)
-        shapeControls.start({
-          width: "10px",
-          transition: { duration: 0.3 },
-        })
-        fillControls.start({
-          width: "0%",
-          transition: { duration: 0.3 },
-        })
+        shapeControls.start({ width: "10px", transition: { duration: 0.3 } });
+        fillControls.start({ width: "0%", transition: { duration: 0.3 } });
       }
-    }, [
-      isActive,
-      mounted,
-      shapeControls,
-      fillControls,
-      index,
-      currentSlide,
-      instanceRef,
-    ])
+    }, [isActive, mounted, shapeControls, fillControls, index, currentSlide, instanceRef]);
+
 
     return (
       <motion.div
@@ -141,7 +98,7 @@ export default function Slider() {
         {/* Right-side background image */}
         <div
           className="absolute inset-y-0 right-0 w-[40%] bg-cover bg-no-repeat"
-          style={{ backgroundImage: 'url("/slider/bg1.webp")' }}
+          style={{ backgroundImage: 'url("/slider/slider-bg.webp")' }}
         />
 
         {/* Title */}
@@ -155,28 +112,20 @@ export default function Slider() {
           <div className="keen-slider__slide relative">
             <div className="hidden md:flex flex-col items-center md:flex-row md:justify-center px-4 pt-44 pb-20 w-full h-full">
               <div className="relative">
-                <img
-                  src="/slider/slider3.webp"
-                  alt="Energy Storage Crate"
+                {/* ✅ Only Render Video When This Slide is Active */}
+                <video
+                  key={currentSlide} // Forces a re-mount when slide changes
+                  src="/vids/storage.webm"
+                  autoPlay
+                  muted
+                  playsInline
+                  preload="auto"
                   className="h-auto w-[800px] max-w-full rounded-lg shadow-xl mr-32 mb-20"
                 />
+
+                {/* Video Info Box */}
                 <div
-                  className="
-                    hidden 
-                    md:block 
-                    absolute 
-                    top-12
-                    -right-24
-                    border border-white/10
-                    bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/85
-                    backdrop-blur-sm 
-                    text-white 
-                    p-5 
-                    pt-7
-                    w-[460px]
-                    rounded-lg
-                    shadow-lg
-                  "
+                  className="hidden md:block absolute top-12 -right-24 border border-white/10 bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/85 backdrop-blur-sm text-white p-5 pt-7 w-[460px] rounded-lg shadow-lg"
                 >
                   <h3 className="text-lg font-bold flex items-center mb-4">
                     <Energy className="mr-3" />
@@ -199,11 +148,9 @@ export default function Slider() {
                         py-2
                         px-2.5
                         md:px-3.5
-                        mr-1
                         text-[12px]
                         font-bold
                         tracking-[0.2px]
-                        whitespace-nowrap
                         cursor-pointer
                         border-none
                         rounded-[4px]
@@ -212,7 +159,7 @@ export default function Slider() {
                         ease-in-out
                         bg-[#E6E6E6]
                         hover:bg-[#FFF]
-                        shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
+                        shadow-md
                         opacity-90
                         hover:opacity-100
                         text-black
@@ -232,11 +179,17 @@ export default function Slider() {
             {/* Mobile layout */}
             <div className="md:hidden flex flex-col items-center w-full px-4 py-24">
               <div className="border border-white/10 rounded-md bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/75 backdrop-blur-sm shadow-lg w-full max-w-[700px] overflow-hidden">
-                <img
-                  src="/slider/slider3.webp"
-                  alt="Energy Storage Crate"
+                {/* ✅ Mobile Video */}
+                <video
+                  key={currentSlide}
+                  src="/vids/storage.webm"
+                  autoPlay
+                  muted
+                  playsInline
+                  preload="auto"
                   className="w-full h-auto block border-b border-white/10"
                 />
+
                 <div className="text-white p-5 pt-7">
                   <h3 className="text-lg font-bold flex items-center mb-4">
                     <Energy className="mr-3" />
@@ -258,11 +211,9 @@ export default function Slider() {
                         justify-center
                         py-2
                         px-2.5
-                        mr-1
                         text-[12px]
                         font-bold
                         tracking-[0.2px]
-                        whitespace-nowrap
                         cursor-pointer
                         border-none
                         rounded-[4px]
@@ -271,7 +222,7 @@ export default function Slider() {
                         ease-in-out
                         bg-[#E6E6E6]
                         hover:bg-[#FFF]
-                        shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
+                        shadow-md
                         opacity-90
                         hover:opacity-100
                         text-black
@@ -287,13 +238,261 @@ export default function Slider() {
           </div>
 
           {/* Slide 2 */}
-          <div className="keen-slider__slide flex items-center justify-center text-white">
-            Slide 2 Content
+          <div className="keen-slider__slide relative">
+          <div className="hidden md:flex flex-col items-center md:flex-row md:justify-center px-4 pt-44 pb-20 w-full h-full">
+          <div className="relative">
+            {/* ✅ Only Render Video When This Slide is Active */}
+            <video
+              key={currentSlide} // Forces a re-mount when slide changes
+              src="/vids/battry.webm"
+              autoPlay
+              muted
+              playsInline
+              preload="auto"
+              className="h-auto w-[800px] max-w-full rounded-lg shadow-xl mr-32 mb-20"
+            />
+
+            {/* Video Info Box */}
+            <div
+              className="hidden md:block absolute top-12 -right-24 border border-white/10 bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/85 backdrop-blur-sm text-white p-5 pt-7 w-[460px] rounded-lg shadow-lg"
+            >
+              <h3 className="text-lg font-bold flex items-center mb-4">
+                <Energy className="mr-3" />
+                Energy Storage
+              </h3>
+              <p className="text-base text-gray-200 mb-6 tracking-wide">
+                We deliver{" "}
+                <span className="text-[#8CD6FF] bg-[#1C445D] rounded-sm px-1">
+                  cutting-edge energy storage control solutions
+                </span>{" "}
+                designed to maximize efficiency and reliability in energy
+                and industrial power systems.
+              </p>
+              <Link href="/#" passHref>
+                <motion.div
+                  className="
+                    inline-flex 
+                    items-center 
+                    justify-center
+                    py-2
+                    px-2.5
+                    md:px-3.5
+                    text-[12px]
+                    font-bold
+                    tracking-[0.2px]
+                    cursor-pointer
+                    border-none
+                    rounded-[4px]
+                    transition-colors
+                    duration-200
+                    ease-in-out
+                    bg-[#E6E6E6]
+                    hover:bg-[#FFF]
+                    shadow-md
+                    opacity-90
+                    hover:opacity-100
+                    text-black
+                    uppercase
+                  "
+                >
+                  <span>Learn More</span>
+                </motion.div>
+              </Link>
+            </div>
           </div>
+          <div className="hidden md:block absolute bottom-48 right-12 bg-white/85 backdrop-blur-sm px-4 py-[70px] rounded-lg shadow-md border-white/30">
+            <Energate className="h-7 w-auto" />
+          </div>
+        </div>
+
+        {/* Mobile layout */}
+        <div className="md:hidden flex flex-col items-center w-full px-4 py-24">
+          <div className="border border-white/10 rounded-md bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/75 backdrop-blur-sm shadow-lg w-full max-w-[700px] overflow-hidden">
+            {/* ✅ Mobile Video */}
+            <video
+              key={currentSlide}
+              src="/vids/battry.webm"
+              autoPlay
+              muted
+              playsInline
+              preload="auto"
+              className="w-full h-auto block border-b border-white/10"
+            />
+
+            <div className="text-white p-5 pt-7">
+              <h3 className="text-lg font-bold flex items-center mb-4">
+                <Energy className="mr-3" />
+                Energy Storage
+              </h3>
+              <p className="text-sm text-gray-200 mb-6 tracking-wide">
+                We deliver{" "}
+                <span className="text-[#8CD6FF] bg-[#1C445D] rounded-sm px-1">
+                  cutting-edge energy storage control solutions
+                </span>{" "}
+                designed to maximize efficiency and reliability in energy
+                and industrial power systems.
+              </p>
+              <Link href="/#" passHref>
+                <motion.div
+                  className="
+                    inline-flex 
+                    items-center 
+                    justify-center
+                    py-2
+                    px-2.5
+                    text-[12px]
+                    font-bold
+                    tracking-[0.2px]
+                    cursor-pointer
+                    border-none
+                    rounded-[4px]
+                    transition-colors
+                    duration-200
+                    ease-in-out
+                    bg-[#E6E6E6]
+                    hover:bg-[#FFF]
+                    shadow-md
+                    opacity-90
+                    hover:opacity-100
+                    text-black
+                    uppercase
+                  "
+                >
+                  <span>Learn More</span>
+                </motion.div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
 
           {/* Slide 3 */}
-          <div className="keen-slider__slide flex items-center justify-center text-white">
-            Slide 3 Content
+          <div className="keen-slider__slide relative">
+            <div className="hidden md:flex flex-col items-center md:flex-row md:justify-center px-4 pt-44 pb-20 w-full h-full">
+              <div className="relative">
+                {/* ✅ Only Render Video When This Slide is Active */}
+                <video
+                  key={currentSlide} // Forces a re-mount when slide changes
+                  src="/vids/auto.webm"
+                  autoPlay
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="h-auto w-[800px] max-w-full rounded-lg shadow-xl mr-32 mb-20"
+                />
+
+                {/* Video Info Box */}
+                <div
+                  className="hidden md:block absolute top-12 -right-24 border border-white/10 bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/85 backdrop-blur-sm text-white p-5 pt-7 w-[460px] rounded-lg shadow-lg"
+                >
+                  <h3 className="text-lg font-bold flex items-center mb-4">
+                    <Energy className="mr-3" />
+                    Energy Storage
+                  </h3>
+                  <p className="text-base text-gray-200 mb-6 tracking-wide">
+                    We deliver{" "}
+                    <span className="text-[#8CD6FF] bg-[#1C445D] rounded-sm px-1">
+                      cutting-edge energy storage control solutions
+                    </span>{" "}
+                    designed to maximize efficiency and reliability in energy
+                    and industrial power systems.
+                  </p>
+                  <Link href="/#" passHref>
+                    <motion.div
+                      className="
+                        inline-flex 
+                        items-center 
+                        justify-center
+                        py-2
+                        px-2.5
+                        md:px-3.5
+                        text-[12px]
+                        font-bold
+                        tracking-[0.2px]
+                        cursor-pointer
+                        border-none
+                        rounded-[4px]
+                        transition-colors
+                        duration-200
+                        ease-in-out
+                        bg-[#E6E6E6]
+                        hover:bg-[#FFF]
+                        shadow-md
+                        opacity-90
+                        hover:opacity-100
+                        text-black
+                        uppercase
+                      "
+                    >
+                      <span>Learn More</span>
+                    </motion.div>
+                  </Link>
+                </div>
+              </div>
+              <div className="hidden md:block absolute bottom-48 right-12 bg-white/85 backdrop-blur-sm px-4 py-[70px] rounded-lg shadow-md border-white/30">
+                <Energate className="h-7 w-auto" />
+              </div>
+            </div>
+
+            {/* Mobile layout */}
+            <div className="md:hidden flex flex-col items-center w-full px-4 py-24">
+              <div className="border border-white/10 rounded-md bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/75 backdrop-blur-sm shadow-lg w-full max-w-[700px] overflow-hidden">
+                {/* ✅ Mobile Video */}
+                <video
+                  key={currentSlide}
+                  src="/vids/auto.webm"
+                  autoPlay
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="w-full h-auto block border-b border-white/10"
+                />
+
+                <div className="text-white p-5 pt-7">
+                  <h3 className="text-lg font-bold flex items-center mb-4">
+                    <Energy className="mr-3" />
+                    Energy Storage
+                  </h3>
+                  <p className="text-sm text-gray-200 mb-6 tracking-wide">
+                    We deliver{" "}
+                    <span className="text-[#8CD6FF] bg-[#1C445D] rounded-sm px-1">
+                      cutting-edge energy storage control solutions
+                    </span>{" "}
+                    designed to maximize efficiency and reliability in energy
+                    and industrial power systems.
+                  </p>
+                  <Link href="/#" passHref>
+                    <motion.div
+                      className="
+                        inline-flex 
+                        items-center 
+                        justify-center
+                        py-2
+                        px-2.5
+                        text-[12px]
+                        font-bold
+                        tracking-[0.2px]
+                        cursor-pointer
+                        border-none
+                        rounded-[4px]
+                        transition-colors
+                        duration-200
+                        ease-in-out
+                        bg-[#E6E6E6]
+                        hover:bg-[#FFF]
+                        shadow-md
+                        opacity-90
+                        hover:opacity-100
+                        text-black
+                        uppercase
+                      "
+                    >
+                      <span>Learn More</span>
+                    </motion.div>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
