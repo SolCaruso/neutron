@@ -11,20 +11,20 @@ export default function Hero() {
       <div className="flex flex-col items-center gap-14 py-24">
         <div className="text-center flex flex-col items-center">
           <span className=" text-white text-[12px] font-semibold uppercase tracking-[2px] bg-black py-2 px-6 rounded-full flex gap-2">
-          <Bolt className="w-4"/> ESS Solutions
+          <Bolt className="w-4"/> <span className="gradient-text text-transparent animate-gradient">ESS Solutions</span>
           </span>
           <div className="flex p-6 ">
             {/* <CYE className="2xl:w-[1300px] xl:w-[1100px] w-[1000px] h-auto hidden lg:block max-w-[1000px]"/> */}
             {/* <CYEMobile className="md:w-[600px] xs:w-[400px] w-[300px] lg:w-[700px] h-auto max-w-[1000px]"/> */}
-            <h1 className="sm:text-[60px] font-bold sm:leading-normal text-5xl">test your strength.</h1>
+            <h1 className="sm:text-[45px] font-bold sm:leading-normal text-5xl uppercase">test your strength</h1>
           </div>
-          <p className="text-black sm:text-[21px] text-lg mx-auto font-medium sm:leading-8 lg:max-w-[700px] max-w-[500px]">
+          <p className="text-black sm:text-[20px] text-lg mx-auto font-medium sm:leading-8 lg:max-w-[700px] max-w-[500px]">
           Where energy storage meets innovation, simplifying management and maximizing efficiency.
           </p>
         </div>
   
-        <div className="xs:flex hidden justify-center gap-3 px-2.5 py-3 bg-black rounded-2xl backdrop-blur-sm border-8 border-white/50">
-          <MobileLogo className="self-center mx-2"/>
+        <div className="xs:flex hidden justify-center gap-3 px-2.5 py-3 bg-black rounded-2xl backdrop-blur-sm border-[6px] border-white/50">
+          <MobileLogo className="self-center mx-2 w-10 text-white"/>
         <Link href="/#" passHref>
               <motion.div
                 className="

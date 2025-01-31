@@ -1,97 +1,69 @@
 "use client"
-import { useState, useEffect } from 'react'
+import React from "react";
 
 export default function DigitalBackground() {
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setCursorPos({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove)
-    }
-  }, [])
-
   return (
-    <div className="hidden 2sm:block fixed inset-0 -z-25 pointer-events-none">
+    <div className="hidden 2sm:block fixed inset-0 -z-10 pointer-events-none digital-background">
       <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          {/* Dot pattern */}
-          <pattern
-            id="dotPattern"
-            width="12"
-            height="12"
-            patternUnits="userSpaceOnUse"
-          >
-            <circle
-              cx="6"
-              cy="6"
-              r="1.5"
-              fill="gray"
-              fillOpacity="0.25"
-            />
+          {/* Define the pattern of small grey dots */}
+          <pattern id="dotPattern" width="16" height="16" patternUnits="userSpaceOnUse">
+            <circle cx="8" cy="8" r="2" fill="gray" fillOpacity="0.25" />
           </pattern>
 
-          {/* Cursor spotlight gradient */}
-          <radialGradient
-            id="cursorGradient"
-            gradientUnits="userSpaceOnUse"
-            cx={cursorPos.x}
-            cy={cursorPos.y}
-            // Adjust this radius to control the spotlight size
-            r={600}
-          >
-            <stop offset="0%" stopColor="white" />
-            <stop offset="100%" stopColor="black" />
+          {/* Bottom Left Corner Gradient */}
+          <radialGradient id="cornerGradientBL" cx="0%" cy="100%" r="140%">
+            <stop offset="0%" stopColor="white" stopOpacity="1" />
+            <stop offset="70%" stopColor="white" stopOpacity="0" />
           </radialGradient>
 
-          {/* Center mask gradient */}
-          <radialGradient
-            id="centerMaskGradient"
-            gradientUnits="userSpaceOnUse"
-            cx="50%"
-            cy="50%"
-            // Make this larger or smaller to taste
-            r={900}
-          >
-            <stop offset="0%" stopColor="black" />
-            <stop offset="100%" stopColor="white" />
+          {/* Top Right Corner Gradient */}
+          <radialGradient id="cornerGradientTR" cx="100%" cy="0%" r="100%">
+            <stop offset="0%" stopColor="white" stopOpacity="1" />
+            <stop offset="80%" stopColor="white" stopOpacity="0" />
           </radialGradient>
 
-          {/* Combined mask: black hides dots, white shows them */}
-          <mask id="cursorMask">
-            {/* Cursor spotlight */}
-            <rect
-              x="0"
-              y="0"
-              width="100%"
-              height="100%"
-              fill="url(#cursorGradient)"
-            />
-            {/* Soft-edged circle in center */}
-            <rect
-              x="0"
-              y="0"
-              width="100%"
-              height="100%"
-              fill="url(#centerMaskGradient)"
-              style={{ mixBlendMode: "multiply" }}
-            />
+          {/* Bottom Right Corner Gradient */}
+          <radialGradient id="cornerGradientBR" cx="100%" cy="100%" r="140%">
+            <stop offset="0%" stopColor="white" stopOpacity="1" />
+            <stop offset="70%" stopColor="white" stopOpacity="0" />
+          </radialGradient>
+
+          {/* Middle Right Gradient */}
+          <radialGradient id="middleRightGradient" cx="85%" cy="50%" r="30%">
+            <stop offset="0%" stopColor="white" stopOpacity="1" />
+            <stop offset="80%" stopColor="white" stopOpacity="0" />
+          </radialGradient>
+
+          {/* Create a mask combining the gradients */}
+          <mask id="fadeMask">
+            {/* Start with a solid black rectangle (meaning fully masked out initially) */}
+            <rect x="0" y="0" width="100%" height="100%" fill="black" />
+
+            {/* Bottom Left Corner */}
+            <rect x="0" y="50%" width="50%" height="50%" fill="url(#cornerGradientBL)" />
+
+            {/* Top Right Corner */}
+            <rect x="50%" y="0" width="50%" height="50%" fill="url(#cornerGradientTR)" />
+
+            {/* Bottom Right Corner */}
+            <rect x="50%" y="50%" width="50%" height="50%" fill="url(#cornerGradientBR)" />
+
+            {/* Middle Right Gradient */}
+            <rect x="55%" y="0" width="45%" height="100%" fill="url(#middleRightGradient)" />
           </mask>
         </defs>
 
-        {/* Dots across entire screen, masked by the combined gradients */}
+        {/* Apply the dot pattern and mask to fill the whole screen */}
         <rect
           x="0"
           y="0"
           width="100%"
           height="100%"
           fill="url(#dotPattern)"
-          mask="url(#cursorMask)"
+          mask="url(#fadeMask)"
         />
       </svg>
     </div>
-  )
+  );
 }

@@ -1,13 +1,12 @@
 "use client"
 
-import { Footer } from '@/components/footer'
+// import { Footer } from '@/components/footer'
 import Nav from '../components/nav/Nav';
 import Partners from '@/components/Partners'
 import Slider from '@/components/Slider'
 import Numbers from '@/components/Numbers.jsx'
 import Hero from '@/components/Hero'
 import SideScroll from '@/components/SideScroll'
-
 
 export default function Home() {
   return (
@@ -28,7 +27,7 @@ export default function Home() {
       />
     </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

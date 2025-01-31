@@ -9,14 +9,14 @@ import Card from '@/components/card'
 export default function SideScroll() {
 
     const images = [
-      { src: "/carousel/1.jpg", alt: "Custom Design Process"},
-      { src: "/carousel/2.jpg", alt: "ECU Design"},
-      { src: "/carousel/3.jpg", alt: "Engineer at Work"},
-      { src: "/carousel/4.jpg", alt: "Factory Floor"},
-      { src: "/carousel/1.jpg", alt: "Custom Design Process"},
-      { src: "/carousel/2.jpg", alt: "ECU Design"},
-      { src: "/carousel/3.jpg", alt: "Engineer at Work"},
-      { src: "/carousel/4.jpg", alt: "Factory Floor"}
+      { src: "/side-scroll/1.webp", alt: "Custom Design Process"},
+      { src: "/side-scroll/2.webp", alt: "ECU Design"},
+      { src: "/side-scroll/3.webp", alt: "Engineer at Work"},
+      { src: "/side-scroll/4.webp", alt: "Factory Floor"},
+      { src: "/side-scroll/5.webp", alt: "Custom Design Process"},
+      { src: "/side-scroll/6.webp", alt: "ECU Design"},
+      { src: "/side-scroll/3.webp", alt: "Engineer at Work"},
+      { src: "/side-scroll/4.webp", alt: "Factory Floor"}
     ];
   
     const prefersReducedMotion = useReducedMotion();

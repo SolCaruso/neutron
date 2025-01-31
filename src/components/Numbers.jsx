@@ -1,20 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from "react";
 
 const Numbers = ({
-  timeValue = 1250000,   // final number for TIME
+  timeValue = 1250000, // final number for TIME
   moneyValue = 2500000, // final number for MONEY
-  duration = 4000       // total ms for the animation (4 seconds by default)
+  duration = 4000, // total ms for the animation (4 seconds by default)
 }) => {
-  // Which tab is active
-  const [activeTab, setActiveTab] = useState('time');
-  // Current displayed number
+  const [activeTab, setActiveTab] = useState("time");
   const [displayNumber, setDisplayNumber] = useState(0);
-
-  // Detect if the section is in the viewport
   const [inView, setInView] = useState(false);
   const sectionRef = useRef(null);
 
-  // Observe when the component enters the viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -35,18 +30,11 @@ const Numbers = ({
     };
   }, []);
 
-  // Animate from 90% -> 100% whenever:
-  // - The section is in view
-  // - We switch tabs (time/money)
   useEffect(() => {
-    if (!inView) return; // don't animate until it's visible
+    if (!inView) return;
 
-    // Decide which final value to use
-    const finalValue = activeTab === 'time' ? timeValue : moneyValue;
-
-    // We'll start at 90% of the final value
+    const finalValue = activeTab === "time" ? timeValue : moneyValue;
     const startValue = finalValue * 0.99;
-    // The range (difference) we need to animate
     const range = finalValue - startValue;
 
     let startTimestamp = null;
@@ -57,31 +45,21 @@ const Numbers = ({
         startTimestamp = timestamp;
       }
       const elapsed = timestamp - startTimestamp;
-      // progress goes from 0..1 over 'duration' ms
       const progress = Math.min(elapsed / duration, 1);
-
-      // currentValue: startValue + fraction_of_range
       const currentValue = startValue + range * progress;
 
-      // round for a clean integer display
       setDisplayNumber(Math.round(currentValue));
 
       if (progress < 1) {
-        // keep animating until we reach progress = 1
         animationFrameId = requestAnimationFrame(animate);
       } else {
-        // ensure we end exactly on the final value
         setDisplayNumber(finalValue);
       }
     };
 
-    // Initialize displayed number to 90% (the start)
     setDisplayNumber(Math.round(startValue));
-
-    // Kick off the animation
     animationFrameId = requestAnimationFrame(animate);
 
-    // Cleanup
     return () => {
       if (animationFrameId) {
         cancelAnimationFrame(animationFrameId);
@@ -90,101 +68,54 @@ const Numbers = ({
   }, [activeTab, inView, timeValue, moneyValue, duration]);
 
   return (
-    <section ref={sectionRef} style={styles.container}>
-      <h2 style={styles.headline}>
-        TRANSFORMING ENERGY MANAGEMENT &amp; VEHICLE DEVELOPMENT
+    <section ref={sectionRef} className="text-center sm:py-36 py-24 max-w-4xl mx-auto">
+      <h2 className="sm:text-4xl text-2xl font-bold mb-2 uppercase px-2">
+        TRANSFORMING ENERGY MANAGEMENT <span className="hidden sm:block">& VEHICLE DEVELOPMENT</span>
       </h2>
 
-      <p style={styles.subHeadline}>
+      <p className=" mb-8 pt-4 ms:text-lg text font-medium px-4">
         Canadian companies could collectively save:
       </p>
 
       {/* Tabs */}
-      <div style={styles.tabRow}>
+      <div className="inline-flex gap-2 mb-6 mt-2 bg-white p-2 rounded-full mx-2">
         <button
-          style={{
-            ...styles.tabButton,
-            ...(activeTab === 'time' ? styles.tabActive : {})
-          }}
-          onClick={() => setActiveTab('time')}
+          className={`px-6 py-2.5 text-sm rounded-full transition font-bold ${
+            activeTab === "time"
+              ? "bg-[#566FE3] text-white"
+              : "bg-[#DBE1F9] hover:bg-[#CFD9FF] text-[#566FE3]"
+          }`}
+          onClick={() => setActiveTab("time")}
         >
           TIME SAVED
         </button>
         <button
-          style={{
-            ...styles.tabButton,
-            ...(activeTab === 'money' ? styles.tabActive : {})
-          }}
-          onClick={() => setActiveTab('money')}
+          className={`px-6 py-2.5 text-sm rounded-full transition font-bold ${
+            activeTab === "money"
+              ? "bg-[#566FE3] text-white"
+              : "bg-[#DBE1F9] hover:bg-[#CFD9FF] text-[#566FE3]"
+          }`}
+          onClick={() => setActiveTab("money")}
         >
           MONEY SAVED
         </button>
       </div>
 
       {/* Displayed Number */}
-      <div style={styles.numbersWrapper}>
-        <h1 style={styles.bigNumber}>
-          {activeTab === 'money'
+      <div>
+        <h1 className="sm:text-[120px] text-6xl font-medium text-[#566FE3] mt-4 sm:mt-0 sm:py-8">
+          {activeTab === "money"
             ? `$${displayNumber.toLocaleString()}`
             : displayNumber.toLocaleString()}
         </h1>
-        <p style={styles.caption}>
-          {activeTab === 'money'
-            ? 'Dollars annually through optimized battery systems'
-            : 'Hours annually through optimized battery systems'}
+        <p className="sm:text-xl px-4 font-medium mt-6 max-w-lg mx-auto">
+          {activeTab === "money"
+            ? "Dollars annually through optimized battery systems"
+            : "Hours annually through optimized battery systems"}
         </p>
       </div>
     </section>
   );
-};
-
-const styles = {
-  container: {
-    textAlign: 'center',
-    padding: '2rem 1rem',
-    maxWidth: '900px',
-    margin: '0 auto'
-  },
-  headline: {
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
-    marginBottom: '0.5rem',
-    textTransform: 'uppercase'
-  },
-  subHeadline: {
-    marginBottom: '2rem',
-    color: '#666'
-  },
-  tabRow: {
-    display: 'inline-flex',
-    gap: '1rem',
-    marginBottom: '2rem'
-  },
-  tabButton: {
-    padding: '0.5rem 1rem',
-    fontSize: '0.875rem',
-    backgroundColor: '#f0f0f0',
-    border: 'none',
-    cursor: 'pointer',
-    borderRadius: '4px'
-  },
-  tabActive: {
-    backgroundColor: '#3c56d4',
-    color: '#fff'
-  },
-  numbersWrapper: {
-    marginTop: '1rem'
-  },
-  bigNumber: {
-    fontSize: '3rem',
-    margin: '0',
-    color: '#5363e0'
-  },
-  caption: {
-    marginTop: '0.5rem',
-    fontSize: '1rem',
-    color: '#333'
-  }
 };
 
 export default Numbers;

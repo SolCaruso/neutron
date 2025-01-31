@@ -1,6 +1,9 @@
-// app/layout.jsx (Server Component)
+// Layout.jsx
 import '@/styles/tailwind.css'
-import DigitalBackground from '@/components/DigitalBackground' // <-- We'll write this next
+import DigitalBackground from '@/components/DigitalBackground'
+import Gradient from '@/components/Gradient'
+import MobileLogo from '@/components/logos/MobileLogo'
+import NoiseOverlay from '@/components/NoiseOverlay'
 
 export const metadata = {
   title: {
@@ -12,16 +15,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      
-      <body
-        className="text-gray-950 antialiased"
-        style={{
-          background: "linear-gradient(to top right, #EEEEEE 55%, #ECECEC 100%)",
-        }}
-      >
-        {/* The dotted/cursor mask background rendered by a client component */}
-        <DigitalBackground />  
-        {children}
+      <body className="relative">
+        <Gradient />
+        <DigitalBackground />
+        <MobileLogo className="hidden 2sm:block absolute top-24 left-6 -z-10 w-[550px] text-white/20"/>
+        <NoiseOverlay />
+
+        {/* Overlay above background but behind content */}
+        <div className="absolute inset-0 bg-white/40 pointer-events-none -z-15 backdrop-blur-3xl" />
+        
+        {/* Actual content */}
+        <div className="relative z-10">{children}</div>
       </body>
     </html>
   )

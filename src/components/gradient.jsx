@@ -1,27 +1,32 @@
-import { clsx } from 'clsx'
+'use client'
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
-export function Gradient({ className, ...props }) {
+export default function Gradient() {
+  const [show, setShow] = useState(false)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setShow(true), 100)
+    return () => clearTimeout(timeout)
+  }, [])
+
+  if (!show) return null
+
   return (
-    <div
-      {...props}
-      className={clsx(
-        className,
-        '-z-25 bg-[linear-gradient(115deg,var(--tw-gradient-stops))] from-[#fff1be] from-[28%] via-[#ee87cb] via-[70%] to-[#b060ff] sm:bg-[linear-gradient(145deg,var(--tw-gradient-stops))]',
-      )}
+    <motion.div
+      className="absolute inset-0 -z-20"
+      style={{
+        background: 'linear-gradient(-45deg, #DBE1F9, #F1F1F1, #F6F6F6, #BDBDBD)',
+        backgroundSize: '400% 400%',
+      }}
+      animate={{
+        backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+      }}
+      transition={{
+        duration: 15,
+        ease: 'easeInOut',
+        repeat: Infinity,
+      }}
     />
-  )
-}
-
-export function GradientBackground() {
-  return (
-    <div className="relative mx-auto max-w-7xl -z-25">
-      <div
-        className={clsx(
-          'absolute -right-60 -top-44 h-60 w-[36rem] transform-gpu md:right-0',
-          'bg-[linear-gradient(115deg,var(--tw-gradient-stops))] from-[#fff1be] from-[28%] via-[#ee87cb] via-[70%] to-[#b060ff]',
-          'rotate-[-10deg] rounded-full blur-3xl',
-        )}
-      />
-    </div>
   )
 }
