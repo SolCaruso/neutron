@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body className="relative">
         <Gradient />
         <DigitalBackground />
-        <MobileLogo className="hidden 2sm:block absolute top-24 left-6 -z-10 w-[550px] text-white/20"/>
+        <MobileLogo className="hidden 2sm:block absolute top-24 left-6 -z-10 w-[550px] text-white/40"/>
         <NoiseOverlay />
 
         {/* Overlay above background but behind content */}

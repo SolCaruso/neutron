@@ -7,6 +7,10 @@ import Energate from "@/components/logos/Energate"
 import Energy from "@/components/icons/Energy"
 import { motion, useAnimationControls } from "framer-motion"
 import Link from "next/link"
+import Manage from "@/components/icons/BatteryManage"
+import Auto from "@/components/icons/Auto"
+import Equ8ter from "@/components/logos/Equ8ter"
+import Equ8 from "@/components/logos/Equ8"
 
 export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -171,7 +175,7 @@ export default function Slider() {
 
   return (
     <div className="mx-auto w-full flex justify-center">
-      <div className="relative w-full max-w-7xl bg-black md:rounded-3xl overflow-hidden">
+      <div className="relative w-full max-w-7xl bg-black xl:rounded-3xl overflow-hidden">
         {/* Right-side background image */}
         <div
           className="absolute inset-y-0 right-0 w-[40%] bg-cover bg-no-repeat"
@@ -179,7 +183,7 @@ export default function Slider() {
         />
 
         {/* Title */}
-        <h2 className="w-full text-center text-white md:text-4xl text-2xl font-bold z-10 absolute md:top-24 top-8">
+        <h2 className="w-full text-center text-white lg:text-4xl text-2xl font-bold z-10 absolute lg:top-24 top-8">
           OUR INDUSTRY FOCUS
         </h2>
 
@@ -188,9 +192,9 @@ export default function Slider() {
           {/* ===================== SLIDE 1 ===================== */}
           <div className="keen-slider__slide relative">
             {/* Desktop layout */}
-            <div className="hidden md:flex flex-col items-center md:flex-row md:justify-center px-4 pt-44 pb-20 w-full h-full">
+            <div className="hidden lg:flex flex-col items-center lg:flex-row lg:justify-center px-4 pt-44 pb-20 w-full h-full">
               <div className="relative">
-                <div className="w-[800px] h-[450px] mr-32 mb-20">
+                <div className="w-[800px] h-[450px] mr-44 mb-20">
                   {visitedSlides.has(0) && (
                     <video
                       ref={videoRefSlide1Desktop}
@@ -207,8 +211,8 @@ export default function Slider() {
                 {/* Video Info Box */}
                 <div
                   className="
-                    hidden md:block absolute top-12
-                    right-4 lg:-right-24
+                    hidden lg:block absolute top-12
+                    right-6 xl:-right-24
                     border border-white/10
                     bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/85
                     backdrop-blur-sm text-white p-5 pt-7
@@ -262,13 +266,13 @@ export default function Slider() {
               </div>
 
               {/* Energate Logo (bottom-right) */}
-              <div className="hidden md:block absolute bottom-48 right-12 bg-white/85 backdrop-blur-sm px-4 py-[70px] rounded-lg shadow-md border-white/30">
+              <div className="hidden lg:block absolute bottom-48 right-20 bg-white/85 backdrop-blur-sm px-4 py-[70px] rounded-lg shadow-md border-white/30">
                 <Energate className="h-7 w-auto" />
               </div>
             </div>
 
             {/* Mobile layout */}
-            <div className="md:hidden flex flex-col items-center w-full px-4 py-24">
+            <div className="lg:hidden flex flex-col items-center w-full px-4 py-24">
               <div
                 className="border border-white/10 rounded-md
                            bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/75
@@ -338,9 +342,9 @@ export default function Slider() {
           {/* ===================== SLIDE 2 ===================== */}
           <div className="keen-slider__slide relative">
             {/* Desktop layout */}
-            <div className="hidden md:flex flex-col items-center md:flex-row md:justify-center px-4 pt-44 pb-20 w-full h-full">
+            <div className="hidden lg:flex flex-col items-center lg:flex-row lg:justify-center px-4 pt-44 pb-20 w-full h-full">
               <div className="relative">
-                <div className="w-[800px] h-[450px] relative mr-32 mb-20">
+                <div className="w-[800px] h-[450px] mr-44 mb-20">
                   {visitedSlides.has(1) && (
                     <video
                       ref={videoRefSlide2Desktop}
@@ -357,8 +361,8 @@ export default function Slider() {
                 {/* Video Info Box */}
                 <div
                   className="
-                    hidden md:block absolute top-12
-                    right-4 lg:-right-24
+                    hidden lg:block absolute top-12
+                    right-6 xl:-right-24
                     border border-white/10
                     bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/85
                     backdrop-blur-sm text-white p-5 pt-7
@@ -367,7 +371,7 @@ export default function Slider() {
                   "
                 >
                   <h3 className="text-lg font-bold flex items-center mb-4">
-                    <Energy className="mr-3" />
+                  <Manage className="w-7 mr-3" />
                     Battery Management
                   </h3>
                   <p className="text-base text-gray-200 mb-6 tracking-wide">
@@ -410,13 +414,14 @@ export default function Slider() {
                   </Link>
                 </div>
               </div>
-              <div className="hidden md:block absolute bottom-48 right-12 bg-white/85 backdrop-blur-sm px-4 py-[70px] rounded-lg shadow-md border-white/30">
-                <Energate className="h-7 w-auto" />
+              {/* Energate Logo (bottom-right) */}
+              <div className="hidden lg:block absolute bottom-48 right-20 bg-white/85 backdrop-blur-sm px-12 py-[60px] rounded-lg shadow-md border-white/30">
+                <Equ8 className="h-9 w-auto" />
               </div>
             </div>
 
             {/* Mobile layout */}
-            <div className="md:hidden flex flex-col items-center w-full px-4 py-24">
+            <div className="lg:hidden flex flex-col items-center w-full px-4 py-24">
               <div
                 className="border border-white/10 rounded-md
                            bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/75
@@ -438,7 +443,7 @@ export default function Slider() {
 
                 <div className="text-white p-5 pt-7">
                   <h3 className="text-lg font-bold flex items-center mb-4">
-                    <Energy className="mr-3" />
+                  <Manage className="w-9 mr-3" />
                     Battery Management
                   </h3>
                   <p className="text-sm text-gray-200 mb-6 tracking-wide">
@@ -486,9 +491,9 @@ export default function Slider() {
           {/* ===================== SLIDE 3 ===================== */}
           <div className="keen-slider__slide relative">
             {/* Desktop layout */}
-            <div className="hidden md:flex flex-col items-center md:flex-row md:justify-center px-4 pt-44 pb-20 w-full h-full">
+            <div className="hidden lg:flex flex-col items-center lg:flex-row lg:justify-center px-4 pt-44 pb-20 w-full h-full">
               <div className="relative">
-                <div className="w-[800px] h-[450px] relative mr-32 mb-20">
+                <div className="w-[800px] h-[450px] mr-44 mb-20">
                   {visitedSlides.has(2) && (
                     <video
                       ref={videoRefSlide3Desktop}
@@ -505,8 +510,8 @@ export default function Slider() {
                 {/* Video Info Box */}
                 <div
                   className="
-                    hidden md:block absolute top-12
-                    right-4 lg:-right-24
+                    hidden lg:block absolute top-12
+                    right-6 xl:-right-24
                     border border-white/10
                     bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/85
                     backdrop-blur-sm text-white p-5 pt-7
@@ -515,7 +520,7 @@ export default function Slider() {
                   "
                 >
                   <h3 className="text-lg font-bold flex items-center mb-4">
-                    <Energy className="mr-3" />
+                    <Auto className="w-8 mr-3" />
                     Automotive Engineering
                   </h3>
                   <p className="text-base text-gray-200 mb-6 tracking-wide">
@@ -559,13 +564,13 @@ export default function Slider() {
                 </div>
               </div>
 
-              <div className="hidden md:block absolute bottom-48 right-12 bg-white/85 backdrop-blur-sm px-4 py-[70px] rounded-lg shadow-md border-white/30">
-                <Energate className="h-7 w-auto" />
+              <div className="hidden lg:block absolute bottom-48 right-20 bg-white/85 backdrop-blur-sm px-8 py-[60px] rounded-lg shadow-md border-white/30">
+                <Equ8ter className="h-10 w-auto" />
               </div>
             </div>
 
             {/* Mobile layout */}
-            <div className="md:hidden flex flex-col items-center w-full px-4 py-24">
+            <div className="lg:hidden flex flex-col items-center w-full px-4 py-24">
               <div
                 className="border border-white/10 rounded-md
                            bg-gradient-to-tr from-[#0C0D0F] to-[#111214] via-[#111214]/75
@@ -587,7 +592,7 @@ export default function Slider() {
 
                 <div className="text-white p-5 pt-7">
                   <h3 className="text-lg font-bold flex items-center mb-4">
-                    <Energy className="mr-3" />
+                  <Auto className="w-8 mr-3" />
                     Automotive Engineering
                   </h3>
                   <p className="text-sm text-gray-200 mb-6 tracking-wide">
@@ -634,7 +639,7 @@ export default function Slider() {
         </div>
 
         {/* Dots */}
-        <div className="absolute bottom-10 md:bottom-24 w-full flex justify-center z-20">
+        <div className="absolute bottom-10 lg:bottom-24 w-full flex justify-center z-20">
           <Dot index={0} />
           <Dot index={1} />
           <Dot index={2} />

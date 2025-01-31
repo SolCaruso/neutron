@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="flex flex-col items-center gap-14 py-24">
         <div className="text-center flex flex-col items-center">
           <span className=" text-white text-[12px] font-semibold uppercase tracking-[2px] bg-black py-2 px-6 rounded-full flex gap-2">
-          <Bolt className="w-4"/> <span className="gradient-text text-transparent animate-gradient">ESS Solutions</span>
+          <Bolt className="w-4 text-red-600 "/> <span className="gradient-text text-transparent animate-gradient">ESS Solutions</span>
           </span>
           <div className="flex p-6 ">
             {/* <CYE className="2xl:w-[1300px] xl:w-[1100px] w-[1000px] h-auto hidden lg:block max-w-[1000px]"/> */}
