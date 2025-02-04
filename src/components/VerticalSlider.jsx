@@ -6,7 +6,7 @@ import React from "react";
 export default function VerticalSlider() {
   return (
     // Outer container with black background and large height.
-    <div className="relative w-full h-[300vh] bg-black rounded-t-4xl">
+    <div className="relative w-full h-[300vh] bg-[#090A0B] rounded-t-4xl">
       {/* --- Black Layer (pinned) --- */}
       <section className="sticky top-0 text-white z-10 flex items-center justify-center rounded-t-4xl lg:py-24 py-12">
         <div className="max-w-3xl p-8 text-center">
