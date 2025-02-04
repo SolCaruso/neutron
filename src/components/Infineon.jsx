@@ -80,7 +80,7 @@ function Infineon() {
           </div>
 
           {/* Rows 3 & 4 -> merged cell for the image */}
-          <div className="relative border-y border-[#1B1C1E] min-h-[715.74px] flex items-center justify-center overflow-hidden">
+          <div className="relative border-y border-[#1B1C1E] min-h-[715.74px] min-w-[796.62px] flex items-center justify-center overflow-hidden">
             {/* Polka‐dot background (inline SVG, smaller + spaced) */}
             <div
               className="
