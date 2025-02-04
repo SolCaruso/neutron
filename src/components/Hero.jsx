@@ -16,7 +16,7 @@ export default function Hero() {
           <div className="flex p-6 ">
             {/* <CYE className="2xl:w-[1300px] xl:w-[1100px] w-[1000px] h-auto hidden lg:block max-w-[1000px]"/> */}
             {/* <CYEMobile className="md:w-[600px] xs:w-[400px] w-[300px] lg:w-[700px] h-auto max-w-[1000px]"/> */}
-            <h1 className="sm:text-[45px] font-bold sm:leading-normal text-5xl uppercase">test your strength</h1>
+            <h1 className="sm:text-[45px] font-bold sm:leading-normal text-[40px] leading-[47px] uppercase pt-4 sm:pt-0">test your strength</h1>
           </div>
           <p className="text-black sm:text-[20px] text-lg mx-auto font-medium sm:leading-8 lg:max-w-[700px] max-w-[500px]">
           Where energy storage meets innovation, simplifying management and maximizing efficiency.

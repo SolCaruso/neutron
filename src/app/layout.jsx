@@ -4,6 +4,8 @@ import DigitalBackground from '@/components/DigitalBackground'
 import Gradient from '@/components/Gradient'
 import MobileLogo from '@/components/logos/MobileLogo'
 import NoiseOverlay from '@/components/NoiseOverlay'
+import Bg from '@/components/bg'
+
 
 export const metadata = {
   title: {
@@ -16,7 +18,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="relative">
-        <Gradient />
+        {/* <Gradient /> */}
+        {/* <Bg/> */}
         <DigitalBackground />
         <MobileLogo className="hidden 2sm:block absolute top-24 left-6 -z-10 w-[550px] text-white/40"/>
         <NoiseOverlay />

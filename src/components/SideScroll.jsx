@@ -9,14 +9,14 @@ import Card from '@/components/card'
 export default function SideScroll() {
 
     const images = [
-      { src: "/side-scroll/1.webp", alt: "Custom Design Process"},
-      { src: "/side-scroll/2.webp", alt: "ECU Design"},
-      { src: "/side-scroll/3.webp", alt: "Engineer at Work"},
-      { src: "/side-scroll/4.webp", alt: "Factory Floor"},
-      { src: "/side-scroll/5.webp", alt: "Custom Design Process"},
-      { src: "/side-scroll/6.webp", alt: "ECU Design"},
-      { src: "/side-scroll/3.webp", alt: "Engineer at Work"},
-      { src: "/side-scroll/4.webp", alt: "Factory Floor"}
+      { src: "/side-scroll/10.webp", alt: "Custom Design Process"},
+      { src: "/side-scroll/7.webp", alt: "ECU Design"},
+      { src: "/side-scroll/9.webp", alt: "Engineer at Work"},
+      { src: "/side-scroll/5.webp", alt: "Factory Floor"},
+      { src: "/side-scroll/4.webp", alt: "Custom Design Process"},
+      { src: "/side-scroll/3.webp", alt: "ECU Design"},
+      { src: "/side-scroll/2.webp", alt: "Engineer at Work"},
+      { src: "/side-scroll/1.webp", alt: "Factory Floor"}
     ];
   
     const prefersReducedMotion = useReducedMotion();
@@ -62,7 +62,7 @@ export default function SideScroll() {
     
     return (
       <motion.div 
-        className="absolute left-0 flex gap-4" 
+        className="absolute left-0 flex gap-4 overflow-hidden" 
         ref={ref} 
         style={{ x:xTranslation}} 
         onHoverStart={() => {
