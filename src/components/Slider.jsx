@@ -436,7 +436,7 @@ export default function Slider() {
                       playsInline
                       preload="auto"
                       className="absolute inset-0 w-full h-full object-cover border-b border-white/10"
-                      src="/vids/battry.webm"
+                      src="/vids/output.webm"
                     />
                   )}
                 </div>
