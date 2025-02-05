@@ -1,46 +1,34 @@
-// ContactButton.jsx
-import React from 'react'
-import { motion } from "framer-motion";
+// DownloadButton.jsx
+import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
-const ContactButton = () => {
+export default function DownloadButton() {
   return (
     <Link href="/#" passHref>
-            <motion.div
-              className="
-                inline-flex 
-                items-center 
-                justify-center
-                md/lg:px-5 md/lg:py-3.5
-                py-2.5
-                px-3
-                md:px-4
-                mr-1
-                md:py-3
-                md/lg:text-[14px]
-                text-[12px]
-                font-bold
-                tracking-[0.2px]
-                whitespace-nowrap
-                cursor-pointer
-                border-none
-                rounded-[4px]
-                transition-colors
-                duration-200
-                ease-in-out
-                bg-[#E6E6E6]
-                hover:bg-[#FFF]
-                shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
-                opacity-90
-                hover:opacity-100
-                text-black
-                uppercase
-              "
-            >
-              <span>Contact <span className="hidden xs:inline">Us</span></span>
-            </motion.div>
-          </Link>
-  )
+      <motion.a
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className={`
+          inline-flex items-center justify-center
+          min-h-[36px]
+          gap-1
+          px-4 py-3
+          text-gray-800
+          bg-gray-50
+          rounded-md
+          border-none
+          cursor-pointer
+          transition-all
+          duration-50
+          ease-in-out
+          btn-glass /* Our custom utility class for the multi-layer box-shadow */
+          uppercase
+          text-[12px] tracking-[2px] font-bold
+        `}
+      >    
+        Contact Us
+      </motion.a>
+    </Link>
+  );
 }
-
-export default ContactButton

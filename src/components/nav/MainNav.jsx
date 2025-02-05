@@ -6,12 +6,11 @@ import ContactButton from "./ContactButton"
 
 export default function MainNav({ isOpen, setIsOpen }) {
   return (
-    <header className= "md/lg:px-4 ">
+    <header className= "md/lg:px-4 md/lg:pt-4">
     <div
       className="
-        bg-nav-gradient
         text-white
-        md/lg:mt-4
+        bg-gradient-to-t from-[#0f0e0e] to-black/60 shadow-[0px_-4px_4px_0px_rgba(0,0,0,0.25)] backdrop-blur-[40px]
         md/lg:rounded-t-lg
         max-w-8xl
         mx-auto
@@ -23,9 +22,9 @@ export default function MainNav({ isOpen, setIsOpen }) {
         justify-between
         items-center
       "
-      style={{
-        background: 'linear-gradient(45deg, #000000 0%, #000000 77%, #161616 100%)'
-      }}
+      // style={{
+      //   background: 'linear-gradient(45deg, #000000 0%, #000000 77%, #161616 100%)'
+      // }}
     >
         <NavLogo className="w-44"/>
 

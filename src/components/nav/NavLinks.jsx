@@ -8,31 +8,32 @@ const NavLinks = () => {
   return (
     // Hide the entire <nav> on screens < md; show on md and larger
     <nav className="hidden md/lg:block">
-      <ul className="flex justify-center gap-10 list-none m-0 p-0 text-[#C7C2BE]">
+      <ul className="flex justify-center gap-12 list-none m-0 p-0 text-[#C7C2BE]">
         <li className="">
-          <a
-            href="#"
-            className="font-medium flex items-center group hover:text-white"
-            onClick={(e) => {
-              e.preventDefault(); // Prevent default link behavior
-              setIsRotated(!isRotated); // Toggle rotation state
-            }}
-          >
-            Solutions
-            <motion.div
-              className="inline-block w-4 h-4 ml-1 group-hover:fill-white"
-              animate={{
-                rotate: isRotated ? -180 : 0, // Opposite direction rotation
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 260,
-                damping: 20, // Tiny spring touch
-              }}
-            >
-              <Down className="w-full h-full fill-current group-hover:text-white" />
-            </motion.div>
-          </a>
+        <a
+        href="#"
+        className="text-[12px] uppercase tracking-[3px] font-semibold hover:text-white inline-flex items-center"
+        onClick={(e) => {
+          e.preventDefault(); // Prevent default link behavior
+          setIsRotated(!isRotated); // Toggle rotation state
+        }}
+      >
+        Solutions
+        <motion.div
+          className="w-4 h-4 ml-1 flex items-center justify-center"
+          animate={{
+            rotate: isRotated ? -180 : 0, // Rotate arrow
+            y: isRotated ? -2 : 0, // Move up slightly when rotated
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20, // Tiny spring touch
+          }}
+        >
+          <Down className="w-full h-full fill-current group-hover:text-white" />
+        </motion.div>
+      </a>
           <ul className="absolute top-8 left-0 bg-white text-black hidden text-[16px] ">
             <li>
               <a href="#" className="block px-3 py-2 hover:bg-gray-200">
@@ -47,17 +48,17 @@ const NavLinks = () => {
           </ul>
         </li>
         <li>
-          <a href="#" className="font-medium hover:text-white">
+          <a href="#" className="text-[12px] uppercase tracking-[3px] font-semibold hover:text-white">
             Services
           </a>
         </li>
         <li>
-          <a href="#" className="font-medium hover:text-white">
+          <a href="#" className="text-[12px] uppercase tracking-[3px] font-semibold hover:text-white">
             About
           </a>
         </li>
         <li>
-          <a href="#" className="font-medium hover:text-white">
+          <a href="#" className="text-[12px] uppercase tracking-[3px] font-semibold hover:text-white">
             Careers
           </a>
         </li>

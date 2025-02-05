@@ -9,13 +9,15 @@ import SideScroll from '@/components/SideScroll'
 import VerticalSlider from '@/components/VerticalSlider'
 import Infineon from '@/components/Infineon'
 import Footer from '@/components/Footer'
+import BackgroundHero from '@/components/BackgroundHero'
 
 export default function Home() {
   return (
     <div>
-      <Nav />
-      <main>
-        <div className="mb-72">
+      <main >
+        <BackgroundHero/>
+        <div className="pb-72 bg-[#090A0B] ">
+            <Nav className="mt-4"/>
             <Hero />
             <SideScroll />
         </div>
