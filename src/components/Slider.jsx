@@ -414,7 +414,7 @@ export default function Slider() {
                   </Link>
                 </div>
               </div>
-              {/* Energate Logo (bottom-right) */}
+              {/* Logo (bottom-right) */}
               <div className="hidden lg:block absolute bottom-48 right-20 bg-white/85 backdrop-blur-sm px-12 py-[60px] rounded-lg shadow-md border-white/30">
                 <Equ8 className="h-9 w-auto" />
               </div>

@@ -14,11 +14,23 @@ function Infineon() {
     <section className="bg-[#090A0B] text-white py-36">
 
       {/* ================== 5-COLUMN DESKTOP (≥LG) ================== */}
-      <div className="hidden lg:flex max-w-7xl mx-auto">
+      <div className="hidden lg:flex max-w-7xl mx-auto relative overflow-hidden">
+        {/*
+          ========= FADE GRADIENTS ON ALL SIDES =========
+          Adjust the widths/heights (64, etc.) to make them longer or shorter.
+        */}
+        {/* Top fade */}
+        <div className="pointer-events-none absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#090A0B] to-transparent" />
+        {/* Left fade */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-[#090A0B] to-transparent" />
+        {/* Right fade */}
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-[#090A0B] to-transparent" />
+        {/* Bottom fade */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#090A0B] to-transparent" />
 
         {/* COLUMN ONE */}
         <div className="flex flex-col w-1/2 border-r border-[#1B1C1E]">
-          <div className="py-6" />
+          <div className="py-12" />
           <div className="border-t border-[#1B1C1E] py-6" />
           <div className="border-y border-[#1B1C1E] min-h-[360px]" />
           <div className="min-h-[354.74px]" />
@@ -28,10 +40,10 @@ function Infineon() {
 
         {/* COLUMN TWO */}
         <div className="flex flex-col w-full border-r border-[#1B1C1E]">
-          <div className="py-6" />
+          <div className="py-12" />
           <div className="border-t border-[#1B1C1E] py-6" />
           <div className="border-y border-[#1B1C1E]">
-            <p className="text-6xl font-semibold p-12 leading-[1.1]">
+            <p className="text-6xl font-semibold p-12 pb-[46px] leading-[1.1]">
               Infineon&apos;s Preferred Design House.
             </p>
           </div>
@@ -49,12 +61,11 @@ function Infineon() {
             </p>
             <a
               href="/learn-more"
-              className="inline-block font-medium text-white transition-colors font-geist pt-14"
+              className="inline-block font-medium text-white transition-colors font-geist pt-[56.5px]"
             >
               Learn more
-              {/* ARROW WRAPPED IN A MOTION.SPAN USING arrowVariants */}
               <motion.span
-                className="inline-block w-5 h-5  ml-2"
+                className="inline-block w-5 h-5 ml-2"
                 variants={arrowVariants}
               >
                 <TopRight />
@@ -63,20 +74,21 @@ function Infineon() {
           </motion.div>
 
           <div className="border-y border-[#1B1C1E] py-6" />
-          <div className="py-6" />
+          <div className="py-12" />
         </div>
 
         {/* COLUMNS 3 & 4 MERGED: polka‐dot background behind image */}
         <div className="flex flex-col w-full border-r border-[#1B1C1E]">
           {/* Row 1 */}
           <div className="flex">
-            <div className="w-1/2 py-6 border-r border-[#1B1C1E]" />
-            <div className="w-1/2 py-6border-[#1B1C1E]" />
+            <div className="w-1/2 py-12 border-r border-[#1B1C1E]" />
+            <div className="w-1/2 py-12 border-[#1B1C1E]" />
           </div>
+
           {/* Row 2 */}
           <div className="flex">
-            <div className="w-1/2 border-t border-[#1B1C1E] py-6 border-r" />
-            <div className="w-1/2 border-t border-[#1B1C1E] py-6 " />
+            <div className="w-1/2 border-t py-6 border-r border-[#1B1C1E]" />
+            <div className="w-1/2 border-t py-6  border-[#1B1C1E]" />
           </div>
 
           {/* Rows 3 & 4 -> merged cell for the image */}
@@ -100,21 +112,22 @@ function Infineon() {
             />
           </div>
 
-          {/* Row 5 */}
+          {/* Row 5 (FIX: add border-r on second half) */}
           <div className="flex">
-            <div className="w-1/2 border-b border-[#1B1C1E] py-6 border-r" />
-            <div className="w-1/2 border-b border-[#1B1C1E] py-6" />
+            <div className="w-1/2 border-b py-6 border-r border-[#1B1C1E]" />
+            <div className="w-1/2 border-b py-6  border-[#1B1C1E]" />
           </div>
-          {/* Row 6 */}
+
+          {/* Row 6 (FIX: add border-r on second half) */}
           <div className="flex">
-            <div className="w-1/2 py-6 border-r border-[#1B1C1E]" />
-            <div className="w-1/2 py-6  border-[#1B1C1E]" />
+            <div className="w-1/2 py-12 border-r border-[#1B1C1E]" />
+            <div className="w-1/2 py-12 border-[#1B1C1E]" />
           </div>
         </div>
 
         {/* COLUMN FIVE */}
         <div className="flex flex-col w-1/2">
-          <div className="py-6" />
+          <div className="py-12" />
           <div className="border-t border-[#1B1C1E] py-6" />
           <div className="border-y border-[#1B1C1E] min-h-[360px]" />
           <div className="min-h-[354.74px]" />
@@ -126,7 +139,7 @@ function Infineon() {
 
       {/* ================== RESPONSIVE (UNDER LG) ================== */}
       <div className="lg:hidden max-w-7xl mx-auto px-4 sm:px-6">
-        
+
         {/* ROW 1: top spacing + top border */}
         <div className="border-t border-[#1B1C1E] py-6" />
 
@@ -153,7 +166,7 @@ function Infineon() {
         {/* ROW 3: two columns at md, single column below md */}
         <div className="border-b border-[#1B1C1E] grid grid-cols-1 md:grid-cols-2">
           {/* LEFT COLUMN: big heading (padded) */}
-          <div className="border-r border-[#1B1C1E] p-8 flex items-center">
+          <div className=" border-[#1B1C1E] p-8 flex items-center">
             <p className="text-4xl md:text-5xl font-semibold leading-tight">
               Infineon&apos;s Preferred Design House.
             </p>
@@ -161,7 +174,7 @@ function Infineon() {
 
           {/* RIGHT COLUMN: text + button with Motion hover */}
           <motion.div
-            className="p-8 hover:bg-[#0C0D0F]"
+            className="p-8 hover:bg-[#0C0D0F] cursor-pointer"
             initial="rest"
             whileHover="hover"
             animate="rest"

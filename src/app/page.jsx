@@ -8,7 +8,7 @@ import Hero from '@/components/Hero'
 import SideScroll from '@/components/SideScroll'
 import VerticalSlider from '@/components/VerticalSlider'
 import Infineon from '@/components/Infineon'
-import Footer from '@/components/footer'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
@@ -33,7 +33,7 @@ export default function Home() {
       <Infineon/>
     </div>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
