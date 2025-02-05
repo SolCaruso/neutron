@@ -4,8 +4,8 @@ import Logo from "@/components/logos/Logo";
 import Equ8 from "@/components/logos/ECU8(white)";
 import Equ8ter from "@/components/logos/ECU8TR(white)";
 import Energate from "@/components/logos/ENERG8TE(white)";
-import BackgroundFooter from '@/components/BackgroundFooter'
-import LinkedIn from '@/components/icons/LinkedIn'
+import BackgroundFooter from '@/components/BackgroundFooter';
+import LinkedIn from '@/components/icons/LinkedIn';
 import { motion } from "framer-motion";
 
 
@@ -16,17 +16,15 @@ export default function Footer() {
         relative
         bg-[#090A0B] 
         text-white
-        pb-12
-        pt-60
       "
     >
     <BackgroundFooter className="z-0" />
 
       {/* Content container */}
-      <div className="relative mx-auto pb-40 pt-28 sm:px-6 z-10 w-full bg-gradient-to-t from-[#07080a] to-black/80 shadow-[0px_-4px_4px_0px_rgba(0,0,0,0.25)] border-t border-[#111213] backdrop-blur-[22px]">
+      <div className="relative mx-auto md:pb-40 pb-12 pt-28 px-6 z-10 w-full bg-gradient-to-t from-[#07080a] to-black/70 shadow-[0px_-4px_4px_0px_rgba(0,0,0,0.25)] border-t border-[#111213] backdrop-blur-[72px]">
         
         {/* ============== TOP ROW: 3 Columns ============== */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-12 max-w-7xl mx-auto ">
           
           {/* LOCATIONS Column */}
           <div>
@@ -78,7 +76,7 @@ export default function Footer() {
         </div>
         
         {/* ============== BOTTOM ROW ============== */}
-        <div className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-4 max-w-7xl mx-auto">
+        <div className="mt-14 flex flex-col xs:flex-row items-center justify-between gap-4 max-w-7xl mx-auto">
           {/* Left: Neutron Controls logo */}
           <div className="flex-shrink-0">
             <Logo className="h-16" />
@@ -96,7 +94,7 @@ export default function Footer() {
             >
               {/* Follow us text */}
               <motion.p
-                className="hidden sm:block text-[#BABABA] group-hover:text-white transition-colors duration-50 font-medium"
+                className="hidden xs:block text-[#BABABA] group-hover:text-white transition-colors duration-50 font-medium"
               >
                 Follow us
               </motion.p>

@@ -1,17 +1,17 @@
 import React from "react";
 import Image from "next/image";
 
-
 export default function BackgroundFooter() {
   return (
-    <div className="flex justify-center">
-          <Image
-            src="/bg/bg.webp"
-            alt="neutron red background"
-            width={700}
-            height={500}
-            className="w-[60%] h-auto rotate-90 absolute bottom-0"
-          />
-        </div>
-  )
+    <div className="absolute bottom-96 xs:bottom-72 sm:bottom-52 left-1/2 -translate-x-1/2 w-[800px] h-[700px] z-0 opacity-50">
+      <Image
+        src="/bg/bg.webp"
+        alt="neutron red background"
+        layout="fill"
+        objectFit="cover"
+        className="rotate-90"
+        priority
+      />
+    </div>
+  );
 }
