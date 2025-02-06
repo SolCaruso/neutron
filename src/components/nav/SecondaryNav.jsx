@@ -44,12 +44,37 @@ export default function SecondaryNav() {
       </div>
 
       <style jsx>{`
+
         .noise-bg {
-          background-color: #435fe1;
-          background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22100%22%20height%3D%22100%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22noiseFilter%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%2212%22%20numOctaves%3D%221%22%20seed%3D%221%22%20stitchTiles%3D%22stitch%22/%3E%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22/%3E%3CfeComponentTransfer%3E%3CfeFuncR%20type%3D%22table%22%20tableValues%3D%220%200%22/%3E%3CfeFuncG%20type%3D%22table%22%20tableValues%3D%220%200%22/%3E%3CfeFuncB%20type%3D%22table%22%20tableValues%3D%220%200%22/%3E%3CfeFuncA%20type%3D%22table%22%20tableValues%3D%220.2%200%22/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3C/defs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23noiseFilter)%22/%3E%3C/svg%3E");
-          background-repeat: repeat;
-          background-size: 200%;
+          position: relative;
+          background: transparent; /* Ensure background remains transparent */
+          border-bottom-radius: 20px; /* Adjust this value for rounded corners */
+          padding: 20px; /* Optional: Prevent text from touching edges */
+          overflow: hidden; /* Ensures blur effect respects border-radius */
+          transition: color 0.3s ease-in-out; /* Smooth text color transition */
+          z-index: 1; /* Keeps content above */
+          color: #BDBDBD;
         }
+
+        /* Blur Background */
+        .noise-bg::before {
+          content: "";
+          position: absolute;
+          inset: 0; /* Covers entire parent */
+          background: rgba(67, 95, 225, 0.7); /* Semi-transparent blue */
+          backdrop-filter: blur(10px); /* Apply blur effect */
+          -webkit-backdrop-filter: blur(10px); /* Safari support */
+          border-radius: inherit; /* Ensures blur effect follows border radius */
+          z-index: -1; /* Keeps blur behind content */
+        }
+
+        /* Hover Effect: Change Text Color */
+        .noise-bg:hover {
+          color: white;
+          cursor: pointer;
+          
+        }
+          
 
         /* ========================
           SCROLLER BASE STYLES

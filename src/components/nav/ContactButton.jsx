@@ -14,6 +14,7 @@ export default function DownloadButton() {
           sm:px-4 sm:py-3
           px-3 py-2
           text-gray-800
+          hover:text-black
           bg-[#E6E6E6]
           hover:bg-white
           rounded-md
