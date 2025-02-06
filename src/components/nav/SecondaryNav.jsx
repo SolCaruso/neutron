@@ -140,7 +140,7 @@ export default function SecondaryNav() {
 
 function MarqueeItem() {
   return (
-    <li className="inline-block whitespace-nowrap font-medium text-[15px]">
+    <li className="inline-block whitespace-nowrap font-semibold text-[15px]">
       INTERSOLAR | Event Feb 25–27, 2025
       <a href="https://www.intersolar.us/" target="_blank" className="underline pr-8 pl-12 font-normal" style={{ textUnderlineOffset: '6px' }}>
         Learn more <TopRight className="inline-block w-4 h-4 mb-1" />

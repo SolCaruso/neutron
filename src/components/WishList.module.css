@@ -65,8 +65,8 @@
   
   /* Attach the two keyframe animations with negative start offset (-0.64s). */
   .wishlistAnimate {
-    animation: wishlist_rotating2 -0.64s linear 3s infinite,
-      wishlist_xMove -0.64s linear 3s infinite;
+    animation: wishlist_rotating2 -0.84s linear 4s infinite,
+      wishlist_xMove -0.84s linear 4s infinite;
   }
   
   /* Hover effect (color shift + glow) */
