@@ -6,29 +6,30 @@ import { motion } from "framer-motion";
 export default function DownloadButton() {
   return (
     <Link href="/#" passHref>
-      <motion.a
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
+      <motion.div
         className={`
           inline-flex items-center justify-center
           min-h-[36px]
           gap-1
-          px-4 py-3
+          sm:px-4 sm:py-3
+          px-3 py-2
           text-gray-800
-          bg-gray-50
+          bg-[#E6E6E6]
+          hover:bg-white
           rounded-md
-          border-none
+          border-2-[#FEFEFE]
           cursor-pointer
           transition-all
-          duration-50
+          duration-100
           ease-in-out
-          btn-glass /* Our custom utility class for the multi-layer box-shadow */
+          btn-glass
           uppercase
-          text-[12px] tracking-[2px] font-bold
+          text-[10px]
+          sm:text-[12px] tracking-[1px] font-bold
         `}
       >    
         Contact Us
-      </motion.a>
+      </motion.div>
     </Link>
   );
 }
