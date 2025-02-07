@@ -41,7 +41,7 @@ export default function VerticalSlider() {
 
       {/* --- White Layer (pinned) --- */}
       {/* Use margins so you can see the black background around it */}
-      <section className="sticky top-4 lg:h-screen bg-white text-black z-20 
+      <section className="sticky top-4 lg:h-[calc(100vh-32px)] bg-white text-black z-20 
                           flex flex-col-reverse lg:flex-row items-center 
                           justify-center rounded-4xl mx-4 py-20 xl:py-0">
         <div className="lg:w-1/2 text-left xl:pl-40 px-12">
@@ -92,7 +92,6 @@ export default function VerticalSlider() {
                 uppercase
               "
             >
-              
               <span>Find out more</span>
             </motion.div>
           </Link>
@@ -110,7 +109,7 @@ export default function VerticalSlider() {
 
       {/* --- Gray Layer (pinned) --- */}
       {/* Give it bigger margins so we see white around it */}
-      <section className="sticky top-8 lg:h-screen bg-gray-100 text-black z-30 
+      <section className="sticky top-8 lg:h-[calc(100vh-64px)] bg-gray-100 text-black z-30 
                           flex flex-col-reverse lg:flex-row items-center 
                           justify-center rounded-4xl mx-8 py-20 xl:py-0 mb-4">
         <div className="lg:w-1/2 text-left xl:pl-40 px-12">

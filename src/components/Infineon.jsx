@@ -11,7 +11,7 @@ const arrowVariants = {
 
 function Infineon() {
   return (
-    <section className="bg-[#090A0B] text-white py-40 sm:py-72">
+    <section className="bg-[#090A0B] text-white py-40 sm:pb-72">
 
       {/* ================== 5-COLUMN DESKTOP (≥LG) ================== */}
       <div className="hidden lg:flex max-w-7xl mx-auto relative overflow-hidden">
@@ -136,7 +136,6 @@ function Infineon() {
         </div>
       </div>
 
-
       {/* ================== RESPONSIVE (UNDER LG) ================== */}
       <div className="lg:hidden max-w-7xl mx-auto px-4 sm:px-6">
 
@@ -156,7 +155,7 @@ function Infineon() {
           {/* Image sits on top */}
           <Image
             className="relative z-10"
-            src="/Infineon/app.svg"
+            src="/infineon/app.svg"
             alt="Infineon App"
             width={600}
             height={400}

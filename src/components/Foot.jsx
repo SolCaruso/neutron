@@ -1,15 +1,15 @@
 import React from "react";
 import Image from "next/image";
 import Logo from "@/components/logos/Logo";
-import Equ8 from "@/components/logos/ECU8(white)";
-import Equ8ter from "@/components/logos/ECU8TR(white)";
-import Energate from "@/components/logos/ENERG8TE(white)";
+import Equ8 from "@/components/logos/ECU8white";
+import Equ8ter from "@/components/logos/ECU8TRwhite";
+import Energate from "@/components/logos/ENERG8TEwhite";
 import BackgroundFooter from '@/components/BackgroundFooter';
 import LinkedIn from '@/components/icons/LinkedIn';
 import { motion } from "framer-motion";
 
 
-export default function Footer() {
+export default function Foot() {
   return (
     <footer
       className="

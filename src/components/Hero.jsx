@@ -18,7 +18,7 @@ export default function Hero() {
           <div className="flex justify-center mt-8">
             <div className={`${styles.wishlistOuter} ${styles.wishlistAnimate}`}>
               <div className={styles.wishlistAnnouncement}>
-              <Bolt className="w-4 text-red-600 ml-2 "/><span className="gradient-text text-transparent animate-gradient text-white text-[12px] font-semibold uppercase tracking-[2px] bg-black py-2 pr-2 rounded-full flex gap-2 just"><span className="hidden xs:block"> BMS Control &</span> ESS Solutions</span>
+              <Bolt className="w-4 text-red-600 ml-2"/><span className="gradient-text text-transparent animate-gradient text-white text-[12px] font-semibold uppercase tracking-[2px] bg-black py-2 pr-2 rounded-full flex gap-2 just"><span className="hidden xs:block"> BMS Control &</span> ESS Solutions</span>
               </div>
             </div>
           </div>
