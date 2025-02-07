@@ -14,9 +14,9 @@ import BackgroundHero from '@/components/BackgroundHero'
 export default function Home() {
   return (
     <div>
-      <main >
-        <BackgroundHero/>
-        <div className="pb-72 bg-[#090A0B] ">
+      <main>
+        <div className="pb-96 bg-[#090A0B] overflow-x-hidden relative">
+            <BackgroundHero/>
             <Nav className="mt-4"/>
             <Hero />
             <SideScroll />
@@ -25,17 +25,17 @@ export default function Home() {
           <Partners/>
           <Slider/>
           <Numbers 
-        timeValue={500000}   // e.g. 500k
-        moneyValue={300000} // e.g. 3 million
-        duration={500}      // 4 seconds
-      />
-    </div>
-    <div>
-      <VerticalSlider/>
-      <Infineon/>
-    </div>
+            timeValue={500000}   // e.g. 500k
+            moneyValue={300000} // e.g. 3 million
+            duration={500}      // 4 seconds
+          />
+        </div>
+        <div>
+          <VerticalSlider/>
+          <Infineon/>
+        </div>
       </main>
-      <Footer />
+        <Footer />
     </div>
   );
 }

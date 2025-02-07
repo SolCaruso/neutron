@@ -6,7 +6,8 @@ export default function BackgroundHero() {
     <div
       className="
         absolute 
-        top-0 
+        top-24
+        sm:top-0 
         left-1/2 
         -translate-x-1/2 
         pointer-events-none

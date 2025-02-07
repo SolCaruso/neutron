@@ -79,7 +79,6 @@ export default function SideScroll() {
         {[...images, ...images].map((item, idx) => (
           <Card image={item} key={idx} />
         ))}
-  
       </motion.div>
     );
   }

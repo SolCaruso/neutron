@@ -23,12 +23,12 @@
 .gradient-text {
   background: linear-gradient(
     to right,
-    #c6c6c6,
-    #8C8C8C,
+    #6c6c6c,
+    #fff,
     #C0C0C0,
-    #8C8C8C,
-    #c6c6c6,
-    #8C8C8C,
+    #fff,
+    #6c6c6c,
+    #fff,
     #C0C0C0
   );
   -webkit-background-clip: text;
@@ -37,23 +37,36 @@
   background-size:300% 300%;
 }
 
-.btn-glass {
-  box-shadow:
-    0 0 0 2px rgba(0, 0, 0, 0.5),
-    0 0 14px 0 hsla(0, 0%, 100%, 0.19),
-    inset 0 -1px 0.4px 0 rgba(0, 0, 0, 0.2),
-    inset 0 1px 0.4px 0 #fff;
-}
-
-.btn-glass-blue {
-  box-shadow:
-    0 0 0 2px rgba(0, 0, 0, 0.5),
-    0 0 14px 0 hsla(0, 0%, 100%, 0.19),
-    inset 0 -1px 0.4px 0 rgba(0, 0, 0, 0.2),
-    inset 0 1px 0.4px 0 #5C5FFF;
-}
-
 .mask-text {
   -webkit-mask-image: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 160%);
   mask-image: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 160%);
+}
+
+.backdrop {
+  @apply absolute filter blur-[20px] transform-gpu;
+  inset: -60px -70px;
+}
+
+.backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1; 
+  clip-path: polygon(
+    0 0,
+    50% 14%,
+    100% 0,
+    92% 50%,
+    100% 100%,
+    50% 86%,
+    0 100%,
+    8% 50%
+  );
+  
+  background: radial-gradient(
+      40% 30% at 50% 46.2%,
+      hsla(0, 100%, 73%, 0.2) 5%,
+      rgba(154, 170, 255, 0.11) 60%,
+      hsla(0, 100%, 88%, 0) 140%
+    );
 }

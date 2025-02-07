@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function VerticalSlider() {
   return (
@@ -58,9 +60,42 @@ export default function VerticalSlider() {
             <li>iso SPI and iso UART compatible</li>
             <li>Quality Management</li>
           </ul>
-          <button className="bg-black font-semibold text-white px-6 py-3 rounded-md hover:bg-gray-800">
-            FIND OUT MORE
-          </button>
+          <Link href="#" passHref>
+            <motion.div
+              className="
+                inline-flex 
+                items-center 
+                justify-center
+                gap-2
+                min-h-[40px]
+                sm:min-h-[48px]
+                px-3
+                sm:px-6 py-1.5
+                text-[14px]
+                sm:text-[16px] 
+                font-semibold 
+                leading-[16px]
+                tracking-[0.2px]
+                whitespace-nowrap
+                cursor-pointer
+                border-none
+                rounded-md
+                transition-colors
+                duration-200
+                ease-in-out
+              bg-[#000]
+              hover:bg-[#191919]
+                shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
+                opacity-90
+                hover:opacity-100
+                text-white
+                uppercase
+              "
+            >
+              
+              <span>Find out more</span>
+            </motion.div>
+          </Link>
         </div>
         <div className="flex justify-center mb-6 lg:mb-0">
           <Image
@@ -95,9 +130,42 @@ export default function VerticalSlider() {
             <li>System Reliability and Safety</li>
             <li>Flexible Integration</li>
           </ul>
-          <button className="bg-black font-semibold text-white px-6 py-3 rounded-md hover:bg-gray-800">
-            FIND OUT MORE
-          </button>
+          <Link href="#" passHref>
+            <motion.div
+              className="
+                inline-flex 
+                items-center 
+                justify-center
+                gap-2
+                min-h-[40px]
+                sm:min-h-[48px]
+                px-3
+                sm:px-6 py-1.5
+                text-[14px]
+                sm:text-[16px] 
+                font-semibold 
+                leading-[16px]
+                tracking-[0.2px]
+                whitespace-nowrap
+                cursor-pointer
+                border-none
+                rounded-md
+                transition-colors
+                duration-200
+                ease-in-out
+              bg-[#000]
+              hover:bg-[#191919]
+                shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
+                opacity-90
+                hover:opacity-100
+                text-white
+                uppercase
+              "
+            >
+              
+              <span>Find out more</span>
+            </motion.div>
+          </Link>
         </div>
         <div className="flex justify-center mb-6 lg:mb-0">
           <Image
