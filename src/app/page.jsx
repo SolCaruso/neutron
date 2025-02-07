@@ -3,12 +3,12 @@
 import Nav from '../components/nav/Nav';
 import Partners from '@/components/Partners'
 import Slider from '@/components/Slider'
-import Numbers from '@/components/Numbers.jsx'
+import Numbers from '@/components/Numbers'
 import Hero from '@/components/Hero'
 import SideScroll from '@/components/SideScroll'
 import VerticalSlider from '@/components/VerticalSlider'
 import Infineon from '@/components/Infineon'
-import Foot from '@/components/Foot'
+import Footer from '@/components/Footer'
 import BackgroundHero from '@/components/BackgroundHero'
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
             <Hero />
             <SideScroll />
         </div>
-        <div className="py-24">
+        <div className="py-24 overflow-x-hidden relative">
           <Partners/>
           <Slider/>
           <Numbers 
@@ -32,10 +32,13 @@ export default function Home() {
         </div>
         <div>
           <VerticalSlider/>
-          <Infineon/>
         </div>
       </main>
-        <Foot />
+      <div className="overflow-x-hidden relative">
+        <Infineon/>
+        <Footer />
+      </div>
+        
     </div>
   );
 }

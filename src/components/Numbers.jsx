@@ -73,7 +73,7 @@ const Numbers = ({
         TRANSFORMING ENERGY MANAGEMENT <span className="hidden sm:block">& VEHICLE DEVELOPMENT</span>
       </h2>
 
-      <p className=" mb-8 pt-4 ms:text-lg text font-medium px-4">
+      <p className=" mb-8 pt-4 text-lg text font-medium px-4">
         Canadian companies could collectively save:
       </p>
 
@@ -82,8 +82,8 @@ const Numbers = ({
         <button
           className={`px-6 py-2.5 text-sm rounded-full transition font-bold ${
             activeTab === "time"
-              ? "bg-[#566FE3] text-white"
-              : "bg-[#DBE1F9] hover:bg-[#CFD9FF] text-[#566FE3]"
+              ? "bg-[#4864e0] text-white"
+              : "bg-[#DBE1F9] hover:bg-[#CFD9FF] text-[#3250d4]"
           }`}
           onClick={() => setActiveTab("time")}
         >
@@ -92,8 +92,8 @@ const Numbers = ({
         <button
           className={`px-6 py-2.5 text-sm rounded-full transition font-bold ${
             activeTab === "money"
-              ? "bg-[#566FE3] text-white"
-              : "bg-[#DBE1F9] hover:bg-[#CFD9FF] text-[#566FE3]"
+              ? "bg-[#4864e0] text-white"
+              : "bg-[#DBE1F9] hover:bg-[#CFD9FF] text-[#3250d4]"
           }`}
           onClick={() => setActiveTab("money")}
         >

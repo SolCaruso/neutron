@@ -9,7 +9,7 @@ import LinkedIn from '@/components/icons/LinkedIn';
 import { motion } from "framer-motion";
 
 
-export default function Foot() {
+export default function Footer() {
   return (
     <footer
       className="

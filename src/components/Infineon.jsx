@@ -55,7 +55,7 @@ function Infineon() {
             whileHover="hover"
             animate="rest"
           >
-            <p className="text-lg leading-relaxed max-w-xs font-geist text-[#6A6B6C]">
+            <p className="text-lg leading-relaxed max-w-xs font-geist text-[#8e8f90]">
               As an Infineon Preferred Design House, Neutron Controls brings ideas to life,
               uniting Infineon&apos;s advanced solutions with our expert guidance.
             </p>
