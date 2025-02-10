@@ -452,7 +452,7 @@ export default function Slider() {
 
                 <div className="text-white p-5 pt-7">
                   <h3 className="text-lg font-bold flex items-center mb-4">
-                  <Manage className="w-9 mr-3" />
+                  <Manage className="w-6 mr-3" />
                     Battery Management
                   </h3>
                   <p className="text-sm text-gray-200 mb-6 tracking-wide">
@@ -605,7 +605,7 @@ export default function Slider() {
 
                 <div className="text-white p-5 pt-7">
                   <h3 className="text-lg font-bold flex items-center mb-4">
-                  <Auto className="w-8 mr-3" />
+                  <Auto className="w-6 mr-3" />
                     Automotive Engineering
                   </h3>
                   <p className="text-sm text-gray-200 mb-6 tracking-wide">

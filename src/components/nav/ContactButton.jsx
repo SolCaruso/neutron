@@ -8,7 +8,6 @@ export default function DownloadButton() {
           <Link href="#" passHref>
             <motion.div
               className="
-                
                 items-center 
                 justify-center
                 gap-2

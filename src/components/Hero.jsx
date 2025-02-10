@@ -90,7 +90,7 @@ export default function Hero() {
               min-h-[40px]
               sm:min-h-[44px]
               px-3
-              sm:px-3.5 py-1.5
+              sm:px-4 py-1.5
               text-[12px]
               sm:text-[14px] 
               font-semibold 
@@ -112,7 +112,6 @@ export default function Hero() {
               uppercase
             "
           >
-            <Info className="w-5 h-auto hover:text-black" />    
             <span>Event Info</span>
           </motion.div>
         </Link>
@@ -127,7 +126,7 @@ export default function Hero() {
               min-h-[40px]
               sm:min-h-[44px]
               px-3
-              sm:px-3.5 py-1.5
+              sm:px-4 py-1.5
               uppercase
               text-[12px]
               sm:text-[14px]  
@@ -148,8 +147,7 @@ export default function Hero() {
               opacity-90
               hover:opacity-100
             "
-          >
-            <Book className="w-5 h-auto" />    
+          >  
             <span>Book Demo</span>
           </motion.div>
         </Link>
