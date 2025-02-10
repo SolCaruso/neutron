@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 export default function VerticalSlider() {
   return (
     // Outer container with black background and large height.
-    <div className="relative w-full h-[300vh] bg-[#090A0B] rounded-t-4xl">
+    <div className="relative w-full lg:h-[300vh] bg-[#090A0B] lg:rounded-t-4xl">
       {/* --- Black Layer (pinned) --- */}
-      <section className="sticky top-0 text-white z-10 flex items-center justify-center rounded-t-4xl lg:py-24 py-12">
+      <section className="lg:sticky top-0 text-white z-10 flex items-center justify-center lg:rounded-t-4xl lg:py-24 py-12">
         <div className="max-w-3xl p-8 text-center">
           <h2 className="lg:text-[40px] text-2xl font-semibold mb-10">
             CUSTOM ENGINEERING SERVICES
@@ -41,9 +41,9 @@ export default function VerticalSlider() {
 
       {/* --- White Layer (pinned) --- */}
       {/* Use margins so you can see the black background around it */}
-      <section className="sticky top-4 lg:h-[calc(100vh-32px)] bg-white text-black z-20 
+      <section className="lg:sticky top-4 lg:h-[calc(100vh-32px)] bg-white text-black z-20 
                           flex flex-col-reverse lg:flex-row items-center 
-                          justify-center rounded-4xl mx-4 py-20 xl:py-0">
+                          justify-center lg:rounded-4xl lg:mx-4 py-20 xl:py-0">
         <div className="lg:w-1/2 text-left xl:pl-40 px-12">
           <p className="text-[#E00000] font-bold lg:text-[14px] text-[12px] tracking-[6px] mb-6">
             ECU8TR&trade;
@@ -109,9 +109,9 @@ export default function VerticalSlider() {
 
       {/* --- Gray Layer (pinned) --- */}
       {/* Give it bigger margins so we see white around it */}
-      <section className="sticky top-8 lg:h-[calc(100vh-64px)] bg-gray-100 text-black z-30 
+      <section className="lg:sticky top-8 lg:h-[calc(100vh-64px)] bg-gray-100 text-black z-30 
                           flex flex-col-reverse lg:flex-row items-center 
-                          justify-center rounded-4xl mx-8 py-20 xl:py-0 mb-4">
+                          justify-center lg:rounded-4xl lg:mx-8 py-20 xl:py-0 lg:mb-4">
         <div className="lg:w-1/2 text-left xl:pl-40 px-12">
           <p className="text-[#E00000] font-bold lg:text-[14px] text-[12px] tracking-[6px] mb-6">
               EMUL8TR ESS CONTROLLER&trade;

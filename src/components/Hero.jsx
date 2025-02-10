@@ -12,13 +12,13 @@ export default function Hero() {
       <div className="overflow-hidden text-gray-900 px-2 max-w-full relative">
       
       {/* Parent Container */}
-      <div className="flex flex-col items-center gap-14 py-12 sm:py-24 z-10">
+      <div className="flex flex-col items-center gap-14 lg:gap-32 py-20 sm:py-24 lg:py-40 2xl:pb-64 z-10">
         <div className="text-center flex flex-col items-center">
 
           <div className="flex justify-center mt-8">
             <div className={`${styles.wishlistOuter} ${styles.wishlistAnimate}`}>
-              <div className={styles.wishlistAnnouncement}>
-              <Bolt className="w-4 text-red-600 ml-2"/><span className="gradient-text text-transparent animate-gradient text-white text-[16px] font-semibold uppercase tracking-[2px] bg-black py-2 pr-2 rounded-full flex gap-2 just"> ESS Solutions</span>
+              <div className={` ${styles.wishlistAnnouncement} sm:h-[38px] h-[34px] sm:py-[4px] sm:px-[12px] px-[8px]`}>
+              <Bolt className="w-4 text-red-600 ml-2"/><span className="gradient-text text-transparent animate-gradient text-white lg:text-[16px] text-[12px] font-semibold uppercase tracking-[2px] bg-black py-2 pr-2 rounded-full flex gap-2"> <span className="hidden 2xl:block">BMS Controls & </span>ESS Solutions</span>
               </div>
             </div>
           </div>
@@ -28,11 +28,11 @@ export default function Hero() {
 
           <div className="relative flex flex-col items-center text-center pt-8">
             <div className="absolute inset-0 bg-gradient-radial from-white via-gray-300 to-black w-full h-full pointer-events-none"></div>
-            <h1 className="sm:text-[45px] font-bold sm:leading-normal text-[40px] leading-[47px] uppercase pt-4 sm:pt-0 text-white tracking-[3px] ">
+            <h1 className="sm:text-[45px] 2xl:text-[52px] font-bold sm:leading-normal text-[30px] leading-[38px] uppercase pt-4 sm:pt-4 2xl:pt-8 text-white tracking-[3px] ">
               test your strength
             </h1>
-            <p className="text-white sm:text-[20px] text-lg mx-auto sm:leading-8 lg:max-w-[600px] max-w-[500px] pt-4">
-              Where energy storage meets innovation, simplifying management and maximizing efficiency.
+            <p className="text-white lg:text-[20px] text-base mx-auto sm:leading-8 lg:max-w-[600px] max-w-[500px] pt-8 lg:pt-10">
+              Where energy storage meets innovation<span className="hidden sm:inline">, simplifying management and maximizing efficiency.</span> 
             </p>
           </div>
         </div>

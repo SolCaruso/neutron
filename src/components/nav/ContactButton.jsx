@@ -8,13 +8,14 @@ export default function DownloadButton() {
           <Link href="#" passHref>
             <motion.div
               className="
-                inline-flex 
+                
                 items-center 
                 justify-center
                 gap-2
                 min-h-[40px]
                 sm:min-h-[44px]
                 px-3
+                hidden xs:inline-flex 
                 sm:px-[18px] py-1.5
                 text-[12px]
                 sm:text-[13px] 

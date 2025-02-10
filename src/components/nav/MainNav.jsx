@@ -33,7 +33,7 @@ export default function MainNav({ isOpen, setIsOpen }) {
 
         {/* Contact Us button (always visible) */}
         <div className="flex ">
-          <ContactButton/>
+          <ContactButton className="hidden sm:block"/>
 
           {/* Hamburger Icon: show only on screens < md */}
           <button

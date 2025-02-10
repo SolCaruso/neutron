@@ -26,7 +26,7 @@ export default function SecondaryNav() {
 
   return (
     <div className="md/lg:px-4">
-      <div className="noise-bg h-11 flex items-center text-white text-sm md/lg:rounded-b-lg max-w-8xl mx-auto">
+      <div className="noise-bg sm:h-11 h-[2px] flex items-center text-white text-sm md/lg:rounded-b-lg max-w-8xl mx-auto">
         {/* 
           data-speed can be "fast" (20s) or "slow" (60s). 
           data-direction can be "left" or "right".
@@ -140,7 +140,7 @@ export default function SecondaryNav() {
 
 function MarqueeItem() {
   return (
-    <li className="inline-block whitespace-nowrap font-semibold text-[15px]">
+    <li className="inline-block whitespace-nowrap font-semibold sm:text-[15px] text-[12px]">
       INTERSOLAR | Event Feb 25–27, 2025
       <a href="https://www.intersolar.us/" target="_blank" className="underline pr-8 pl-12 font-normal" style={{ textUnderlineOffset: '6px' }}>
         Learn more <TopRight className="inline-block w-4 h-4 mb-1" />

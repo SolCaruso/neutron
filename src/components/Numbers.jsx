@@ -68,7 +68,7 @@ const Numbers = ({
   }, [activeTab, inView, timeValue, moneyValue, duration]);
 
   return (
-    <section ref={sectionRef} className="text-center sm:py-36 py-24 max-w-4xl mx-auto">
+    <section ref={sectionRef} className="text-center sm:pt-36 pt-24 pb-6 sm:pb-12 max-w-4xl mx-auto">
       <h2 className="sm:text-4xl text-2xl font-bold mb-2 uppercase px-2">
         TRANSFORMING ENERGY MANAGEMENT <span className="hidden sm:block">& VEHICLE DEVELOPMENT</span>
       </h2>
