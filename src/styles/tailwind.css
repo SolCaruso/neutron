@@ -70,3 +70,7 @@
       hsla(0, 100%, 88%, 0) 140%
     );
 }
+
+.scrollContainer {
+  will-change: transform;
+}

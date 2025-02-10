@@ -4,9 +4,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        switzer: 'Switzer, system-ui, sans-serif',
-        geist: ['"Geist Mono"', 'serif'],
-        sans: ['"Montserrat"', 'serif'],
+        // tie Montserrat to the CSS variable that next/font creates
+        sans: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
+
+        // still define Geist using a normal string if you want:
+        geist: ['"Geist Mono"', 'monospace'],
       },
       borderRadius: {
         '4xl': '2rem',

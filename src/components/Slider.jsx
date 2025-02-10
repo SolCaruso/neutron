@@ -203,8 +203,10 @@ export default function Slider() {
                       playsInline
                       preload="auto"
                       className="w-full h-full object-cover rounded-lg shadow-xl"
-                      src="/vids/storage.webm"
-                    />
+                    >
+                      <source src="/vids/storage.webm" type="video/webm" />
+                      <source src="/vids/storage.mp4" type="video/mp4" />
+                    </video>
                   )}
                 </div>
 
@@ -287,10 +289,13 @@ export default function Slider() {
                       playsInline
                       preload="auto"
                       className="absolute inset-0 w-full h-full object-cover border-b border-white/10"
-                      src="/vids/storage.webm"
-                    />
+                    >
+                      <source src="/vids/storage.webm" type="video/webm" />
+                      <source src="/vids/storage.mp4" type="video/mp4" />
+                    </video>
                   )}
                 </div>
+                
 
                 <div className="text-white p-5 pt-7">
                   <h3 className="text-lg font-bold flex items-center mb-4">
@@ -353,8 +358,10 @@ export default function Slider() {
                       playsInline
                       preload="auto"
                       className="w-full h-full object-cover rounded-lg shadow-xl"
-                      src="/vids/output.webm"
-                    />
+                    >
+                      <source src="/vids/output.webm" type="video/webm" />
+                      <source src="/vids/output.mp4" type="video/mp4" />
+                  </video>
                   )}
                 </div>
 
@@ -436,8 +443,10 @@ export default function Slider() {
                       playsInline
                       preload="auto"
                       className="absolute inset-0 w-full h-full object-cover border-b border-white/10"
-                      src="/vids/output.webm"
-                    />
+                      >
+                      <source src="/vids/output.webm" type="video/webm" />
+                      <source src="/vids/output.mp4" type="video/mp4" />
+                  </video>
                   )}
                 </div>
 
@@ -495,15 +504,17 @@ export default function Slider() {
               <div className="relative">
                 <div className="w-[800px] h-[450px] mr-44 mb-20">
                   {visitedSlides.has(2) && (
-                    <video
-                      ref={videoRefSlide3Desktop}
-                      loop
-                      muted
-                      playsInline
-                      preload="auto"
-                      className="w-full h-full object-cover rounded-lg shadow-xl"
-                      src="/vids/auto.webm"
-                    />
+                      <video
+                        ref={videoRefSlide3Desktop}
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        className="w-full h-full object-cover rounded-lg shadow-xl"
+                      >
+                        <source src="/vids/auto.webm" type="video/webm" />
+                        <source src="/vids/auto.mp4" type="video/mp4" />
+                    </video>
                   )}
                 </div>
 
@@ -585,8 +596,10 @@ export default function Slider() {
                       playsInline
                       preload="auto"
                       className="absolute inset-0 w-full h-full object-cover border-b border-white/10"
-                      src="/vids/auto.webm"
-                    />
+                      >
+                        <source src="/vids/auto.webm" type="video/webm" />
+                        <source src="/vids/auto.mp4" type="video/mp4" />
+                    </video>
                   )}
                 </div>
 

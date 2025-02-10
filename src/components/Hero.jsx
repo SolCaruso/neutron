@@ -23,12 +23,15 @@ export default function Hero() {
             </div>
           </div>
 
+          {/* gradient-text text-transparent animate-gradient */}
+          {/* mask-text  */}
+
           <div className="relative flex flex-col items-center text-center pt-8">
             <div className="absolute inset-0 bg-gradient-radial from-white via-gray-300 to-black w-full h-full pointer-events-none"></div>
-            <h1 className="sm:text-[45px] font-bold sm:leading-normal text-[40px] leading-[47px] uppercase pt-4 sm:pt-0 text-white tracking-[3px] gradient-text text-transparent animate-gradient">
+            <h1 className="sm:text-[45px] font-bold sm:leading-normal text-[40px] leading-[47px] uppercase pt-4 sm:pt-0 text-white tracking-[3px] ">
               test your strength
             </h1>
-            <p className="text-white sm:text-[20px] text-lg mx-auto sm:leading-8 lg:max-w-[600px] max-w-[500px] mask-text pt-4">
+            <p className="text-white sm:text-[20px] text-lg mx-auto sm:leading-8 lg:max-w-[600px] max-w-[500px] pt-4">
               Where energy storage meets innovation, simplifying management and maximizing efficiency.
             </p>
           </div>
