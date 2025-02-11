@@ -3,8 +3,6 @@ import { Link } from '@/components/link'
 import { motion } from "framer-motion";
 import MobileLogo from '@/components/logos/MobileLogo'
 import styles from "./WishList.module.css";
-import Info from '@/components/icons/Info'
-import Book from '@/components/icons/Book'
 
 export default function Hero() {
 

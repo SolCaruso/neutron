@@ -5,6 +5,7 @@ import NavLinks from "./NavLinks";
 import ContactButton from "./ContactButton";
 import { motion } from "framer-motion";
 import MobileNavDropdown from "./MobileNavDropdown";
+import Link from 'next/link';
 
 const Path = (props) => (
   <motion.path
@@ -38,7 +39,9 @@ export default function MainNav({ isOpen, setIsOpen }) {
         "
       >
         {/* Logo */}
-        <NavLogo className="w-44" />
+        <Link href="/">
+          <NavLogo className="w-44" />
+        </Link>
 
         {/* Desktop NavLinks (hidden on mobile) */}
         <NavLinks />
@@ -53,6 +56,7 @@ export default function MainNav({ isOpen, setIsOpen }) {
             aria-label="Toggle mobile menu"
           >
             <motion.svg
+              initial="closed"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -70,7 +74,7 @@ export default function MainNav({ isOpen, setIsOpen }) {
               <Path
                 variants={{
                   closed: { d: "M 3 12 L 21 12", opacity: 1 },
-                  open:   { opacity: 0 },
+                  open:   { d: "M 3 12 L 21 12", opacity: 0 },
                 }}
                 transition={{ duration: 0.3 }}
               />

@@ -7,9 +7,8 @@ export default function BackgroundFooter() {
       <Image
         src="/bg/bg.webp"
         alt="neutron red background"
-        layout="fill"
-        objectFit="cover"
-        className="rotate-90"
+        fill
+        className="rotate-90 object-cover"
         priority
       />
     </div>

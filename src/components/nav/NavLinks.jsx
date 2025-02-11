@@ -8,6 +8,7 @@ import RightArrow from "@/components/icons/RightArrow";
 import Equ8 from "@/components/logos/ECU8white";
 import Equ8ter from "@/components/logos/ECU8TRwhite";
 import Energate from "@/components/logos/ENERG8TEwhite";
+import Link from 'next/link';
 
 export default function NavLinks() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,10 +56,9 @@ export default function NavLinks() {
       <ul className="flex justify-center gap-12 list-none m-0 p-0 text-[#C7C2BE]">
         {/* Wrap "Solutions" + Dropdown in a single <li> with a ref */}
         <li ref={dropdownContainerRef} className="relative">
-          <a
-            href="#"
+          <div
             className="text-[12px] uppercase tracking-[3px] font-semibold 
-                       hover:text-white inline-flex items-center"
+                       hover:text-white inline-flex items-center cursor-pointer"
             onClick={(e) => {
               e.preventDefault();
               setIsOpen(!isOpen);
@@ -75,7 +75,7 @@ export default function NavLinks() {
             >
               <Down className="w-full h-full fill-current" />
             </motion.div>
-          </a>
+          </div>
 
           {/* Dropdown */}
           <ul
@@ -95,82 +95,58 @@ export default function NavLinks() {
             `}
           >
             <li>
-              <motion.a
-                href="#"
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-                variants={parentVariants}
-                transition={{ duration: 0.2 }}
-                className="flex items-center px-4 mx-3 mt-3 py-4 rounded-lg text-white cursor-pointer"
-              >
+              <Link href="/solutions/ecu8tr" passHref>
                 <motion.div
-                  variants={logoVariants}
+                  initial="rest"
+                  whileHover="hover"
+                  animate="rest"
+                  variants={parentVariants}
                   transition={{ duration: 0.2 }}
-                  className="mr-2"
+                  className="flex items-center px-4 mx-3 py-4 mt-3 rounded-lg text-white cursor-pointer"
                 >
-                  <Equ8 className="h-5 " />
+                  <motion.div
+                    variants={logoVariants}
+                    transition={{ duration: 0.2 }}
+                    className="mr-2"
+                  >
+                    <Equ8ter className="h-[23px] " />
+                  </motion.div>
+                  <motion.div
+                    variants={arrowVariants}
+                    transition={{ duration: 0.2 }}
+                    className="ml-auto"
+                  >
+                    <RightArrow className="w-4 h-4" />
+                  </motion.div>
                 </motion.div>
-                <motion.div
-                  variants={arrowVariants}
-                  transition={{ duration: 0.2 }}
-                  className="ml-auto"
-                >
-                  <RightArrow className="w-4 h-4" />
-                </motion.div>
-              </motion.a>
+              </Link>
             </li>
             <li>
-              <motion.a
-                href="#"
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-                variants={parentVariants}
-                transition={{ duration: 0.2 }}
-                className="flex items-center px-4 mx-3 py-4 rounded-lg text-white cursor-pointer"
-              >
+              <Link href="/solutions/energ8te" passHref>
                 <motion.div
-                  variants={logoVariants}
+                  initial="rest"
+                  whileHover="hover"
+                  animate="rest"
+                  variants={parentVariants}
                   transition={{ duration: 0.2 }}
-                  className="mr-2"
+                  className="flex items-center px-4 mx-3 mb-3 py-4 rounded-lg text-white cursor-pointer"
                 >
-                  <Equ8ter className="h-[23px] " />
+                  <motion.div
+                    variants={logoVariants}
+                    transition={{ duration: 0.2 }}
+                    className="mr-2"
+                  >
+                    <Energate className="h-[14px]" />
+                  </motion.div>
+                  <motion.div
+                    variants={arrowVariants}
+                    transition={{ duration: 0.2 }}
+                    className="ml-auto"
+                  >
+                    <RightArrow className="w-4 h-4" />
+                  </motion.div>
                 </motion.div>
-                <motion.div
-                  variants={arrowVariants}
-                  transition={{ duration: 0.2 }}
-                  className="ml-auto"
-                >
-                  <RightArrow className="w-4 h-4" />
-                </motion.div>
-              </motion.a>
-            </li>
-            <li>
-              <motion.a
-                href="#"
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-                variants={parentVariants}
-                transition={{ duration: 0.2 }}
-                className="flex items-center px-4 mx-3 mb-3 py-4 rounded-lg text-white cursor-pointer"
-              >
-                <motion.div
-                  variants={logoVariants}
-                  transition={{ duration: 0.2 }}
-                  className="mr-2"
-                >
-                  <Energate className="h-[14px]" />
-                </motion.div>
-                <motion.div
-                  variants={arrowVariants}
-                  transition={{ duration: 0.2 }}
-                  className="ml-auto"
-                >
-                  <RightArrow className="w-4 h-4" />
-                </motion.div>
-              </motion.a>
+              </Link>
             </li>
             
           </ul>

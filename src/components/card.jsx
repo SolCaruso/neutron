@@ -37,8 +37,8 @@ function Card({ image }) {
         src={image.src}  
         alt={image.alt} 
         fill 
-        style={{ objectFit: 'cover' }} 
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 20vw"
+        className="object-cover"
         priority
       />
     </motion.div>
