@@ -10,7 +10,7 @@ import VerticalSlider from '@/components/VerticalSlider'
 import Infineon from '@/components/Infineon'
 import Footer from '@/components/Footer'
 import BackgroundHero from '@/components/BackgroundHero'
-import Ecu8tr from '@/components/ecu8tr'
+import Ecu8tr from '@/components/Ecu8tr'
 
 export default function Home() {
   return (
