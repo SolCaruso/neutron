@@ -3,15 +3,25 @@ import '@/styles/tailwind.css'
 import DigitalBackground from '@/components/DigitalBackground'
 import MobileLogo from '@/components/logos/MobileLogo'
 import NoiseOverlay from '@/components/NoiseOverlay'
-import { Montserrat } from 'next/font/google'
+import '@/styles/tailwind.css'
+import { Montserrat, Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
+  weight: ['100','200','300','400','500','600','700','800','900'],
+  style: ['normal','italic'],
   variable: '--font-montserrat',
   display: 'swap',
-});
+})
+
+const geistMono = localFont({
+  src: [
+    { path: '../fonts/GeistMono-VariableFont_wght.ttf', weight: '400', style: 'normal' },
+  ],
+  variable: '--font-geist-mono',
+  display: 'swap',
+})
 
 export const metadata = {
   title: {
@@ -22,18 +32,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={montserrat.variable}>
+    <html lang="en" className={`${montserrat.variable} ${geistMono.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="true"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap"
-            rel="stylesheet"
-          />
       </head>
 
       <body className="relative">

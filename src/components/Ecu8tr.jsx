@@ -9,37 +9,7 @@ export default function Equ8tr() {
   return (
 
       // Outer container with black background and large height.
-    <div className="relative w-full lg:h-[300vh] bg-[#090A0B] ">
-    {/* --- Black Layer (pinned) --- */}
-    <section className="lg:sticky top-0 text-white z-10 flex items-center justify-center  lg:py-24 py-12">
-      <div className="max-w-3xl p-8 text-center">
-        <h2 className="lg:text-[40px] text-2xl font-semibold mb-10">
-          CUSTOM ENGINEERING SERVICES
-        </h2>
-        <p className="lg:text-2xl text-lg text-left mb-10">
-          Power your energy systems with tailored{" "}
-          <span className=" px-[2.5px] bg-[#435FE1] rounded-sm">BMS</span> and{" "}
-          <span className=" px-[2.5px] bg-[#435FE1] rounded-sm">ECU</span>{" "}
-          solutions designed for efficiency, reliability, and safety.
-        </p>
-        <p className="lg:text-2xl text-lg text-left mb-10">
-          From electric vehicles to industrial and renewable applications, our
-          expertise ensures{" "}
-          <span className=" px-[2.5px] bg-[#435FE1] rounded-sm">
-            optimized performance
-          </span>{" "}
-          and extended battery life.
-        </p>
-        <p className="lg:text-2xl text-lg text-left">
-          <span className=" px-[2.5px] bg-[#435FE1] rounded-sm">
-            Safety is at our core,
-          </span>{" "}
-          with designs built to meet ISO 26262 standards and protect both
-          people and environments.
-        </p>
-      </div>
-    </section>
-
+    <div className="relative w-full lg:h-[200vh] bg-[#090A0B] ">
     {/* --- White Layer (pinned) --- */}
     {/* Use margins so you can see the black background around it */}
     <section className="lg:sticky top-4 lg:h-[calc(100vh-32px)] bg-white text-black z-20 
@@ -120,7 +90,7 @@ export default function Equ8tr() {
         <h2 className="3xl:text-5xl 2xl:text-4xl text-3xl font-bold xl:mb-10 mb-6">
           ADVANCED ENERGY STORAGE MANAGEMENT
         </h2>
-        <p className="2xl:text-2xl text-xl xl:mb-10 mb-6">
+        <p className="2xl:text-2xl text-xl xl:mb-10 mb-6"> 
           The EMUL8TR™ ESS Controller is an advanced Energy Storage System
           management product designed to optimize the performance of Battery
           Energy Storage Systems (BESS).

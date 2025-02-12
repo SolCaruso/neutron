@@ -10,6 +10,7 @@ export default function BackgroundFooter() {
         fill
         className="rotate-90 object-cover"
         priority
+        sizes="800px"
       />
     </div>
   );

@@ -4,11 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // tie Montserrat to the CSS variable that next/font creates
         sans: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
-
-        // still define Geist using a normal string if you want:
-        geist: ['"Geist Mono"', 'monospace'],
+        geist: ['var(--font-geist-mono)', 'monospace'],
       },
       borderRadius: {
         '4xl': '2rem',

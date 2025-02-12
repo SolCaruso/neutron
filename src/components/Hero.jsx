@@ -26,10 +26,10 @@ export default function Hero() {
 
           <div className="relative flex flex-col items-center text-center pt-8">
             <div className="absolute inset-0 bg-gradient-radial from-white via-gray-300 to-black w-full h-full pointer-events-none"></div>
-            <h1 className="sm:text-[45px] 2xl:text-[52px] font-bold sm:leading-normal text-[30px] leading-[38px] uppercase pt-4 sm:pt-4 2xl:pt-8 text-white tracking-[3px] ">
+            <h1 className="sm:text-[45px] 2xl:text-6xl font-bold sm:leading-normal text-[30px] leading-[38px] uppercase pt-4 sm:pt-4 2xl:pt-8 text-white tracking-wider">
               test your strength
             </h1>
-            <p className="text-white lg:text-[20px] text-base mx-auto sm:leading-8 lg:max-w-[600px] max-w-[500px] pt-8 lg:pt-10">
+            <p className="text-white/60 font-geist lg:text-[20px] text-base mx-auto sm:leading-8 lg:max-w-[600px] max-w-[500px] pt-8 lg:pt-10">
               Where energy storage meets innovation<span className="hidden sm:inline">, simplifying management and maximizing efficiency.</span> 
             </p>
           </div>

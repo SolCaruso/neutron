@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 export default function VerticalSlider() {
   return (
     // Outer container with black background and large height.
-    <div className="relative w-full lg:h-[300vh] bg-[#090A0B] lg:rounded-t-4xl">
+    <div className="relative w-full lg:h-[250vh] bg-[#090A0B] lg:rounded-t-4xl">
       {/* --- Black Layer (pinned) --- */}
-      <section className="lg:sticky top-0 text-white z-10 flex items-center justify-center lg:rounded-t-4xl lg:py-24 py-12">
+      <section className="lg:sticky lg:h-[50vh] top-0 text-white z-10 flex items-center justify-center lg:rounded-t-4xl lg:py-24 py-12">
         <div className="max-w-3xl p-8 text-center">
           <h2 className="lg:text-[40px] text-2xl font-semibold mb-10">
             CUSTOM ENGINEERING SERVICES
