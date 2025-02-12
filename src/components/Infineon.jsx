@@ -1,6 +1,5 @@
 import React from "react";
 import TopRight from "@/components/icons/TopRight";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import InfineonIcon from "@/components/icons/Infineon";
 
@@ -105,13 +104,7 @@ function Infineon() {
             />
             {/* Image on top (z-10) */}
             <div className="relative w-[600px] h-[400px]">
-              <Image
-                src="/Infineon/app.svg"
-                alt="Infineon App"
-                fill
-                className="object-contain z-10"
-                sizes="(max-width: 600px) 100vw, 600px"
-              />
+              <InfineonIcon className="object-contain" />
             </div>
           </div>
 
