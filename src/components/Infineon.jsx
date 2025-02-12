@@ -2,6 +2,7 @@ import React from "react";
 import TopRight from "@/components/icons/TopRight";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import InfineonIcon from "@/components/icons/Infineon";
 
 // Framer Motion variants for the arrow
 const arrowVariants = {
@@ -156,13 +157,7 @@ function Infineon() {
           />
           {/* Image sits on top */}
           <div className="relative w-[796px] aspect-[488/385]">
-            <Image
-              src="/Infineon/app.svg"
-              alt="Infineon App"
-              fill
-              className="object-contain"
-              sizes="(max-width: 796px) 100vw, 796px"
-            />
+            <InfineonIcon className="object-contain" />
           </div>
         </div>
 
