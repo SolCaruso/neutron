@@ -43,7 +43,7 @@ export default function VerticalSlider() {
       {/* Use margins so you can see the black background around it */}
       <section className="lg:sticky top-4 lg:h-[calc(100vh-32px)] bg-white text-black z-20 
                           flex flex-col-reverse lg:flex-row items-center 
-                          justify-center lg:rounded-4xl lg:mx-4 py-20 xl:py-0 2xl:px-[175px] 3xl:px-40">
+                          justify-center lg:rounded-4xl lg:mx-4 py-20 xl:py-0 2xl:px-[90px] 3xl:px-40">
         <div className="lg:w-1/2 text-left px-12 lg:max-w-[50vw] pt-12 lg:pt-0">
           <p className="text-[#E00000] font-bold lg:text-[14px] text-[12px] tracking-[6px] mb-6">
             ECU8TR&trade;
@@ -111,7 +111,7 @@ export default function VerticalSlider() {
       {/* Give it bigger margins so we see white around it */}
       <section className="lg:sticky top-8 lg:h-[calc(100vh-64px)] bg-gray-100 text-black z-30 
                           flex flex-col-reverse lg:flex-row items-center 
-                          justify-center lg:rounded-4xl lg:mx-8 py-20 xl:py-0 lg:mb-4 2xl:px-[175px] 3xl:px-40">
+                          justify-center lg:rounded-4xl lg:mx-8 py-20 xl:py-0 lg:mb-4 2xl:px-[90px] 3xl:px-40">
         <div className="lg:w-1/2 text-left px-12 lg:max-w-[50vw] pt-12 lg:pt-0">
           <p className="text-[#E00000] font-bold lg:text-[14px] text-[12px] tracking-[6px] mb-6">
               ENERG8TE&trade;

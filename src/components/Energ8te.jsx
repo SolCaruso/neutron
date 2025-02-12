@@ -13,27 +13,26 @@ export default function Energ8te() {
     {/* Use margins so you can see the black background around it */}
     <section className="lg:sticky top-4 lg:h-[calc(100vh-32px)] bg-white text-black z-20 
                           flex flex-col-reverse lg:flex-row items-center 
-                          justify-center lg:rounded-4xl lg:mx-4 py-20 xl:py-0 2xl:px-[175px] 3xl:px-40">
+                          justify-center lg:rounded-4xl lg:mx-4 py-20 xl:py-0 2xl:px-[90px] 3xl:px-40">
         <div className="lg:w-1/2 text-left px-12 lg:max-w-[50vw] pt-12 lg:pt-0">
           <p className="text-[#E00000] font-bold lg:text-[14px] text-[12px] tracking-[6px] mb-6">
-            ECU8TR&trade;
+            ENERG8TE&trade;
           </p>
           <h2 className="3xl:text-5xl 2xl:text-4xl text-3xl font-bold xl:mb-10 mb-6">
-            REVOLUTIONIZING QUALITY CONTROL
+          ADVANCED ENERGY STORAGE MANAGEMENT
           </h2>
           <p className="2xl:text-2xl text-xl xl:mb-10 mb-6">
-            ECU8TR™ is a cutting-edge tester crafted for the verification of
-            cell monitor operations within battery modules or packs.
+            The ENERG8TE™ BMS Controller is a high-performance control solution designed to ensure efficient battery management of your Energy Storage System (ESS).
           </p>
           <ul className="list-disc font-semibold 2xl:text-2xl text-lg pl-4 leading-[1.8] lg:mb-12 mb-8 xl:space-y-3 pb-4">
-            <li>Precision Monitoring</li>
-            <li>iso SPI and iso UART compatible</li>
-            <li>Quality Management</li>
+            <li>Optimized Energy Efficiency</li>
+            <li>System Reliability and Safety</li>
+            <li>Flexible Integration</li>
           </ul>
         </div>
         <div className="flex justify-center mb-6 lg:mb-0">
           <Image
-            src="/vertical/ecu8tr.webp"
+            src="/vertical/energ8te.webp"
             alt="Emula8tr ESS Controller"
             width={1200}
             height={800}
@@ -43,61 +42,37 @@ export default function Energ8te() {
       </section>
 
     {/* --- Gray Layer (pinned) --- */}
-    {/* Give it bigger margins so we see white around it */}
     <section
       className="lg:sticky top-8 lg:h-[calc(100vh-64px)] bg-gray-100 text-black z-30 
                 flex flex-col-reverse lg:flex-row items-center 
                 justify-center lg:rounded-4xl lg:mx-8 py-20 xl:py-0 lg:mb-4"
     >
       <div className="max-w-8xl 3xl:max-w-[2000px] w-full mx-auto text-black sm:py-8 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-4xl font-bold mb-12">SPECIFICATIONS</h2>
+        <h2 className="text-2xl sm:text-4xl font-bold mb-12">FEATURES</h2>
 
         {/* Outer container with a solid border */}
         <div className="border-2 border-[#016DFF] rounded-md overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-[220px_minmax(0,1fr)]">
-            {/* 1) DIMENSIONS */}
-            <div className="p-4 pb-0 md:pb-4 md:border-b border-[#016DFF] font-semibold lg:text-xl">
-              DIMENSIONS
+          <div className="grid grid-cols-1 lg:grid-cols-[400px_minmax(0,1fr)]">
+            {/* 1) */}
+            <div className="p-4 pb-0 lg:pb-4 lg:border-b border-[#016DFF] font-semibold lg:text-xl">
+            ADVANCED CHARGING AND DISCHARGING CONTROL
             </div>
-            <div className="p-4 border-b border-[#016DFF] md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70">
-              <p className="mb-1">Standard 1U Chassis size</p>
-              <p className="mb-1">8.000&#34; L x 16.600&#34; W x 1.750&#34; H</p>
-              <p>203.20mm x 421.64mm x 44.45mm</p>
+            <div className="p-4 border-b border-[#016DFF] lg:border-l lg:border-[#016DFF] lg:text-xl font-geist text-black/70">
+              <p className="mb-1">ENERG8TE™ manages charging and discharging cycles with precision, ensuring optimal battery performance and extended lifespan, and crucial for extending lifespan and maximizing your energy storage investment.</p>
             </div>
 
-            {/* 2) SAFETY CERTIFICATIONS */}
-            <div className="p-4 pb-0 md:pb-4 md:border-b border-[#016DFF] font-semibold lg:text-xl">
-              SAFETY CERTIFICATIONS
+            {/* 2) */}
+            <div className="p-4 pb-0 lg:pb-4 lg:border-b border-[#016DFF] font-semibold lg:text-xl">
+            GRID INTERACTION AND COMPLIANCE
             </div>
-            <div className="p-4 border-b border-[#016DFF] md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70">
-              UL 61010
-            </div>
-
-            {/* 3) POWER */}
-            <div className="p-4 pb-0 md:pb-4 md:border-b border-[#016DFF] font-semibold lg:text-xl">POWER</div>
-            <div className="p-4 border-b border-[#016DFF] md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70">
-              12V 36 W AC/DC External Desktop (Class I) Adapter International,<br />
-              90 &#126; 264 VAC
+            <div className="p-4 border-b border-[#016DFF] lg:border-l lg:border-[#016DFF] lg:text-xl font-geist text-black/70">
+            ENERG8TE™ includes advanced grid management features like peak shaving, time-of-use management, and reactive power control. These features ensure that your energy storage system complies with local regulations and optimizes energy costs
             </div>
 
-            {/* 4) INTERFACES */}
-            <div className="p-4 pb-0 md:pb-4 md:border-b border-[#016DFF] font-semibold lg:text-xl">
-              INTERFACES
-            </div>
-            <div className="p-4 border-b border-[#016DFF] md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70">
-              <p className="mb-1">
-                iso SPI and iso UART analog frontend communications options via
-                circular connectors
-              </p>
-              <p className="mb-1">Ethernet network interface – 10/100 baseT</p>
-              <p className="mb-1">CAN FD interface via 9-pin Dsub connector</p>
-              <p>12V power input via barrel jack</p>
-            </div>
-
-            {/* 5) INDICATORS */}
-            <div className="p-4 pb-0 md:pb-4 font-semibold lg:text-xl">INDICATORS</div>
-            <div className="p-4 md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70">
-              Large LED indicator to display test modes and test results
+            {/* 5) */}
+            <div className="p-4 pb-0 lg:pb-4 font-semibold lg:text-xl">SCALABLE INTEGRATION</div>
+            <div className="p-4 lg:border-l lg:border-[#016DFF] lg:text-xl font-geist text-black/70">
+                Easily integrate with various energy sources, including solar, wind, and grid power, making ENERG8TE™ adaptable for both small-scale installations and large industrial applications.
             </div>
           </div>
         </div>
@@ -105,7 +80,7 @@ export default function Energ8te() {
         {/* Download button */}
         <div className="mt-12">
         <motion.a
-            href="/pdf/ECU8TR.pdf"
+            href="/pdf/ENERG8TE.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="
