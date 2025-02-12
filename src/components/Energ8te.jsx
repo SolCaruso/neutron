@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function Ecu8tr() {
+export default function Energ8te() {
   return (
 
       // Outer container with black background and large height.

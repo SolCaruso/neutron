@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Logo from "@/components/logos/Logo";
 import Equ8 from "@/components/logos/ECU8white";
 import Equ8ter from "@/components/logos/ECU8TRwhite";
@@ -7,6 +6,7 @@ import Energate from "@/components/logos/ENERG8TEwhite";
 import BackgroundFooter from '@/components/BackgroundFooter';
 import LinkedIn from '@/components/icons/LinkedIn';
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 
 export default function Footer() {
@@ -53,10 +53,49 @@ export default function Footer() {
               Solutions
             </h3>
             <div>
-              {/* Replace with your actual logo components */}
-              <Equ8 className="h-6 opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out" />
-              <Equ8ter className="h-[26px] mt-4 opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out" />
-              <Energate className="h-4 mt-5 opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out" />
+              <Link href="/solutions/ecu8tr">
+                <Equ8 
+                  className="
+                    h-6
+                    opacity-60
+                    hover:opacity-100
+                    cursor-pointer
+                    transition-all
+                    duration-50
+                    ease-in-out
+                  "
+                />
+              </Link>
+
+              <Link href="/solutions/ecu8tr">
+                <Equ8ter
+                  className="
+                    h-[26px]
+                    mt-4
+                    opacity-60
+                    hover:opacity-100
+                    cursor-pointer
+                    transition-all
+                    duration-50
+                    ease-in-out
+                  "
+                />
+              </Link>
+
+              <Link href="/solutions/energ8te">
+                <Energate
+                  className="
+                    h-4
+                    mt-5
+                    opacity-60
+                    hover:opacity-100
+                    cursor-pointer
+                    transition-all
+                    duration-50
+                    ease-in-out
+                  "
+                />
+              </Link>
             </div>
           </div>
 

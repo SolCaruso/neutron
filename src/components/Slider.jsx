@@ -234,7 +234,7 @@ export default function Slider() {
                     designed to maximize efficiency and reliability in energy
                     and industrial power systems.
                   </p>
-                  <Link href="/#" passHref>
+                  <Link href="/solutions/energ8te" passHref>
                     <motion.div
                       className="
                         inline-flex
@@ -310,7 +310,7 @@ export default function Slider() {
                     designed to maximize efficiency and reliability in energy
                     and industrial power systems.
                   </p>
-                  <Link href="/#" passHref>
+                  <Link href="/solutions/energ8te" passHref>  
                     <motion.div
                       className="
                         inline-flex
@@ -389,7 +389,7 @@ export default function Slider() {
                     that enhance performance and ensure safety across automotive
                     and industrial applications.
                   </p>
-                  <Link href="/#" passHref>
+                  <Link href="/solutions/ecu8tr" passHref>
                     <motion.div
                       className="
                         inline-flex
@@ -463,7 +463,7 @@ export default function Slider() {
                     that enhance performance and ensure safety across automotive
                     and industrial applications.
                   </p>
-                  <Link href="/#" passHref>
+                  <Link href="/solutions/ecu8tr" passHref>
                     <motion.div
                       className="
                         inline-flex
@@ -542,7 +542,7 @@ export default function Slider() {
                     that meet safety, efficiency, and performance demands for
                     modern vehicles.
                   </p>
-                  <Link href="/#" passHref>
+                  <Link href="/solutions/ecu8tr" passHref>
                     <motion.div
                       className="
                         inline-flex
@@ -616,7 +616,7 @@ export default function Slider() {
                     that meet safety, efficiency, and performance demands for
                     modern vehicles.
                   </p>
-                  <Link href="/#" passHref>
+                  <Link href="/solutions/ecu8tr" passHref>
                     <motion.div
                       className="
                         inline-flex
