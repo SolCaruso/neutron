@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import TopRight from "@/components/icons/TopRight";
 import { motion } from "framer-motion";

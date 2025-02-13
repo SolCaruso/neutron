@@ -5,7 +5,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Down from "@/components/icons/Down";
 import RightArrow from "@/components/icons/RightArrow";
-import Equ8 from "@/components/logos/ECU8white";
 import Equ8ter from "@/components/logos/ECU8TRwhite";
 import Energate from "@/components/logos/ENERG8TEwhite";
 import Link from 'next/link';

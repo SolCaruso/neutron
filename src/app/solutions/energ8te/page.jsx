@@ -1,21 +1,17 @@
 "use client"
 
-import Nav from '@/components/nav/Nav';
 import Infineon from '@/components/Infineon'
-import Footer from '@/components/Footer'
-import BackgroundHero from '@/components/BackgroundHero'
 import Energ8te from '@/components/Energ8te'
 import Safety from "@/components/icons/Safety";
 import Scale from "@/components/icons/Scale";
 import Future from "@/components/icons/Future";
+
 
 export default function Home() {
   return (
     <div>
       <main>
         <div className="pb-20 lg:pb-32 xl:pb-52 bg-[#090A0B] overflow-x-hidden relative">
-            <BackgroundHero/>
-            <Nav className="mt-4"/>
             <div className='px-12'>
               <div className='h-full w-full m-auto mt-28 max-w-7xl'>
                 <h1 className='text-white text-3xl sm:text-5xl text-left font-bold max-w-xl uppercase tracking-wider'>Battery Energy Storage System</h1>
@@ -48,7 +44,6 @@ export default function Home() {
       </main>
       <div className="overflow-x-hidden relative">
         <Infineon/>
-        <Footer />
       </div>
         
     </div>

@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import MainNav from "./MainNav";
-import SecondaryNav from "./SecondaryNav";
 import { motion } from "framer-motion";
+import SecondaryNav from "@/components/nav/SecondaryNav";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function Nav() {
           transition={{ duration: 0.4 }}
           className="absolute inset-0"
         >
-          <SecondaryNav />
+        <SecondaryNav />
         </motion.div>
       </div>
     </div>

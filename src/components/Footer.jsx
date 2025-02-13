@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import Logo from "@/components/logos/Logo";
 import Equ8 from "@/components/logos/ECU8white";

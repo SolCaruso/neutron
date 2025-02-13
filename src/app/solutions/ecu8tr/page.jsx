@@ -1,9 +1,6 @@
 "use client"
 
-import Nav from '@/components/nav/Nav';
 import Infineon from '@/components/Infineon'
-import Footer from '@/components/Footer'
-import BackgroundHero from '@/components/BackgroundHero'
 import Ecu8tr from '@/components/Ecu8tr'
 import Purpose from "@/components/icons/Purpose";
 import Quality from "@/components/icons/Quality";
@@ -14,8 +11,6 @@ export default function Home() {
     <div>
       <main>
         <div className="pb-20 lg:pb-32 xl:pb-52 bg-[#090A0B] overflow-x-hidden relative">
-            <BackgroundHero/>
-            <Nav className="mt-4"/>
             <div className='px-12'>
               <div className='h-full w-full m-auto mt-28 max-w-7xl'>
                 <h1 className='text-white text-3xl sm:text-5xl text-left font-bold max-w-xl uppercase tracking-wider'>Battery point tester</h1>
@@ -48,7 +43,6 @@ export default function Home() {
       </main>
       <div className="overflow-x-hidden relative">
         <Infineon/>
-        <Footer />
       </div>
         
     </div>
