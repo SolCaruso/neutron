@@ -6,7 +6,6 @@ import SideScroll from '@/components/SideScroll'
 import VerticalSlider from '@/components/VerticalSlider'
 import Infineon from '@/components/Infineon'
 
-
 export default function Home() {
   return (
     <div>

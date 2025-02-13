@@ -1,5 +1,3 @@
-"use client"
-
 import Infineon from '@/components/Infineon'
 import Ecu8tr from '@/components/Ecu8tr'
 import Purpose from "@/components/icons/Purpose";
@@ -10,8 +8,8 @@ export default function Home() {
   return (
     <div>
       <main>
-        <div className="pb-20 lg:pb-32 xl:pb-52 bg-[#090A0B] overflow-x-hidden relative">
-            <div className='px-12'>
+        <div className=" bg-[#090A0B] overflow-x-hidden relative min-h-[800px]">
+            <div className='px-12 pb-20'>
               <div className='h-full w-full m-auto mt-28 max-w-7xl'>
                 <h1 className='text-white text-3xl sm:text-5xl text-left font-bold max-w-xl uppercase tracking-wider'>Battery point tester</h1>
                 <p className='text-white/60 font-geist sm:text-[20px] mt-3'>Factory-grade end of line tester.</p>

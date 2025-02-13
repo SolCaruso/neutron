@@ -1,4 +1,3 @@
-// NavLinks.jsx
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
@@ -7,7 +6,7 @@ import Down from "@/components/icons/Down";
 import RightArrow from "@/components/icons/RightArrow";
 import Equ8ter from "@/components/logos/ECU8TRwhite";
 import Energate from "@/components/logos/ENERG8TEwhite";
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function NavLinks() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +17,6 @@ export default function NavLinks() {
   // Close dropdown if click is outside the dropdown container
   useEffect(() => {
     function handleClickOutside(e) {
-      // If we have a container and the click is NOT inside it, close
       if (
         dropdownContainerRef.current &&
         !dropdownContainerRef.current.contains(e.target)
@@ -27,7 +25,6 @@ export default function NavLinks() {
       }
     }
 
-    // Listen for clicks at the document level
     document.addEventListener("click", handleClickOutside);
     return () => {
       document.removeEventListener("click", handleClickOutside);
@@ -56,8 +53,7 @@ export default function NavLinks() {
         {/* Wrap "Solutions" + Dropdown in a single <li> with a ref */}
         <li ref={dropdownContainerRef} className="relative">
           <div
-            className="text-[12px] uppercase tracking-[3px] font-semibold 
-                       hover:text-white inline-flex items-center cursor-pointer"
+            className="text-[12px] uppercase tracking-[3px] font-semibold hover:text-white inline-flex items-center cursor-pointer"
             onClick={(e) => {
               e.preventDefault();
               setIsOpen(!isOpen);
@@ -94,7 +90,10 @@ export default function NavLinks() {
             `}
           >
             <li>
-              <Link href="/solutions/ecu8tr" passHref>
+              <Link
+                href="/solutions/ecu8tr"
+                onClick={() => setIsOpen(false)}
+              >
                 <motion.div
                   initial="rest"
                   whileHover="hover"
@@ -108,7 +107,7 @@ export default function NavLinks() {
                     transition={{ duration: 0.2 }}
                     className="mr-2"
                   >
-                    <Equ8ter className="h-[23px] " />
+                    <Equ8ter className="h-[23px]" />
                   </motion.div>
                   <motion.div
                     variants={arrowVariants}
@@ -121,7 +120,10 @@ export default function NavLinks() {
               </Link>
             </li>
             <li>
-              <Link href="/solutions/energ8te" passHref>
+              <Link
+                href="/solutions/energ8te"
+                onClick={() => setIsOpen(false)}
+              >
                 <motion.div
                   initial="rest"
                   whileHover="hover"
@@ -147,7 +149,6 @@ export default function NavLinks() {
                 </motion.div>
               </Link>
             </li>
-            
           </ul>
         </li>
 
