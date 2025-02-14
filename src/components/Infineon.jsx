@@ -3,7 +3,7 @@
 import React from "react";
 import TopRight from "@/components/icons/TopRight";
 import { motion } from "framer-motion";
-import InfineonIcon from "@/components/icons/Infineon";
+import InfineonIcon from "@/components/AnimatedInfineon";
 
 // Framer Motion variants for the arrow
 const arrowVariants = {
@@ -141,7 +141,7 @@ function Infineon() {
         <div className="border-t border-[#1B1C1E] py-6" />
 
         {/* ROW 2: polka‐dot behind the image */}
-        <div className="relative border-y border-[#1B1C1E] flex justify-center py-8 overflow-hidden">
+        <div className="relative border-y border-[#1B1C1E] flex items-center justify-center py-8 overflow-hidden">
           <div
             className="
               absolute inset-0 z-0
@@ -151,7 +151,7 @@ function Infineon() {
             "
           />
           {/* Image sits on top */}
-          <div className="relative w-[796px] aspect-[488/385]">
+          <div className="relative w-[796px] aspect-[488/385] flex items-center justify-center">
             <InfineonIcon className="object-contain" />
           </div>
         </div>

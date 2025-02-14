@@ -3,7 +3,7 @@ import React from "react";
 import NavLogo from "@/components/logos/Logo";
 import NavLinks from "./NavLinks";
 import ContactButton from "./ContactButton";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import MobileNavDropdown from "./MobileNavDropdown";
 import Link from 'next/link';
 
@@ -18,9 +18,14 @@ const Path = (props) => (
 );
 
 export default function MainNav({ isOpen, setIsOpen }) {
+
+  const mainNavHeight = 106;
+  // Dropdown extra height (adjust based on your mobile links height)
+  const dropdownExtraHeight = 200;
+
   return (
     <header className="relative md/lg:px-4 md/lg:pt-4">
-      <div
+      <motion.div
         className="
           text-white
           bg-gradient-to-t from-[#0f0e0e] to-black/70 
@@ -37,6 +42,8 @@ export default function MainNav({ isOpen, setIsOpen }) {
           items-center
           relative
         "
+         animate={{ height: isOpen ? mainNavHeight + dropdownExtraHeight : mainNavHeight }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
       >
         {/* Logo */}
         <Link href="/">
@@ -89,10 +96,33 @@ export default function MainNav({ isOpen, setIsOpen }) {
             </motion.svg>
           </motion.button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Mobile nav only if isOpen === true */}
-      {isOpen && <MobileNavDropdown closeMenu={() => setIsOpen(false)} />}
+      <AnimatePresence>
+          {isOpen && (
+            <motion.nav
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="absolute top-[85px] left-0 w-full flex flex-col items-center text-white text-[18px] pt-6 space-y-6"
+            >
+              <Link href="/services" onClick={() => setIsOpen(false)}>
+                Services
+              </Link>
+              <Link href="/about" onClick={() => setIsOpen(false)}>
+                About
+              </Link>
+              <Link href="/careers" onClick={() => setIsOpen(false)}>
+                Careers
+              </Link>
+              <Link href="/contact" onClick={() => setIsOpen(false)}>
+                Contact
+              </Link>
+            </motion.nav>
+          )}
+        </AnimatePresence>
     </header>
   );
 }
