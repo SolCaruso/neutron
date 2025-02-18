@@ -2,17 +2,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import InfineonIcon from "@/components/icons/Infineon";
 
-export default function AnimatedInfineon() {
+export default function AnimatedInfineon({ className = "", ...props }) {
   const containerRef = useRef(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // When at least 50% is visible, mark as active
+        // When any part is visible, mark as active
         setInView(entry.isIntersecting);
       },
-      { threshold: 0.5 }
+      { threshold: 0.01 } // lower threshold so mobile doesn't miss it
     );
     if (containerRef.current) {
       observer.observe(containerRef.current);
@@ -25,9 +25,9 @@ export default function AnimatedInfineon() {
   return (
     <div
       ref={containerRef}
-      className={`animate-svg ${inView ? "active" : ""}`}
+      className={`animate-svg ${inView ? "active" : ""} w-full h-full`}
     >
-      <InfineonIcon />
+      <InfineonIcon className={className} {...props} />
     </div>
   );
 }

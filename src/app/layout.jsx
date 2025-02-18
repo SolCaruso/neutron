@@ -5,7 +5,7 @@ import NoiseOverlay from '@/components/NoiseOverlay'
 import '@/styles/tailwind.css'
 import { Montserrat } from 'next/font/google'
 import localFont from 'next/font/local'
-import Footer from '@/components/Footer'
+
 import Nav from '@/components/nav/Nav';
 import BackgroundHero from '@/components/BackgroundHero'
 
@@ -37,15 +37,14 @@ export default function RootLayout({ children }) {
   
   return (
     <html lang="en" className={`${montserrat.variable} ${geistMono.variable}`}>
-      <body className="relative z-10">
+      <body className="relative">
           <DigitalBackground />
           <NoiseOverlay />
-          <div className="bg-[#090A0B] z-10 relative">
-              <BackgroundHero/>
-              <Nav className="mt-4"/>
+          <div className="bg-[#090A0B] relative">
+            <Nav className='mt-4 relative z-50'/>
+            <BackgroundHero/>
           </div>
           {children}
-          <Footer />
       </body>
     </html>
   )

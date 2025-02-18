@@ -20,12 +20,12 @@ export default function Nav() {
       <div className="relative w-full" style={{ height: "48px" }}>
         <motion.div
           // fade out when isOpen === true, fade in otherwise
-          initial={{ opacity: 1 }}
-          animate={{ opacity: isOpen ? 0 : 1 }}
-          transition={{ duration: 0.4 }}
+          // initial={{ opacity: 1 }}
+          // animate={{ opacity: isOpen ? 0 : 1 }}
+          // transition={{ duration: 0.4 }}
           className="absolute inset-0"
         >
-        <SecondaryNav />
+        <SecondaryNav/>
         </motion.div>
       </div>
     </div>

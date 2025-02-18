@@ -151,8 +151,8 @@ function Infineon() {
             "
           />
           {/* Image sits on top */}
-          <div className="relative w-[796px] aspect-[488/385] flex items-center justify-center">
-            <InfineonIcon className="object-contain" />
+          <div className="relative w-full max-w-[796px] mx-auto aspect-[488/385] flex items-center justify-center">
+          <InfineonIcon className="object-contain" />
           </div>
         </div>
 

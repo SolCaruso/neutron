@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function DownloadButton() {
   return (
-          <Link href="#" passHref>
+          <Link href="/contact" passHref>
             <motion.div
               className="
                 items-center 
@@ -14,7 +14,7 @@ export default function DownloadButton() {
                 min-h-[40px]
                 sm:min-h-[44px]
                 px-3
-                hidden xs:inline-flex 
+                hidden lg:inline-flex 
                 sm:px-[18px] py-1.5
                 text-[12px]
                 sm:text-[13px] 

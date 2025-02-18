@@ -4,8 +4,9 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Down from "@/components/icons/Down";
 import RightArrow from "@/components/icons/RightArrow";
-import Equ8ter from "@/components/logos/ECU8TRwhite";
-import Energate from "@/components/logos/ENERG8TEwhite";
+import Equ8 from "@/components/logos/ECU8";
+import Equ8ter from "@/components/logos/ECU8TR";
+import Energate from "@/components/logos/ENERG8TE";
 import Link from "next/link";
 
 export default function NavLinks() {
@@ -48,7 +49,7 @@ export default function NavLinks() {
   };
 
   return (
-    <nav className="hidden md/lg:block">
+    <nav className="hidden lg:block">
       <ul className="flex justify-center gap-12 list-none m-0 p-0 text-[#C7C2BE]">
         {/* Wrap "Solutions" + Dropdown in a single <li> with a ref */}
         <li ref={dropdownContainerRef} className="relative">
@@ -153,28 +154,28 @@ export default function NavLinks() {
         </li>
 
         <li>
-          <a
-            href="#"
+          <Link
+            href="/services"
             className="text-[12px] uppercase tracking-[3px] font-semibold hover:text-white"
           >
             Services
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#"
+          <Link
+            href="/about"
             className="text-[12px] uppercase tracking-[3px] font-semibold hover:text-white"
           >
             About
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#"
+          <Link
+            href="/careers"
             className="text-[12px] uppercase tracking-[3px] font-semibold hover:text-white"
           >
             Careers
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

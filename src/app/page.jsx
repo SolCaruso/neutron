@@ -5,13 +5,14 @@ import Hero from '@/components/Hero'
 import SideScroll from '@/components/SideScroll'
 import VerticalSlider from '@/components/VerticalSlider'
 import Infineon from '@/components/Infineon'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
     <div>
       <main>
         <div className="pb-96 bg-[#090A0B] overflow-x-hidden relative">
-            <Hero />
+            <Hero/>
             <SideScroll />
         </div>
         <div className="py-24 overflow-x-hidden relative">
@@ -29,8 +30,8 @@ export default function Home() {
       </main>
       <div className="overflow-x-hidden relative">
         <Infineon/>
+        <Footer/>
       </div>
-        
     </div>
   );
 }

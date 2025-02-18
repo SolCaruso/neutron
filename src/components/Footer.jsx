@@ -2,9 +2,9 @@
 
 import React from "react";
 import Logo from "@/components/logos/Logo";
-import Equ8 from "@/components/logos/ECU8white";
-import Equ8ter from "@/components/logos/ECU8TRwhite";
-import Energate from "@/components/logos/ENERG8TEwhite";
+import Equ8 from "@/components/logos/ECU8";
+import Equ8ter from "@/components/logos/ECU8TR";
+import Energate from "@/components/logos/ENERG8TE";
 import BackgroundFooter from '@/components/BackgroundFooter';
 import LinkedIn from '@/components/icons/LinkedIn';
 import { motion } from "framer-motion";
@@ -87,7 +87,7 @@ export default function Footer() {
               <Link href="/solutions/energ8te">
                 <Energate
                   className="
-                    h-4
+                    h-[16.5px]
                     mt-5
                     opacity-60
                     hover:opacity-100
@@ -120,7 +120,9 @@ export default function Footer() {
         <div className="mt-14 flex flex-col xs:flex-row items-center justify-between gap-4 max-w-7xl mx-auto">
           {/* Left: Neutron Controls logo */}
           <div className="flex-shrink-0">
-            <Logo className="h-16" />
+            <Link href="/">
+              <Logo className="h-16" />
+            </Link>
           </div>
           
           {/* Right: Social or "Follow us" */}

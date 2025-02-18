@@ -17,7 +17,7 @@ export default function BackgroundHero() {
         max-w-full
         bg-no-repeat 
         bg-top
-
+        z-10
         [background:radial-gradient(
           50%_50%_at_50%_-20%,
           rgba(255,99,99,0.08)_0,

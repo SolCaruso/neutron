@@ -29,7 +29,7 @@ export default function SecondaryNav() {
   }, []);
 
   return (
-    <div className="md/lg:px-4">
+    <div className="md/lg:px-4 hidden lg:block relative z-20">
       {/* The container is initially hidden (opacity-0).
           When isReady becomes true (everything is ready),
           the transition moves it to opacity-100. */}
