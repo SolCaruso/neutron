@@ -6,15 +6,15 @@ export default function BackgroundHero() {
     <div
       className="
         absolute 
-        top-24
-        sm:top-0 
+        top-0
         left-1/2 
         -translate-x-1/2 
         pointer-events-none
         overflow-hidden
         w-[1064px] 
         h-[385px]
-        max-w-full
+        max-w-[175%]
+        sm:max-w-full
         bg-no-repeat 
         bg-top
         z-10

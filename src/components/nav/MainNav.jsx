@@ -18,6 +18,24 @@ const Path = (props) => (
   />
 );
 
+// Variants for the container that staggers its children
+const dropdownContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+  exit: {},
+};
+
+// Variants for each dropdown item (animates from above)
+const dropdownItemVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -20 },
+};
+
 export default function MainNav({ isOpen, setIsOpen }) {
   const navRef = useRef(null);
   const mainNavHeight = 106;
@@ -30,7 +48,7 @@ export default function MainNav({ isOpen, setIsOpen }) {
     function updateHeight() {
       if (window.innerWidth < 640) {
         // Adjust this value as needed for mobile screens
-        setMobileDropdownExtraHeight(450);
+        setMobileDropdownExtraHeight(400);
       } else {
         setMobileDropdownExtraHeight(dropdownExtraHeight);
       }
@@ -139,28 +157,29 @@ export default function MainNav({ isOpen, setIsOpen }) {
           </div>
         </div>
 
-        {/* Mobile Nav Links */}
+        {/* Dropdown Content with Items Animating from Top to Bottom */}
         <AnimatePresence>
           {isOpen && (
             <motion.nav
+              variants={dropdownContainerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              transition={{ duration: 0.3, ease: "easeOut" }}
               onClick={(e) => {
                 // If the click did not occur within a link, close the nav.
                 if (!e.target.closest("a")) {
                   setIsOpen(false);
                 }
               }}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="-full flex sm:flex-row flex-col justify-around items-stretch pt-10 sm:pt-12 pb-8 pl-6 sm:pl-0"
+              className="left-8 w-full flex sm:flex-row flex-col justify-around items-stretch pt-10 sm:pt-12 pb-8 pl-6 sm:pl-0"
             >
-              {/* Company Links */}
-              <div className="flex flex-col">
+              {/* Company Links Group */}
+              <motion.div variants={dropdownItemVariants} className="flex flex-col">
                 <p className="sm:text-base text-sm font-bold mb-6 text-black uppercase tracking-[7px]">
                   Company
                 </p>
-                <div className="flex flex-col space-y-3 sm:space-y-4 text-[13px] sm:text-[14px] uppercase tracking-[3px] font-semibold text-gray-500 ">
+                <div className="flex flex-col space-y-3 sm:space-y-4 text-[13px] sm:text-[14px] uppercase tracking-[3px] font-semibold text-gray-500">
                   <Link
                     href="/services"
                     className="hover:text-black"
@@ -190,19 +209,22 @@ export default function MainNav({ isOpen, setIsOpen }) {
                     Contact
                   </Link>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Divider */}
-              <div className="w-[1.5px] bg-black/10 mx-8 self-stretch sm:block hidden" />
+              <motion.div
+                variants={dropdownItemVariants}
+                className="w-[1.5px] bg-black/10 mx-8 self-stretch sm:block hidden"
+              />
 
-              {/* Solutions Icons */}
-              <div className="flex flex-col mt-10 sm:mt-0">
+              {/* Solutions Icons Group */}
+              <motion.div variants={dropdownItemVariants} className="flex flex-col mt-10 sm:mt-0">
                 <p className="sm:text-base text-sm font-bold mb-6 text-black uppercase tracking-[7px]">
                   Solutions
                 </p>
                 <div className="flex flex-col">
                   <Link href="/solutions/ecu8tr" onClick={() => setIsOpen(false)}>
-                    <Equ8 
+                    <Equ8
                       className="h-[18px] sm:h-[22px] opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out"
                     />
                   </Link>
@@ -217,7 +239,7 @@ export default function MainNav({ isOpen, setIsOpen }) {
                     />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             </motion.nav>
           )}
         </AnimatePresence>

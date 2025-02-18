@@ -105,7 +105,7 @@ const Numbers = ({
 
       {/* Displayed Number */}
       <div>
-        <h1 className="sm:text-[120px] text-6xl font-medium text-[#566FE3] mt-4 sm:mt-0 sm:py-8">
+        <h1 className="sm:text-[120px] text-5xl xs:text-6xl font-medium text-[#566FE3] mt-4 sm:mt-0 sm:py-8">
           {activeTab === "money"
             ? `$${displayNumber.toLocaleString()}`
             : displayNumber.toLocaleString()}
