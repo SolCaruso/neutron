@@ -85,17 +85,23 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
         initial={{
           opacity: 0,
           height: mainNavHeight,
-          background: "linear-gradient(to top, #0f0e0e, rgba(0,0,0,0.7))"
+          background: "linear-gradient(to top, #0f0e0e, rgba(0,0,0,0.7))",
+          boxShadow: "0 4px 4px rgba(0,0,0,0.25)",
         }}
         animate={{
           opacity: secondaryNavReady ? 1 : 0,
-          height: isOpen ? mainNavHeight + mobileDropdownExtraHeight : mainNavHeight,
+          height: isOpen
+            ? mainNavHeight + mobileDropdownExtraHeight
+            : mainNavHeight,
           background: isOpen
             ? "linear-gradient(to top, rgba(255,255,255,0.8), rgba(255,255,255,0.9))"
-            : "linear-gradient(to top, #0f0e0e, rgba(0,0,0,0.7))"
+            : "linear-gradient(to top, #0f0e0e, rgba(0,0,0,0.7))",
+          boxShadow: isOpen
+            ? "0 8px 20px rgba(0,0,0,0.3)" // stronger shadow when open (visible from the bottom)
+            : "0 4px 4px rgba(0,0,0,0.25)", // subtler shadow when closed
         }}
         transition={{ duration: 0.3, ease: "easeOut" }}
-        className="shadow-[0px_-4px_4px_0px_rgba(0,0,0,0.25)] backdrop-blur-[40px] rounded-lg lg:rounded-b-none lg:rounded-t-lg max-w-8xl mx-auto py-6 px-3.5 flex flex-col relative"
+        className="backdrop-blur-[40px] rounded-lg lg:rounded-b-none lg:rounded-t-lg max-w-8xl mx-auto py-6 px-3.5 flex flex-col relative"
       >
         {/* Top Navigation Row */}
         <div className="flex justify-between items-center">
@@ -184,16 +190,32 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
                   Company
                 </p>
                 <div className="flex flex-col space-y-3 sm:space-y-4 text-[13px] sm:text-[14px] uppercase tracking-[3px] font-semibold text-gray-500">
-                  <Link href="/services" className="hover:text-black" onClick={() => setIsOpen(false)}>
+                  <Link
+                    href="/services"
+                    className="hover:text-black"
+                    onClick={() => setIsOpen(false)}
+                  >
                     Services
                   </Link>
-                  <Link href="/about" className="hover:text-black" onClick={() => setIsOpen(false)}>
+                  <Link
+                    href="/about"
+                    className="hover:text-black"
+                    onClick={() => setIsOpen(false)}
+                  >
                     About
                   </Link>
-                  <Link href="/careers" className="hover:text-black" onClick={() => setIsOpen(false)}>
+                  <Link
+                    href="/careers"
+                    className="hover:text-black"
+                    onClick={() => setIsOpen(false)}
+                  >
                     Careers
                   </Link>
-                  <Link href="/contact" className="hover:text-black" onClick={() => setIsOpen(false)}>
+                  <Link
+                    href="/contact"
+                    className="hover:text-black"
+                    onClick={() => setIsOpen(false)}
+                  >
                     Contact
                   </Link>
                 </div>
@@ -206,7 +228,10 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
               />
 
               {/* Solutions Icons Group */}
-              <motion.div variants={dropdownItemVariants} className="flex flex-col mt-10 sm:mt-0">
+              <motion.div
+                variants={dropdownItemVariants}
+                className="flex flex-col mt-10 sm:mt-0"
+              >
                 <p className="sm:text-base text-sm font-bold mb-6 text-black uppercase tracking-[7px]">
                   Solutions
                 </p>

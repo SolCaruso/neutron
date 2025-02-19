@@ -17,13 +17,15 @@ export default function Home() {
             <SideScroll />
         </div>
         <div className="py-24 overflow-x-hidden relative">
-          <Partners/>
-          <Slider/>
-          <Numbers 
-            timeValue={500000}   // e.g. 500k
-            moneyValue={30000000} // e.g. 3 million
-            duration={500}      // 4 seconds
-          />
+          <div className='relative z-30'>
+            <Partners/>
+            <Slider/>
+            <Numbers 
+              timeValue={500000}   // e.g. 500k
+              moneyValue={30000000} // e.g. 3 million
+              duration={500}      // 4 seconds
+            />
+          </div>
           <DigitalBackground />
           <NoiseOverlay />
         </div>

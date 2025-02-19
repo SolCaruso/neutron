@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${geistMono.variable}`}>
       <body className="relative overflow-x-hidden">
-          <div className="bg-[#090A0B] relative">
+          <div className="bg-[#090A0B] relative ">
             <Nav className='mt-4 relative z-50'/>
             <BackgroundHero/>
           </div>
