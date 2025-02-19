@@ -36,10 +36,10 @@ const dropdownItemVariants = {
   exit: { opacity: 0, y: -20 },
 };
 
-export default function MainNav({ isOpen, setIsOpen }) {
+export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
   const navRef = useRef(null);
   const mainNavHeight = 106;
-  const dropdownExtraHeight = 300; 
+  const dropdownExtraHeight = 300;
   const [mobileDropdownExtraHeight, setMobileDropdownExtraHeight] =
     useState(dropdownExtraHeight);
 
@@ -82,13 +82,17 @@ export default function MainNav({ isOpen, setIsOpen }) {
       className="absolute lg:relative top-0 left-0 w-full z-50 px-4 pt-4"
     >
       <motion.div
+        initial={{
+          opacity: 0,
+          height: mainNavHeight,
+          background: "linear-gradient(to top, #0f0e0e, rgba(0,0,0,0.7))"
+        }}
         animate={{
-          height: isOpen
-            ? mainNavHeight + mobileDropdownExtraHeight
-            : mainNavHeight,
+          opacity: secondaryNavReady ? 1 : 0,
+          height: isOpen ? mainNavHeight + mobileDropdownExtraHeight : mainNavHeight,
           background: isOpen
             ? "linear-gradient(to top, rgba(255,255,255,0.8), rgba(255,255,255,0.9))"
-            : "linear-gradient(to top, #0f0e0e, rgba(0,0,0,0.7))",
+            : "linear-gradient(to top, #0f0e0e, rgba(0,0,0,0.7))"
         }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         className="shadow-[0px_-4px_4px_0px_rgba(0,0,0,0.25)] backdrop-blur-[40px] rounded-lg lg:rounded-b-none lg:rounded-t-lg max-w-8xl mx-auto py-6 px-3.5 flex flex-col relative"
@@ -180,32 +184,16 @@ export default function MainNav({ isOpen, setIsOpen }) {
                   Company
                 </p>
                 <div className="flex flex-col space-y-3 sm:space-y-4 text-[13px] sm:text-[14px] uppercase tracking-[3px] font-semibold text-gray-500">
-                  <Link
-                    href="/services"
-                    className="hover:text-black"
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link href="/services" className="hover:text-black" onClick={() => setIsOpen(false)}>
                     Services
                   </Link>
-                  <Link
-                    href="/about"
-                    className="hover:text-black"
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link href="/about" className="hover:text-black" onClick={() => setIsOpen(false)}>
                     About
                   </Link>
-                  <Link
-                    href="/careers"
-                    className="hover:text-black"
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link href="/careers" className="hover:text-black" onClick={() => setIsOpen(false)}>
                     Careers
                   </Link>
-                  <Link
-                    href="/contact"
-                    className="hover:text-black"
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link href="/contact" className="hover:text-black" onClick={() => setIsOpen(false)}>
                     Contact
                   </Link>
                 </div>
@@ -224,19 +212,13 @@ export default function MainNav({ isOpen, setIsOpen }) {
                 </p>
                 <div className="flex flex-col">
                   <Link href="/solutions/ecu8tr" onClick={() => setIsOpen(false)}>
-                    <Equ8
-                      className="h-[18px] sm:h-[22px] opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out"
-                    />
+                    <Equ8 className="h-[18px] sm:h-[22px] opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out" />
                   </Link>
                   <Link href="/solutions/ecu8tr" onClick={() => setIsOpen(false)}>
-                    <Equ8ter
-                      className="h-[20px] sm:h-[26px] mt-4 opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out"
-                    />
+                    <Equ8ter className="h-[20px] sm:h-[26px] mt-4 opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out" />
                   </Link>
                   <Link href="/solutions/energ8te" onClick={() => setIsOpen(false)}>
-                    <Energate
-                      className="h-[14px] sm:h-[17px] mt-5 opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out"
-                    />
+                    <Energate className="h-[14px] sm:h-[17px] mt-5 opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out" />
                   </Link>
                 </div>
               </motion.div>

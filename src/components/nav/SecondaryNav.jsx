@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import TopRight from "@/components/icons/TopRight";
 
-export default function SecondaryNav() {
+export default function SecondaryNav({ setSecondaryNavReady }) {
   const [isReady, setIsReady] = useState(false);
   const scrollerRef = useRef(null);
 
@@ -26,7 +26,8 @@ export default function SecondaryNav() {
     // Once the duplication and attribute setup are done,
     // mark everything as ready so the fade-in effect triggers.
     setIsReady(true);
-  }, []);
+    if (setSecondaryNavReady) setSecondaryNavReady(true);
+  }, [setSecondaryNavReady]);
 
   return (
     <div className="md/lg:px-4 hidden lg:block relative z-20">
