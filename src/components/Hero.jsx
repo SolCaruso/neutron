@@ -39,6 +39,7 @@ export default function Hero() {
               className="sm:text-[45px] 2xl:text-6xl font-bold sm:leading-normal text-[30px] leading-[38px] uppercase pt-4 sm:pt-4 2xl:pt-8 text-white tracking-wider"
             >
               test your strength
+              
             </motion.h1>
             
             {/* Subtitle */}

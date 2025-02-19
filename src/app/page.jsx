@@ -5,7 +5,8 @@ import Hero from '@/components/Hero'
 import SideScroll from '@/components/SideScroll'
 import VerticalSlider from '@/components/VerticalSlider'
 import Infineon from '@/components/Infineon'
-import Footer from '@/components/Footer'
+import DigitalBackground from '@/components/DigitalBackground'
+import NoiseOverlay from '@/components/NoiseOverlay'
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
             moneyValue={30000000} // e.g. 3 million
             duration={500}      // 4 seconds
           />
+          <DigitalBackground />
+          <NoiseOverlay />
         </div>
         <div>
           <VerticalSlider/>
@@ -30,7 +33,6 @@ export default function Home() {
       </main>
       <div className="overflow-x-hidden relative">
         <Infineon/>
-        <Footer/>
       </div>
     </div>
   );

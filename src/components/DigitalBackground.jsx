@@ -3,7 +3,7 @@ import React from "react";
 
 export default function DigitalBackground() {
   return (
-    <div className="hidden 2sm:block fixed inset-0 -z-10 pointer-events-none digital-background">
+    <div className="hidden 2sm:block absolute inset-0 -z-10 pointer-events-none digital-background">
       <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
           {/* Define the pattern of small grey dots */}

@@ -1,13 +1,11 @@
 // Layout.jsx
 import '@/styles/tailwind.css'
-import DigitalBackground from '@/components/DigitalBackground'
-import NoiseOverlay from '@/components/NoiseOverlay'
 import '@/styles/tailwind.css'
 import { Montserrat } from 'next/font/google'
 import localFont from 'next/font/local'
-
-import Nav from '@/components/nav/Nav';
+import Nav from '@/components/nav/Nav'
 import BackgroundHero from '@/components/BackgroundHero'
+import Footer from '@/components/Footer'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -37,14 +35,13 @@ export default function RootLayout({ children }) {
   
   return (
     <html lang="en" className={`${montserrat.variable} ${geistMono.variable}`}>
-      <body className="relative">
-          <DigitalBackground />
-          <NoiseOverlay />
+      <body className="relative overflow-x-hidden">
           <div className="bg-[#090A0B] relative">
             <Nav className='mt-4 relative z-50'/>
             <BackgroundHero/>
           </div>
           {children}
+          <Footer/>
       </body>
     </html>
   )
