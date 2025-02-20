@@ -76,7 +76,7 @@
     cursor: pointer; /* So it behaves like a button/link */
   }
   
-  /* Inner pill styling (like Raycast's .HeroAnnouncement_announcement__TOQds) */
+
   .wishlistAnnouncement {
     display: flex;
     flex-wrap: nowrap;
@@ -96,7 +96,7 @@
     display: flex;
     flex-wrap: nowrap;
     gap: 0.5rem; /* or var(--spacing-0-5) if you have a variable */
-    color: #ccc; /* Raycast uses var(--grey-200) */
+    color: #ccc; 
     white-space: nowrap;
   }
   

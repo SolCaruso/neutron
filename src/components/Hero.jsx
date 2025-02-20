@@ -9,7 +9,7 @@ import styles from "./WishList.module.css";
 export default function Hero() {
 
   return (
-    <div className="overflow-hidden text-gray-900 px-2 max-w-full relative z-10">
+    <div className="text-gray-900 px-2 max-w-full relative z-30">
       {/* Parent Container */}
       <div className="flex flex-col items-center gap-14 lg:gap-32 py-20 sm:py-24 lg:py-40 2xl:pb-64 ">
         <div className="text-center flex flex-col items-center">
@@ -19,7 +19,7 @@ export default function Hero() {
               <div className={`${styles.wishlistOuter} ${styles.wishlistAnimate}`}>
                 <div className={` ${styles.wishlistAnnouncement} sm:h-[38px] h-[34px] sm:py-[4px] sm:px-[12px] px-[8px]`}>
                   <Bolt className="w-4 text-red-600 ml-2"/>
-                  <span className="gradient-text text-transparent animate-gradient text-white lg:text-[16px] text-[12px] font-semibold uppercase tracking-[2px] bg-black py-2 pr-2 rounded-full flex gap-2">
+                  <span className="gradient-text text-transparent animate-gradient text-white lg:text-[16px] text-[12px] font-semibold uppercase tracking-[2px] py-2 pr-2 rounded-full flex gap-2">
                     <span className="hidden 2xl:block">BMS Controls & </span>ESS Solutions
                   </span>
                 </div>

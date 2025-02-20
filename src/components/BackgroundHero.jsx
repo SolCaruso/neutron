@@ -13,8 +13,7 @@ export default function BackgroundHero() {
         overflow-hidden
         w-[1064px] 
         h-[385px]
-        max-w-[175%]
-        sm:max-w-full
+        max-w-full
         bg-no-repeat 
         bg-top
         z-10

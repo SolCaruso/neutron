@@ -1,4 +1,3 @@
-
 export default function Example() {
   return (
     <div className="bg-gray-50 pt-24 sm:pt-32">

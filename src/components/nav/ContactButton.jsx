@@ -12,15 +12,14 @@ export default function DownloadButton() {
                 justify-center
                 gap-2
                 min-h-[40px]
-                sm:min-h-[44px]
+                sm:min-h-[43px]
                 px-3
                 hidden lg:inline-flex 
                 sm:px-[18px] py-1.5
                 text-[12px]
-                sm:text-[13px] 
-                uppercase
+                sm:text-[14px] 
                 font-semibold 
-                leading-[16px]
+                leading-[16px][#3558f2]
                 tracking-[0.2px]
                 whitespace-nowrap
                 cursor-pointer
@@ -38,7 +37,7 @@ export default function DownloadButton() {
               "
             >
               
-              <span>Contact Us</span>
+              <span>Contact us</span>
             </motion.div>
           </Link>
   );

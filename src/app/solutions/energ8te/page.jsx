@@ -4,6 +4,7 @@ import Safety from "@/components/icons/Safety";
 import Scale from "@/components/icons/Scale";
 import Future from "@/components/icons/Future";
 
+
 export default function Home() {
   return (
     <div>

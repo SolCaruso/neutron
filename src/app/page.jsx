@@ -1,7 +1,7 @@
 import Partners from '@/components/Partners'
 import Slider from '@/components/Slider'
 import Numbers from '@/components/Numbers'
-import Hero from '@/components/Hero'
+import Hero from '@/components/Hero2'
 import SideScroll from '@/components/SideScroll'
 import VerticalSlider from '@/components/VerticalSlider'
 import Infineon from '@/components/Infineon'
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div>
       <main>
-        <div className="pb-96 bg-[#090A0B] overflow-x-hidden relative">
+        <div className="pb-96 relative overflow-x-hidden bg-[#090A0B]">
             <Hero/>
             <SideScroll />
         </div>
@@ -30,7 +30,7 @@ export default function Home() {
           <NoiseOverlay />
         </div>
         <div>
-          <VerticalSlider/>
+          {/* <VerticalSlider/> */}
         </div>
       </main>
       <div className="overflow-x-hidden relative">
