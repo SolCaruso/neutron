@@ -15,12 +15,16 @@ export default function Footer() {
     <footer
       className="relative bg-[#090A0B] text-white overflow-x-hidden"
       style={{ paddingTop: "clamp(100px, calc(100vw * 0.23 + 13.79px), 200px)" }}
+      suppressHydrationWarning
     >
       {/* Background image */}
       <BackgroundFooter />
 
       {/* Content container with gradient, blur, shadow, and border */}
-      <div className="relative mx-auto z-10 w-full bg-gradient-to-t from-[#07080a] to-black/70 shadow-[0px_-4px_4px_0px_rgba(0,0,0,0.25)] border-t border-[#111213] backdrop-blur-[72px] md:pb-40 pb-12 pt-28 px-6">
+      <div
+        className="relative mx-auto z-10 w-full bg-gradient-to-t from-[#07080a] to-black/70 shadow-[0px_-4px_4px_0px_rgba(0,0,0,0.25)] border-t border-[#111213] backdrop-blur-[72px] md:pb-40 pb-12 pt-28 px-6"
+        style={{ willChange: "transform, opacity" }}
+      >
         
         {/* ============== TOP ROW: 3 Columns ============== */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
@@ -97,7 +101,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="block"
           >
-            <motion.div className="flex items-center space-x-4 group cursor-pointer">
+            <motion.div className="flex items-center space-x-4 group cursor-pointer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
               <motion.p className="hidden xs:block text-[#BABABA] group-hover:text-white transition-colors duration-50 font-medium">
                 Follow us
               </motion.p>

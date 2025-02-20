@@ -80,6 +80,7 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
     <header
       ref={navRef}
       className="absolute lg:relative top-0 left-0 w-full z-50 px-4 pt-4"
+      suppressHydrationWarning
     >
       <motion.div
         initial={{
@@ -97,19 +98,20 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
             ? "linear-gradient(to top, rgba(255,255,255,0.8), rgba(255,255,255,0.9))"
             : "linear-gradient(to top, #0f0e0e, rgba(0,0,0,0.7))",
           boxShadow: isOpen
-            ? "0 8px 20px rgba(0,0,0,0.3)" // stronger shadow when open (visible from the bottom)
-            : "0 4px 4px rgba(0,0,0,0.25)", // subtler shadow when closed
+            ? "0 8px 20px rgba(0,0,0,0.3)"
+            : "0 4px 4px rgba(0,0,0,0.25)",
         }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         className="backdrop-blur-[40px] rounded-xl lg:rounded-b-none lg:rounded-t-lg max-w-8xl mx-auto py-6 px-3.5 flex flex-col relative"
+        style={{ willChange: "transform, opacity" }} 
       >
         {/* Top Navigation Row */}
         <div className="flex justify-between items-center">
           <Link href="/" onClick={() => setIsOpen(false)}>
             {/* Wrap the logo to animate its color */}
             <motion.div
-              animate={{ color: isOpen ? "#000" : "#fff" }}
-              transition={{ duration: 0.3 }}
+              animate={{ color: isOpen ? "#000" : "#fff", opacity: [0, 1] }}
+              transition={{ duration: 0.3, delay: 0.1 }} 
             >
               <NavLogo className="w-44" />
             </motion.div>

@@ -23,6 +23,20 @@ const tiers = [
       'Marketing automations',
     ],
   },
+  {
+    name: 'Team',
+    id: 'tier-team',
+    href: '#',
+    priceMonthly: '$99',
+    description: 'Explicabo quo fugit vel facere ullam corrupti non dolores. Expedita eius sit sequi.',
+    features: [
+      'Unlimited products',
+      'Unlimited subscribers',
+      'Advanced analytics',
+      '1-hour, dedicated support response time',
+      'Marketing automations',
+    ],
+  },
 ]
 
 export default function Example() {
@@ -57,11 +71,11 @@ export default function Example() {
       <div className="flow-root bg-white pb-24 sm:pb-32">
         <div className="-mt-80">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto grid max-w-md grid-cols-1 gap-8 lg:max-w-4xl lg:grid-cols-2">
+            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {tiers.map((tier) => (
                 <div
                   key={tier.id}
-                  className="flex flex-col justify-between rounded-3xl bg-white p-8 shadow-xl ring-1 ring-gray-900/10 sm:p-10"
+                  className="flex flex-col justify-between rounded-3xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10 sm:p-8 w-full"
                 >
                   <div>
                     <h3 id={tier.id} className="text-base/7 font-semibold text-[#425ACA]">
@@ -90,7 +104,7 @@ export default function Example() {
                   </a>
                 </div>
               ))}
-              <div className="flex flex-col items-start gap-x-8 gap-y-6 rounded-3xl p-8 ring-1 ring-gray-900/10 sm:gap-y-10 sm:p-10 lg:col-span-2 lg:flex-row lg:items-center">
+              <div className="flex flex-col items-start gap-x-8 gap-y-6 rounded-3xl p-8 ring-1 ring-gray-900/10 sm:gap-y-10 sm:p-10 lg:col-span-3 lg:flex-row lg:items-center">
                 <div className="lg:min-w-0 lg:flex-1">
                   <h3 className="text-base/7 font-semibold text-[#425ACA]">Discounted</h3>
                   <p className="mt-1 text-base/7 text-gray-600">
