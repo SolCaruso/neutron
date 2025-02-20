@@ -20,7 +20,7 @@ module.exports = {
         "3sm": "465px",
         "2sm": "620px",
         "2md": "820px",
-        'md/lg': '992px',
+        '3md': '992px',
         "3xl": "2000px",
       },
       zIndex: {
@@ -36,8 +36,8 @@ module.exports = {
       },
       keyframes: {
         gradient: {
-          "0": {backgroundPosition: "0% 50%"},
-          "100%": {backgroundPosition: "100% 50%"},
+          "0%": { backgroundPosition: "0% 50%" },
+          "100%": { backgroundPosition: "100% 50%" },
         },
       },
       animation: {

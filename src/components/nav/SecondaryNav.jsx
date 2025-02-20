@@ -30,12 +30,12 @@ export default function SecondaryNav({ setSecondaryNavReady }) {
   }, [setSecondaryNavReady]);
 
   return (
-    <div className="md/lg:px-4 hidden lg:block relative z-20">
+    <div className="3md:px-4 hidden lg:block relative z-20">
       {/* The container is initially hidden (opacity-0).
           When isReady becomes true (everything is ready),
           the transition moves it to opacity-100. */}
       <div
-        className={`noise-bg sm:h-11 h-[2px] flex items-center text-white text-sm md/lg:rounded-b-lg max-w-8xl mx-auto transition-opacity duration-700 ${
+        className={`noise-bg sm:h-11 h-[2px] flex items-center text-white text-sm 3md:rounded-b-lg max-w-8xl mx-auto transition-opacity duration-700 ${
           isReady ? "opacity-100" : "opacity-0"
         }`}
       >

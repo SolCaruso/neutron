@@ -75,10 +75,10 @@ export default function Footer() {
               Company
             </h3>
             <ul className="space-y-[2px] leading-relaxed text-white/60">
-              <li><a href="/services" className="hover:text-white">Services</a></li>
-              <li><a href="/about" className="hover:text-white">About</a></li>
-              <li><a href="/careers" className="hover:text-white">Careers</a></li>
-              <li><a href="/contact" className="hover:text-white">Contact</a></li>
+              <li><Link href="/services" className="hover:text-white">Services</Link></li>
+              <li><Link href="/about" className="hover:text-white">About</Link></li>
+              <li><Link href="/careers" className="hover:text-white">Careers</Link></li>
+              <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
             </ul>
           </div>
 
