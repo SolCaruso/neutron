@@ -2,14 +2,14 @@ import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/2
 
 export default function Example() {
   return (
-    <div className="relative isolate bg-[#090A0B] overflow-x-hidden">
-        <div className="relative isolate bg-[#090A0B] py-12">
+    <div className="relative bg-[#090A0B] overflow-x-hidden">
+        <div className="relative bg-[#090A0B] py-12">
 
           <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
             <div className="relative px-6 pb-2 pt-24 lg:static lg:px-8 lg:py-48">
-              <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+              <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg ">
                 <div
-                  className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden ring-1 ring-white/5 lg:w-1/2 border-r border-white/10"
+                  className="absolute inset-y-0 left-0 w-full overflow-hidden ring-1 ring-white/5 lg:w-1/2 border-r border-white/10"
                   style={{
                     WebkitMaskImage:
                       'linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 90%)',
@@ -36,10 +36,9 @@ export default function Example() {
                     <rect fill="url(#54f88622-e7f8-4f1d-aaf9-c2f5e46dd1f2)" width="100%" height="100%" strokeWidth={0} />
                   </svg>
                 </div>
-                <h2 className="text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl">Get in touch</h2>
-                <p className="mt-6 text-lg/8 text-gray-300">
-                  Proin volutpat consequat porttitor cras nullam gravida at. Orci molestie a eu arcu. Sed ut tincidunt
-                  integer elementum id sem. Arcu sed malesuada et magna.
+                <h2 className="text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl relative z-30">Get in touch</h2>
+                <p className="mt-6 text-lg/8 text-gray-300 relative z-30">
+                  Our team is here to help with any questions you might have about optimizing energy storage and battery management systems. Feel free to reach out—we look forward to connecting with you.
                 </p>
                 <dl className="mt-10 space-y-4 text-base/7 text-gray-300">
                   <div className="flex gap-x-4">
@@ -48,20 +47,22 @@ export default function Example() {
                       <BuildingOffice2Icon aria-hidden="true" className="h-7 w-6 text-gray-400" />
                     </dt>
                     <dd>
-                      545 Mavis Island
+                    1145 Innovation Drive, Suite 101
                       <br />
-                      Chicago, IL 99191
+                      Kanata, Ontario, K2K 3G8
                     </dd>
                   </div>
                   <div className="flex gap-x-4">
                     <dt className="flex-none">
-                      <span className="sr-only">Telephone</span>
-                      <PhoneIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
+                      <span className="sr-only">Address</span>
+                      <BuildingOffice2Icon aria-hidden="true" className="h-7 w-6 text-gray-400" />
                     </dt>
                     <dd>
-                      <a href="tel:+1 (555) 234-5678" className="hover:text-white">
-                        +1 (555) 234-5678
-                      </a>
+                    <dd>
+                      5270 Solar Drive, Unit 21
+                      <br />
+                      Mississauga, Ontario, L4W 0G7
+                    </dd>
                     </dd>
                   </div>
                   <div className="flex gap-x-4">
@@ -70,8 +71,8 @@ export default function Example() {
                       <EnvelopeIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
                     </dt>
                     <dd>
-                      <a href="mailto:hello@example.com" className="hover:text-white">
-                        hello@example.com
+                      <a href="mailto:info@neutroncontrols.com" className="hover:text-white">
+                        info@neutroncontrols.com
                       </a>
                     </dd>
                   </div>

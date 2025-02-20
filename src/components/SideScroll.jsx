@@ -63,7 +63,7 @@ export default function SideScroll() {
     
     return (
       <motion.div 
-        className="absolute left-0 flex gap-4 overflow-hidden scrollContainer" 
+        className="absolute left-0 flex gap-4 overflow-hidden scrollContainer z-40" 
         ref={ref} 
         style={{ x:xTranslation}} 
         onHoverStart={() => {

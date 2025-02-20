@@ -14,7 +14,7 @@ export default function Home() {
       <main>
         <div className="pb-96 relative overflow-x-hidden bg-[#090A0B]">
             <Hero/>
-            <SideScroll />
+            <SideScroll/>
         </div>
         <div className="py-24 overflow-x-hidden relative">
           <div className='relative z-30'>

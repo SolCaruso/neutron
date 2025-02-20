@@ -18,7 +18,6 @@ const Path = (props) => (
   />
 );
 
-// Variants for the container that staggers its children
 const dropdownContainerVariants = {
   hidden: {},
   visible: {
@@ -29,7 +28,6 @@ const dropdownContainerVariants = {
   exit: {},
 };
 
-// Variants for each dropdown item (animates from above)
 const dropdownItemVariants = {
   hidden: { opacity: 0, y: -20 },
   visible: { opacity: 1, y: 0 },
@@ -44,10 +42,8 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
     useState(dropdownExtraHeight);
 
   useEffect(() => {
-    // Update mobile height based on window width
     function updateHeight() {
       if (window.innerWidth < 640) {
-        // Adjust this value as needed for mobile screens
         setMobileDropdownExtraHeight(400);
       } else {
         setMobileDropdownExtraHeight(dropdownExtraHeight);
@@ -57,6 +53,17 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
     window.addEventListener("resize", updateHeight);
     return () => window.removeEventListener("resize", updateHeight);
   }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+  
+    const handleScroll = () => {
+      setIsOpen(false);
+    };
+  
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isOpen, setIsOpen]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -82,6 +89,23 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
       className="absolute lg:relative top-0 left-0 w-full z-50 px-4 pt-4"
       suppressHydrationWarning
     >
+      {/* 1) The overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="overlay"
+            className="fixed inset-0 bg-black/40 z-40" // behind the nav (z-50)
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            // If you want clicking on the overlay to close the nav:
+            onClick={() => setIsOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* 2) The nav container */}
       <motion.div
         initial={{
           opacity: 0,
@@ -102,16 +126,15 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
             : "0 4px 4px rgba(0,0,0,0.25)",
         }}
         transition={{ duration: 0.3, ease: "easeOut" }}
-        className="backdrop-blur-[40px] rounded-xl lg:rounded-b-none lg:rounded-t-lg max-w-8xl mx-auto py-6 px-3.5 flex flex-col relative"
-        style={{ willChange: "transform, opacity" }} 
+        className="backdrop-blur-[40px] rounded-xl lg:rounded-b-none lg:rounded-t-lg max-w-8xl mx-auto py-6 px-3.5 flex flex-col relative z-50"
+        style={{ willChange: "transform, opacity" }}
       >
         {/* Top Navigation Row */}
         <div className="flex justify-between items-center">
           <Link href="/" onClick={() => setIsOpen(false)}>
-            {/* Wrap the logo to animate its color */}
             <motion.div
               animate={{ color: isOpen ? "#000" : "#fff", opacity: [0, 1] }}
-              transition={{ duration: 0.3, delay: 0.1 }} 
+              transition={{ duration: 0.3, delay: 0.1 }}
             >
               <NavLogo className="w-44" />
             </motion.div>
@@ -140,7 +163,6 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
                 animate={isOpen ? "open" : "closed"}
                 transition={{ duration: 0.3 }}
               >
-                {/* Top line */}
                 <Path
                   variants={{
                     closed: { d: "M 3 6 L 21 6" },
@@ -148,7 +170,6 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
                   }}
                   transition={{ duration: 0.3 }}
                 />
-                {/* Middle line */}
                 <Path
                   variants={{
                     closed: { d: "M 3 12 L 21 12", opacity: 1 },
@@ -156,7 +177,6 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
                   }}
                   transition={{ duration: 0.3 }}
                 />
-                {/* Bottom line */}
                 <Path
                   variants={{
                     closed: { d: "M 3 18 L 21 18" },
@@ -169,7 +189,7 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
           </div>
         </div>
 
-        {/* Dropdown Content with Items Animating from Top to Bottom */}
+        {/* Dropdown Content */}
         <AnimatePresence>
           {isOpen && (
             <motion.nav
@@ -179,15 +199,17 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
               exit="exit"
               transition={{ duration: 0.3, ease: "easeOut" }}
               onClick={(e) => {
-                // If the click did not occur within a link, close the nav.
                 if (!e.target.closest("a")) {
                   setIsOpen(false);
                 }
               }}
               className="left-8 w-full flex sm:flex-row flex-col justify-around items-stretch pt-10 sm:pt-12 pb-8 pl-6 sm:pl-0"
             >
-              {/* Company Links Group */}
-              <motion.div variants={dropdownItemVariants} className="flex flex-col">
+              {/* Company Links */}
+              <motion.div
+                variants={dropdownItemVariants}
+                className="flex flex-col"
+              >
                 <p className="sm:text-base text-sm font-bold mb-6 text-black uppercase tracking-[7px]">
                   Company
                 </p>
@@ -229,7 +251,7 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
                 className="w-[1.5px] bg-black/10 mx-8 self-stretch sm:block hidden"
               />
 
-              {/* Solutions Icons Group */}
+              {/* Solutions Icons */}
               <motion.div
                 variants={dropdownItemVariants}
                 className="flex flex-col mt-10 sm:mt-0"
@@ -244,7 +266,10 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
                   <Link href="/solutions/ecu8tr" onClick={() => setIsOpen(false)}>
                     <Equ8ter className="h-[20px] sm:h-[26px] mt-4 opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out" />
                   </Link>
-                  <Link href="/solutions/energ8te" onClick={() => setIsOpen(false)}>
+                  <Link
+                    href="/solutions/energ8te"
+                    onClick={() => setIsOpen(false)}
+                  >
                     <Energate className="h-[14px] sm:h-[17px] mt-5 opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out" />
                   </Link>
                 </div>

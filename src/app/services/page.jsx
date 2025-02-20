@@ -7,8 +7,8 @@ import {
   Cog6ToothIcon,
   FingerPrintIcon,
 } from '@heroicons/react/20/solid'
-import Image from 'next/image'
 import InfineonLogo from '@/components/logos/Infineon'
+import Link from 'next/link'
 
 const features = [
   {
@@ -32,7 +32,7 @@ const tiers = [
   {
     name: 'BMS Controls',
     id: 'tier-hobby',
-    href: '#',
+    href: '/contact',
     description: 'Elevate your battery management capabilities. Ensure reliable power and maximize energy efficiency.',
     features: ['High-performance BMS and ECU design', 'Enhanced battery longevity', 'Tailored solutions for EVs and renewables', 'Industrial-grade safety and performance'],
     icon: <Battery className="h-20 w-20" aria-hidden="true" />,
@@ -40,7 +40,7 @@ const tiers = [
   {
     name: 'Safety-Critical Design',
     id: 'tier-team',
-    href: '#',
+    href: '/contact',
     description: 'Drive safety and reliability with integrated systems that meet ISO 26262 standards.',
     features: [
       'Functional safety expertise for automotive and industrial control',
@@ -53,7 +53,7 @@ const tiers = [
   {
     name: 'Advanced Design Solutions',
     id: 'tier-enterprise',
-    href: '#',
+    href: '/contact',
     description: 'Discover the next generation of innovation with tailored advanced design solutions.',
     features: [
       'Next-generation electronic systems built to your unique vision',
@@ -67,9 +67,9 @@ const tiers = [
 
 export default function Example() {
   return (
-    <div className="isolate overflow-hidden bg-[#090A0B] relative ">
+    <div className=" overflow-hidden bg-[#090A0B]">
       <div className="mx-auto max-w-7xl px-6 pb-96 text-center pt-32 lg:px-8">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-4xl relative z-30">
           <h2 className="text-base/7 font-semibold text-[#425ACA]">Services</h2>
           <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl">
             Smarter energy solutions
@@ -104,7 +104,7 @@ export default function Example() {
                   className="flex flex-col justify-between rounded-3xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10 sm:p-8 w-full"
                 >
                   <div>
-                    <h3 id={tier.id} className="text-base/7 font-semibold text-[#425ACA]">
+                    <h3 id={tier.id} className="text-base/7 font-semibold text-[#425ACA] pb-8">
                       {tier.name}
                     </h3>
                     
@@ -124,13 +124,13 @@ export default function Example() {
                     </ul>
                   </div>
 
-                  <a
+                  <Link
                     href={tier.href}
                     aria-describedby={tier.id}
                     className="mt-8 block rounded-md bg-[#425ACA] px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#425ACA]"
                   >
                     Get started today
-                  </a>
+                  </Link>
                 </div>
               ))}
 
@@ -142,12 +142,12 @@ export default function Example() {
                   Unleash the full potential of Infineon’s AURIX™-MCUs with expert design support and tailored training, equipping you to harness cutting-edge technology for maximum performance and reliability.
                   </p>
                 </div>
-                <a
-                  href="#"
+                <Link
+                  href="/solutions/ecu8tr"
                   className="rounded-md px-3.5 py-2 text-sm/6 font-semibold text-[#425ACA] ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#425ACA]"
                 >
-                  Buy discounted license <span aria-hidden="true">&rarr;</span>
-                </a>
+                  See our solutions <span aria-hidden="true">&rarr;</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -175,7 +175,7 @@ export default function Example() {
           <div className="mx-auto flex max-w-7xl justify-center px-6 lg:px-8">
             <div className="relative w-[342px] h-[343px]">
               {/* Gradient Shadow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#4DE9FE] to-[#0419AE] blur-2xl -z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#4DE9FE] to-[#0419AE] blur-2xl"></div>
 
               {/* Computer Chip SVG */}
               <svg
