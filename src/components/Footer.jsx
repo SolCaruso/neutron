@@ -5,28 +5,25 @@ import Logo from "@/components/logos/Logo";
 import Equ8 from "@/components/logos/ECU8";
 import Equ8ter from "@/components/logos/ECU8TR";
 import Energate from "@/components/logos/ENERG8TE";
-import BackgroundFooter from '@/components/BackgroundFooter';
-import LinkedIn from '@/components/icons/LinkedIn';
+import BackgroundFooter from "@/components/BackgroundFooter";
+import LinkedIn from "@/components/icons/LinkedIn";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
 
 export default function Footer() {
   return (
     <footer
-      className="
-        relative
-        bg-[#090A0B] 
-        text-white
-      "
+      className="relative bg-[#090A0B] text-white overflow-x-hidden"
+      style={{ paddingTop: "clamp(100px, calc(100vw * 0.23 + 13.79px), 200px)" }}
     >
-    <BackgroundFooter className="z-0" />
+      {/* Background image */}
+      <BackgroundFooter />
 
-      {/* Content container */}
-      <div className="relative mx-auto md:pb-40 pb-12 pt-28 px-6 z-10 w-full bg-gradient-to-t from-[#07080a] to-black/70 shadow-[0px_-4px_4px_0px_rgba(0,0,0,0.25)] border-t border-[#111213] backdrop-blur-[72px]">
+      {/* Content container with gradient, blur, shadow, and border */}
+      <div className="relative mx-auto z-10 w-full bg-gradient-to-t from-[#07080a] to-black/70 shadow-[0px_-4px_4px_0px_rgba(0,0,0,0.25)] border-t border-[#111213] backdrop-blur-[72px] md:pb-40 pb-12 pt-28 px-6">
         
         {/* ============== TOP ROW: 3 Columns ============== */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-12 max-w-7xl mx-auto ">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
           
           {/* LOCATIONS Column */}
           <div>
@@ -38,7 +35,6 @@ export default function Footer() {
               Kanata, Ontario, K2K 3G8<br />
               Canada
             </p>
-
             <h3 className="text-sm uppercase tracking-[7px] font-semibold mb-3 text-white">
               Toronto
             </h3>
@@ -49,7 +45,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* SOLUTIONS Column (Product logos) */}
+          {/* SOLUTIONS Column */}
           <div>
             <h3 className="text-sm uppercase tracking-[7px] font-semibold mb-4 text-white">
               Solutions
@@ -57,45 +53,17 @@ export default function Footer() {
             <div>
               <Link href="/solutions/ecu8tr">
                 <Equ8 
-                  className="
-                    h-6
-                    opacity-60
-                    hover:opacity-100
-                    cursor-pointer
-                    transition-all
-                    duration-50
-                    ease-in-out
-                  "
+                  className="h-6 opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out"
                 />
               </Link>
-
               <Link href="/solutions/ecu8tr">
                 <Equ8ter
-                  className="
-                    h-[26px]
-                    mt-4
-                    opacity-60
-                    hover:opacity-100
-                    cursor-pointer
-                    transition-all
-                    duration-50
-                    ease-in-out
-                  "
+                  className="h-[26px] mt-4 opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out"
                 />
               </Link>
-
               <Link href="/solutions/energ8te">
                 <Energate
-                  className="
-                    h-[16.5px]
-                    mt-5
-                    opacity-60
-                    hover:opacity-100
-                    cursor-pointer
-                    transition-all
-                    duration-50
-                    ease-in-out
-                  "
+                  className="h-[16.5px] mt-5 opacity-60 hover:opacity-100 cursor-pointer transition-all duration-50 ease-in-out"
                 />
               </Link>
             </div>
@@ -118,31 +86,21 @@ export default function Footer() {
         
         {/* ============== BOTTOM ROW ============== */}
         <div className="mt-14 flex flex-col xs:flex-row items-center justify-between gap-4 max-w-7xl mx-auto">
-          {/* Left: Neutron Controls logo */}
           <div className="flex-shrink-0">
             <Link href="/">
               <Logo className="h-16" />
             </Link>
           </div>
-          
-          {/* Right: Social or "Follow us" */}
           <a
             href="https://www.linkedin.com/company/neutron-controls"
             target="_blank"
             rel="noopener noreferrer"
             className="block"
           >
-            <motion.div
-              className="text-sm text-gray-200 flex items-center space-x-4 group cursor-pointer"
-            >
-              {/* Follow us text */}
-              <motion.p
-                className="hidden xs:block text-[#BABABA] group-hover:text-white transition-colors duration-50 font-medium"
-              >
+            <motion.div className="flex items-center space-x-4 group cursor-pointer">
+              <motion.p className="hidden xs:block text-[#BABABA] group-hover:text-white transition-colors duration-50 font-medium">
                 Follow us
               </motion.p>
-
-              {/* LinkedIn Icon */}
               <div className="bg-white/5 rounded-[4px] p-1 group-hover:bg-white/10 transition-colors duration-50">
                 <LinkedIn className="w-5 h-4.5" />
               </div>

@@ -24,10 +24,10 @@ export default function AnimatedInfineon({ className = "", ...props }) {
 
   return (
     <div
-      ref={containerRef}
-      className={`animate-svg ${inView ? "active" : ""} w-full h-full`}
-    >
-      <InfineonIcon className={className} {...props} />
-    </div>
+  ref={containerRef}
+  className={`animate-svg ${inView ? "active" : ""} w-full h-full flex items-center justify-center`}
+>
+  <InfineonIcon className={className} {...props} />
+</div>
   );
 }

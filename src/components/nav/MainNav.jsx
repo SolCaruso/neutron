@@ -123,7 +123,7 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
             {/* Animated Hamburger / X for mobile */}
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="block lg:hidden mr-3"
+              className="block lg:hidden mr-3 p-4"
               aria-label="Toggle mobile menu"
             >
               <motion.svg
