@@ -4,6 +4,7 @@ import React from "react";
 import TopRight from "@/components/icons/TopRight";
 import { motion } from "framer-motion";
 import InfineonIcon from "@/components/AnimatedInfineon";
+import Link from 'next/link'
 
 // Framer Motion variants for the arrow
 const arrowVariants = {
@@ -51,29 +52,31 @@ function Infineon() {
           </div>
 
           {/* HOVER CONTAINER (Framer Motion) */}
-          <motion.div
-            className="p-12 pr-2 hover:bg-[#0C0D0F] cursor-pointer"
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-          >
-            <p className="text-lg leading-relaxed max-w-xs font-geist text-[#8e8f90]">
-              As an Infineon Preferred Design House, Neutron Controls brings ideas to life,
-              uniting Infineon&apos;s advanced solutions with our expert guidance.
-            </p>
-            <a
-              href="/learn-more"
-              className="inline-block font-medium text-white transition-colors font-geist pt-[56.5px]"
+          <Link
+              href="/services"
+              className=" transition-colors"
             >
-              Learn more
-              <motion.span
-                className="inline-block w-5 h-5 ml-2"
-                variants={arrowVariants}
-              >
-                <TopRight />
-              </motion.span>
-            </a>
-          </motion.div>
+            <motion.div
+              className="p-12 pr-2 hover:bg-[#0C0D0F] cursor-pointer"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+            >
+              <p className="text-lg leading-relaxed max-w-xs font-geist text-[#8e8f90]">
+                As an Infineon Preferred Design House, Neutron Controls brings ideas to life,
+                uniting Infineon&apos;s advanced solutions with our expert guidance.
+              </p>
+          
+                <p className='inline-block font-medium text-white transition-colors font-geist pt-[56.5px]'>Learn more</p>
+                <motion.span
+                  className="inline-block w-5 h-5 ml-2"
+                  variants={arrowVariants}
+                >
+                  <TopRight />
+                </motion.span>
+              
+            </motion.div>
+          </Link>
 
           <div className="border-y border-[#1B1C1E] py-6" />
           <div className="py-12" />
@@ -166,29 +169,28 @@ function Infineon() {
           </div>
 
           {/* RIGHT COLUMN: text + button with Motion hover */}
-          <motion.div
-            className="p-8 hover:bg-[#0C0D0F] cursor-pointer"
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-          >
-            <p className="text-base md:text-lg leading-relaxed max-w-xs font-geist text-[#6A6B6C] mb-6">
-              As an Infineon Preferred Design House, Neutron Controls brings ideas to life,
-              uniting Infineon&apos;s advanced solutions with our expert guidance.
-            </p>
-            <a
-              href="/learn-more"
-              className="inline-block font-medium text-white transition-colors font-geist pt-2"
+          <Link href="/services" className="block">
+            <motion.div
+              className="p-8 hover:bg-[#0C0D0F] cursor-pointer"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
             >
-              Learn more
-              <motion.span
-                className="inline-block w-5 h-5 mb-1 ml-2"
-                variants={arrowVariants}
-              >
-                <TopRight />
-              </motion.span>
-            </a>
-          </motion.div>
+              <p className="text-base md:text-lg leading-relaxed max-w-xs font-geist text-[#6A6B6C] mb-6">
+                As an Infineon Preferred Design House, Neutron Controls brings ideas to life,
+                uniting Infineon&apos;s advanced solutions with our expert guidance.
+              </p>
+              <span className="inline-block font-medium text-white transition-colors font-geist pt-2">
+                Learn more
+                <motion.span
+                  className="inline-block w-5 h-5 mb-1 ml-2"
+                  variants={arrowVariants}
+                >
+                  <TopRight />
+                </motion.span>
+              </span>
+            </motion.div>
+          </Link>
         </div>
 
         {/* ROW 4: bottom spacing */}
