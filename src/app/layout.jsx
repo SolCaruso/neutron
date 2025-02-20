@@ -34,6 +34,9 @@ export default function RootLayout({ children }) {
   
   return (
     <html lang="en" className={`${montserrat.variable} ${geistMono.variable}`}>
+      <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body>
           <div className="bg-[#090A0B]">
             <Nav className='mt-4'/>

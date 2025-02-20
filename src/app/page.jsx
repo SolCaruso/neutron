@@ -30,7 +30,7 @@ export default function Home() {
           <NoiseOverlay />
         </div>
         <div>
-          {/* <VerticalSlider/> */}
+          <VerticalSlider/>
         </div>
       </main>
       <div className="overflow-x-hidden relative">

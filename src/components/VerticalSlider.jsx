@@ -89,7 +89,6 @@ export default function VerticalSlider() {
                 opacity-90
                 hover:opacity-100
                 text-white
-                uppercase
               "
             >
               <span>Find out more</span>
@@ -102,7 +101,7 @@ export default function VerticalSlider() {
             alt="Emula8tr ESS Controller"
             width={1200}
             height={800}
-            className="w-full lg:max-w-[50vw] h-auto"
+            className="w-full max-w-full lg:max-w-[50vw] h-auto"
           />
         </div>
       </section>
@@ -156,7 +155,6 @@ export default function VerticalSlider() {
                 opacity-90
                 hover:opacity-100
                 text-white
-                uppercase
               "
             >
               
@@ -170,7 +168,7 @@ export default function VerticalSlider() {
             alt="Emula8tr ESS Controller"
             width={1200}
             height={800}
-            className="w-full lg:max-w-[50vw] h-auto"
+            className="w-full max-w-full lg:max-w-[50vw] h-auto"
           />
         </div>
       </section>

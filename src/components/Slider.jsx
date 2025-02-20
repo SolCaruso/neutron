@@ -243,8 +243,8 @@ export default function Slider() {
                         py-2
                         px-2.5
                         md:px-3.5
-                        text-[12px]
-                        font-bold
+                        text-[13.5px]
+                        font-semibold
                         tracking-[0.2px]
                         cursor-pointer
                         border-none
@@ -258,10 +258,10 @@ export default function Slider() {
                         opacity-90
                         hover:opacity-100
                         text-black
-                        uppercase
+             
                       "
                     >
-                      <span>Learn More</span>
+                      <span>Learn more</span>
                     </motion.div>
                   </Link>
                 </div>
@@ -318,8 +318,9 @@ export default function Slider() {
                         justify-center
                         py-2
                         px-2.5
-                        text-[12px]
-                        font-bold
+                        md:px-3.5
+                        text-[13.5px]
+                        font-semibold
                         tracking-[0.2px]
                         cursor-pointer
                         border-none
@@ -333,7 +334,6 @@ export default function Slider() {
                         opacity-90
                         hover:opacity-100
                         text-black
-                        uppercase
                       "
                     >
                       <span>Learn More</span>
@@ -398,8 +398,8 @@ export default function Slider() {
                         py-2
                         px-2.5
                         md:px-3.5
-                        text-[12px]
-                        font-bold
+                        text-[13.5px]
+                        font-semibold
                         tracking-[0.2px]
                         cursor-pointer
                         border-none
@@ -413,7 +413,6 @@ export default function Slider() {
                         opacity-90
                         hover:opacity-100
                         text-black
-                        uppercase
                       "
                     >
                       <span>Learn More</span>
@@ -471,8 +470,9 @@ export default function Slider() {
                         justify-center
                         py-2
                         px-2.5
-                        text-[12px]
-                        font-bold
+                        md:px-3.5
+                        text-[13.5px]
+                        font-semibold
                         tracking-[0.2px]
                         cursor-pointer
                         border-none
@@ -486,7 +486,6 @@ export default function Slider() {
                         opacity-90
                         hover:opacity-100
                         text-black
-                        uppercase
                       "
                     >
                       <span>Learn More</span>
@@ -551,8 +550,8 @@ export default function Slider() {
                         py-2
                         px-2.5
                         md:px-3.5
-                        text-[12px]
-                        font-bold
+                        text-[13.5px]
+                        font-semibold
                         tracking-[0.2px]
                         cursor-pointer
                         border-none
@@ -566,7 +565,6 @@ export default function Slider() {
                         opacity-90
                         hover:opacity-100
                         text-black
-                        uppercase
                       "
                     >
                       <span>Learn More</span>
@@ -624,8 +622,9 @@ export default function Slider() {
                         justify-center
                         py-2
                         px-2.5
-                        text-[12px]
-                        font-bold
+                        md:px-3.5
+                        text-[13.5px]
+                        font-semibold
                         tracking-[0.2px]
                         cursor-pointer
                         border-none
@@ -639,7 +638,6 @@ export default function Slider() {
                         opacity-90
                         hover:opacity-100
                         text-black
-                        uppercase
                       "
                     >
                       <span>Learn More</span>
