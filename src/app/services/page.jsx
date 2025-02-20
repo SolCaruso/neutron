@@ -160,7 +160,7 @@ export default function Example() {
       <div className="bg-gradient-to-b from-gray-900 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
-            <h2 className="text-base/7 font-semibold text-indigo-400">Custom design</h2>
+            <h2 className="text-base/7 font-semibold text-[#425ACA]">Custom design</h2>
             <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-balance sm:text-5xl">
               Infineon's Preferred Design House
             </p>
@@ -217,7 +217,7 @@ export default function Example() {
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-9">
                 <dt className="inline font-semibold text-white">
-                  <feature.icon aria-hidden="true" className="absolute left-1 top-1 size-5 text-indigo-500" />
+                  <feature.icon aria-hidden="true" className="absolute left-1 top-1 size-5 text-[#425ACA]" />
                   {feature.name}
                 </dt>{' '}
                 <dd className="inline">{feature.description}</dd>

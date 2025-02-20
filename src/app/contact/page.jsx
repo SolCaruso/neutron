@@ -3,7 +3,7 @@ import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/2
 export default function Example() {
   return (
     <div className="relative bg-[#090A0B] overflow-x-hidden">
-        <div className="relative bg-[#090A0B] py-12">
+        <div className="relative bg-[#090A0B] pt-12">
 
           <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
             <div className="relative px-6 pb-2 pt-24 lg:static lg:px-8 lg:py-48">
@@ -156,7 +156,7 @@ export default function Example() {
                 <div className="mt-8 flex justify-end">
                   <button
                     type="submit"
-                    className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                    className="rounded-md bg-[#425ACA] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                   >
                     Send message
                   </button>
