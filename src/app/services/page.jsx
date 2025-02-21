@@ -1,3 +1,5 @@
+'use client'
+
 import { CheckIcon, GlobeAltIcon, ChartBarIcon } from '@heroicons/react/20/solid'
 import Battery from '@/components/icons/Battery'
 import Design from '@/components/icons/Design'
@@ -9,6 +11,7 @@ import {
 } from '@heroicons/react/20/solid'
 import InfineonLogo from '@/components/logos/Infineon'
 import Link from 'next/link'
+import { useState, useEffect, useRef } from 'react'
 
 const features = [
   {
@@ -76,6 +79,26 @@ const tiers = [
 ]
 
 export default function Example() {
+
+  const [isVisible, setIsVisible] = useState(false)
+  const infineonRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+            observer.disconnect()
+          }
+        })
+      },
+      { threshold: 0.2 } // Adjust threshold as needed
+    )
+    if (infineonRef.current) observer.observe(infineonRef.current)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <div className=" overflow-hidden bg-[#090A0B]">
       <div className="mx-auto max-w-7xl px-6 pb-96 text-center pt-32 lg:px-8">
@@ -165,9 +188,9 @@ export default function Example() {
       </div>
 
 
-      {/* TEST IFINEON SECITON */}
+      {/* INFINEON SECITON */}
 
-      <div className="bg-gradient-to-b from-gray-900 py-24 sm:py-32">
+      <div ref={infineonRef} className="bg-gradient-to-b from-gray-900 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
             <h2 className="text-base/7 font-semibold text-[#425ACA]">Custom design</h2>
@@ -180,19 +203,26 @@ export default function Example() {
           </div>
         </div>
 
-
-        <div className="relative py-16 ">
+        <div className="relative py-16">
           <div className="mx-auto flex max-w-7xl justify-center px-6 lg:px-8">
             <div className="relative w-[342px] h-[343px]">
-              {/* Gradient Shadow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#4DE9FE] to-[#0419AE] blur-2xl"></div>
+              {/* Gradient Shadow Effect (fade in immediately) */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-tr from-[#4DE9FE] to-[#0419AE] blur-2xl ${
+                  isVisible ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0'
+                }`}
+                style={{ transitionDelay: '0ms' }}
+              ></div>
 
-              {/* Computer Chip SVG */}
+              {/* Computer Chip SVG (fade in and lift with a slight delay) */}
               <svg
                 viewBox="0 0 342 344"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="absolute inset-0 h-full w-full"
+                className={`absolute inset-0 h-full w-full ${
+                  isVisible ? 'opacity-100 translate-y-0 transition-all duration-1000' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: '200ms' }}
               >
                 <defs>
                   <linearGradient
@@ -210,8 +240,13 @@ export default function Example() {
                 <rect width="342" height="343" fill="url(#gradient)" />
               </svg>
 
-              {/* Centered container for logo and text */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
+              {/* Centered container for logo and text (also animated) */}
+              <div
+                className={`absolute inset-0 flex flex-col items-center justify-center ${
+                  isVisible ? 'opacity-100 translate-y-0 transition-all duration-1000' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: '200ms' }}
+              >
                 <InfineonLogo className="w-60 h-auto text-white" />
                 <p className="mt-6 text-4xl font-semibold bg-gradient-to-tr from-[#4DE9FE] to-[#0419AE] bg-clip-text text-transparent opacity-70">
                   TriCore
@@ -221,7 +256,6 @@ export default function Example() {
           </div>
         </div>
 
-        
         <div className="mx-auto mt-16 max-w-5xl px-6 sm:mt-20 md:mt-24 lg:px-8">
           <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base/7 text-gray-300 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
             {features.map((feature) => (
@@ -229,14 +263,12 @@ export default function Example() {
                 <dt className="inline font-semibold text-white">
                   <feature.icon aria-hidden="true" className="absolute left-1 top-1 size-5 text-[#425ACA]" />
                   {feature.name}
-                </dt>{' '}
+                </dt>
                 <dd className="inline">{feature.description}</dd>
               </div>
             ))}
           </dl>
         </div>
-
-        
       </div>
 
 
