@@ -1,21 +1,11 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Environmental from '@/components/icons/Environmental'
 import Quality from '@/components/icons/QualityIcon'
 
 export default function Example() {
-  // Total number of images to wait for (adjust as needed)
-  const totalImages = 4
-  const [loadedCount, setLoadedCount] = useState(0)
-  const allImagesLoaded = loadedCount === totalImages
-
-  const handleImageLoaded = () => {
-    setLoadedCount((prev) => prev + 1)
-  }
-
   return (
     <div className="bg-[#090A0B] relative h-full pb-14">
       {/* Large static white background (edge-to-edge) */}
@@ -44,7 +34,7 @@ export default function Example() {
             <motion.div
               className="relative lg:row-span-2"
               initial={{ opacity: 0, y: 20 }}
-              animate={allImagesLoaded ? { opacity: 1, y: 0 } : {}}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, delay: 0.01 }}
             >
               <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
@@ -68,7 +58,7 @@ export default function Example() {
                       alt="Certification Badge"
                       width={250}
                       height={250}
-                      onLoadingComplete={handleImageLoaded}
+                      priority
                       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
                     />
                   </div>
@@ -81,7 +71,7 @@ export default function Example() {
             <motion.div
               className="relative max-lg:row-start-1"
               initial={{ opacity: 0, y: 20 }}
-              animate={allImagesLoaded ? { opacity: 1, y: 0 } : {}}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, delay: 0.1 }}
             >
               <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
@@ -100,7 +90,7 @@ export default function Example() {
                     alt="Performance indicator"
                     width={500}
                     height={500}
-                    onLoadingComplete={handleImageLoaded}
+                    priority
                     className="w-full max-lg:max-w-xs"
                   />
                 </div>
@@ -112,8 +102,8 @@ export default function Example() {
             <motion.div
               className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2"
               initial={{ opacity: 0, y: 20 }}
-              animate={allImagesLoaded ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.2, delay: 0.1}}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2, delay: 0.1 }}
             >
               <div className="absolute inset-px rounded-lg bg-white"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
@@ -131,7 +121,7 @@ export default function Example() {
                     alt="Security Icon"
                     width={500}
                     height={500}
-                    onLoadingComplete={handleImageLoaded}
+                    priority
                     className="object-cover h-[min(152px,40cqw)]"
                   />
                 </div>
@@ -143,7 +133,7 @@ export default function Example() {
             <motion.div
               className="relative lg:row-span-2"
               initial={{ opacity: 0, y: 20 }}
-              animate={allImagesLoaded ? { opacity: 1, y: 0 } : {}}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, delay: 0.1 }}
             >
               <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
@@ -168,7 +158,7 @@ export default function Example() {
                         alt="Certification Badge"
                         width={250}
                         height={250}
-                        onLoadingComplete={handleImageLoaded}
+                        priority
                         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
                       />
                     </div>

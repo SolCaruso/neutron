@@ -4,12 +4,12 @@ import React from "react";
 import TopRight from "@/components/icons/TopRight";
 import { motion } from "framer-motion";
 import InfineonIcon from "@/components/AnimatedInfineon";
-import Link from 'next/link'
+import Link from 'next/link';
 
 // Framer Motion variants for the arrow
 const arrowVariants = {
   rest: { x: 0, y: 0 },
-  hover: { x: 2, y: -2 }, // moves arrow slightly top-right
+  hover: { x: 2, y: -2 },
 };
 
 function Infineon() {
@@ -20,7 +20,7 @@ function Infineon() {
       <div className="hidden lg:flex max-w-7xl mx-auto relative overflow-hidden">
         {/*
           ========= FADE GRADIENTS ON ALL SIDES =========
-          Adjust the widths/heights (64, etc.) to make them longer or shorter.
+          Adjust the widths/heights as needed.
         */}
         {/* Top fade */}
         <div className="pointer-events-none absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-[#090A0B] to-transparent" />
@@ -52,10 +52,7 @@ function Infineon() {
           </div>
 
           {/* HOVER CONTAINER (Framer Motion) */}
-          <Link
-              href="/services"
-              className=" transition-colors"
-            >
+          <Link href="/services" className="transition-colors">
             <motion.div
               className="p-12 pr-2 pb-[50.5px] hover:bg-[#0C0D0F] cursor-pointer"
               initial="rest"
@@ -66,15 +63,15 @@ function Infineon() {
                 As an Infineon Preferred Design House, Neutron Controls brings ideas to life,
                 uniting Infineon&apos;s advanced solutions with our expert guidance.
               </p>
-          
-                <p className='inline-block font-medium text-white transition-colors font-geist pt-[56.5px]'>Learn more</p>
-                <motion.span
-                  className="inline-block w-5 h-5 ml-2"
-                  variants={arrowVariants}
-                >
-                  <TopRight />
-                </motion.span>
-              
+              <p className="inline-block font-medium text-white transition-colors font-geist pt-[56.5px]">
+                Learn more
+              </p>
+              <motion.span
+                className="inline-block w-5 h-5 ml-2"
+                variants={arrowVariants}
+              >
+                <TopRight />
+              </motion.span>
             </motion.div>
           </Link>
 
@@ -82,7 +79,7 @@ function Infineon() {
           <div className="py-12" />
         </div>
 
-        {/* COLUMNS 3 & 4 MERGED: polka‐dot background behind image */}
+        {/* COLUMNS 3 & 4 MERGED: polka‑dot background behind image */}
         <div className="flex flex-col w-full border-r border-[#1B1C1E]">
           {/* Row 1 */}
           <div className="flex">
@@ -93,12 +90,12 @@ function Infineon() {
           {/* Row 2 */}
           <div className="flex">
             <div className="w-1/2 border-t py-6 border-r border-[#1B1C1E]" />
-            <div className="w-1/2 border-t py-6  border-[#1B1C1E]" />
+            <div className="w-1/2 border-t py-6 border-[#1B1C1E]" />
           </div>
 
           {/* Rows 3 & 4 -> merged cell for the image */}
           <div className="relative border-y border-[#1B1C1E] min-h-[715.74px] min-w-[796.62px] flex items-center justify-center overflow-hidden">
-            {/* Polka‐dot background (inline SVG, smaller + spaced) */}
+            {/* Polka‑dot background (inline SVG, smaller + spaced) */}
             <div
               className="
                 absolute inset-0 z-0
@@ -109,17 +106,17 @@ function Infineon() {
             />
             {/* Image on top (z-10) */}
             <div className="relative w-[600px] h-[400px] flex items-center justify-center">
-            <InfineonIcon className="object-contain block mx-auto" />
+              <InfineonIcon className="w-full h-full object-contain block mx-auto" />
             </div>
           </div>
 
-          {/* Row 5 (FIX: add border-r on second half) */}
+          {/* Row 5 */}
           <div className="flex">
             <div className="w-1/2 border-b py-6 border-r border-[#1B1C1E]" />
-            <div className="w-1/2 border-b py-6  border-[#1B1C1E]" />
+            <div className="w-1/2 border-b py-6 border-[#1B1C1E]" />
           </div>
 
-          {/* Row 6 (FIX: add border-r on second half) */}
+          {/* Row 6 */}
           <div className="flex">
             <div className="w-1/2 py-12 border-r border-[#1B1C1E]" />
             <div className="w-1/2 py-12 border-[#1B1C1E]" />
@@ -143,7 +140,7 @@ function Infineon() {
         {/* ROW 1: top spacing + top border */}
         <div className="border-t border-[#1B1C1E] py-6" />
 
-        {/* ROW 2: polka‐dot behind the image */}
+        {/* ROW 2: polka‑dot behind the image */}
         <div className="relative border-y border-[#1B1C1E] flex items-center justify-center py-8 overflow-hidden">
           <div
             className="
@@ -153,16 +150,15 @@ function Infineon() {
               pointer-events-none
             "
           />
-          {/* Image sits on top */}
           <div className="relative w-full max-w-[796px] mx-auto aspect-[488/385] flex items-center justify-center">
-          <InfineonIcon className="object-contain block mx-auto" />
+            <InfineonIcon className="w-full h-full object-contain block mx-auto" />
           </div>
         </div>
 
         {/* ROW 3: two columns at md, single column below md */}
         <div className="border-b border-[#1B1C1E] grid grid-cols-1 md:grid-cols-2">
-          {/* LEFT COLUMN: big heading (padded) */}
-          <div className=" border-[#1B1C1E] p-8 flex items-center">
+          {/* LEFT COLUMN: big heading */}
+          <div className="border-[#1B1C1E] p-8 flex items-center">
             <p className="text-4xl md:text-5xl font-semibold leading-tight">
               Infineon&apos;s Preferred Design House.
             </p>
