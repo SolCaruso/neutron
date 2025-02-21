@@ -1,183 +1,55 @@
-'use client'
+import { Link }from '@/components/link'
 
-import Bolt from '@/components/icons/Bolt'
-import { Link } from '@/components/link'
-import { motion } from "framer-motion";
-import MobileLogo from '@/components/logos/MobileLogo'
-import styles from "./WishList.module.css";
-
-export default function Hero() {
+export default function Example() {
 
   return (
-    <div className="text-gray-900 px-2 max-w-full relative z-30">
-      {/* Parent Container */}
-      <div className="flex flex-col items-center gap-14 lg:gap-32 py-20 sm:py-24 lg:py-40 2xl:pb-64 ">
-        <div className="text-center flex flex-col items-center">
 
-          <Link href="/solutions/energ8te">
-            <div className="flex justify-center mt-8">
-              <div className={`${styles.wishlistOuter} ${styles.wishlistAnimate}`}>
-                <div className={` ${styles.wishlistAnnouncement} sm:h-[38px] h-[34px] sm:py-[4px] sm:px-[12px] px-[8px]`}>
-                  <Bolt className="w-4 text-red-600 ml-2"/>
-                  <span className="gradient-text text-transparent animate-gradient text-white lg:text-[16px] text-[12px] font-semibold uppercase tracking-[2px] py-2 pr-2 rounded-full flex gap-2">
-                    <span className="hidden 2xl:block">BMS Controls & </span>ESS Solutions
-                  </span>
+        <div className="relative isolate px-6 lg:px-8 z-30"> 
+
+            <div className="mx-auto max-w-7xl px-6 pb-28 text-center pt-32 lg:px-8">
+
+                <div className="mx-auto max-w-4xl relative z-30">
+                    <h2 className="text-base/7 font-semibold text-[#425ACA]">Control your energy</h2>
+                    <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl">
+                        Test your strength
+                    </p>
                 </div>
-              </div>
+                
+                <div className="relative mt-6">
+                    <p className="mx-auto max-w-2xl text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
+                        Advanced BMS controls and ESS solutions designed for efficiency, safety, and reliability.
+                    </p>
+
+                <div className="mt-10 flex items-center justify-center gap-x-6">
+                    <Link
+                    href="/services"
+                    className="rounded-md bg-[#425ACA] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                    >
+                    Get started
+                    </Link>
+                    <Link href="/about" className="text-sm/6 font-semibold text-white">
+                    Learn more <span aria-hidden="true">→</span>
+                    </Link>
+                </div>
+                
             </div>
-          </Link>
 
-          {/* Animated heading and subtitle */}
-          <div className="relative flex flex-col items-center text-center pt-8">
-            <div className="absolute inset-0 bg-gradient-radial from-white via-gray-300 to-black w-full h-full pointer-events-none"></div>
-            
-            {/* Main heading */}
-            <motion.h1
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="sm:text-[45px] 2xl:text-6xl font-bold sm:leading-normal text-[30px] leading-[38px] uppercase pt-4 sm:pt-4 2xl:pt-8 text-white tracking-wider"
-            >
-              test your strength
-              
-            </motion.h1>
-            
-            {/* Subtitle */}
-            <motion.p
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ 
-                duration: 0.5,
-                ease: "easeOut",
-                delay: 0.3 // Start a bit later than the heading
-              }}
-              className="text-white/60 font-geist lg:text-[20px] text-base mx-auto sm:leading-8 lg:max-w-[600px] max-w-[500px] pt-8 lg:pt-10"
-            >
-              Where energy storage meets innovation
-              <span className="hidden sm:inline">
-                , simplifying management and maximizing efficiency.
-              </span> 
-            </motion.p>
-          </div>
+            </div>
+           
+                <div
+                aria-hidden="true"
+                className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+                >
+           
+                <div
+                    style={{
+                    clipPath:
+                        'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                    }}
+                    className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#1188CA] to-[#030C6C] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                />
+
+            </div>
         </div>
-
-        <div
-          className="
-            relative
-            xs:flex hidden
-            justify-center
-            gap-3
-            rounded-lg
-            backdrop-blur-sm
-            [--radius:theme(borderRadius.xl)]
-            [--padding:theme(spacing.2)]
-          "
-        >
-          {/* Glow backdrop behind everything */}
-          <div className="backdrop"/>
-
-          {/* Frame layer: subtle ring + shadow */}
-          <div
-            className="
-              absolute
-              -inset-[var(--padding)]
-              rounded-2xl
-              shadow-sm
-              bg-black/20
-              ring-1 ring-gray-100/5
-            "
-          />
-
-          {/* Inner content (black box) with final glow + ring */}
-          <div
-            className="
-              xs:flex hidden
-              justify-center
-              gap-3
-              px-2.5 py-3
-              backdrop-blur-sm
-              bg-black
-              rounded-[10px]
-              shadow-glow
-              ring-1 ring-gray-100/5
-            "
-          >
-            <MobileLogo className="self-center mx-2 w-10 text-white" />
-
-            <Link href="#" passHref>
-              <motion.div
-                className="
-                  inline-flex 
-                  items-center 
-                  justify-center
-                  gap-2
-                  min-h-[40px]
-                  sm:min-h-[44px]
-                  px-3
-                  sm:px-4 py-1.5
-                  text-[12px]
-                  sm:text-[14px] 
-                  font-semibold 
-                  leading-[16px]
-                  tracking-[0.2px]
-                  whitespace-nowrap
-                  cursor-pointer
-                  border-none
-                  rounded-md
-                  transition-colors
-                  duration-200
-                  ease-in-out
-                  bg-[#E6E6E6]
-                  hover:bg-[#FFF]
-                  shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
-                  opacity-90
-                  hover:opacity-100
-                  text-black
-                  uppercase
-                "
-              >
-                <span>Event Info</span>
-              </motion.div>
-            </Link>
-
-            <Link href="#" passHref>
-              <motion.div
-                className="
-                  inline-flex 
-                  items-center 
-                  justify-center
-                  gap-2
-                  min-h-[40px]
-                  sm:min-h-[44px]
-                  px-3
-                  sm:px-4 py-1.5
-                  uppercase
-                  text-[12px]
-                  sm:text-[14px]  
-                  font-semibold 
-                  leading-[16px]
-                  tracking-[0.2px]
-                  whitespace-nowrap
-                  cursor-pointer
-                  border-none
-                  rounded-md
-                  transition-colors
-                  duration-200
-                  ease-in-out
-                  bg-[#4A64E0]
-                  hover:bg-[#5773ff]
-                  text-[#DBE1F9]
-                  shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
-                  opacity-90
-                  hover:opacity-100
-                "
-              >  
-                <span>Book Demo</span>
-              </motion.div>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    )
 }

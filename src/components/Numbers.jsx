@@ -75,7 +75,7 @@ const Numbers = ({
         TRANSFORMING ENERGY MANAGEMENT <span className="hidden sm:block">& VEHICLE DEVELOPMENT</span>
       </h2>
 
-      <p className=" mb-8 pt-4 text-lg text font-medium px-4">
+      <p className=" mb-8 pt-4 text-lg lg:text-xl text font-medium px-4">
         Canadian companies could collectively save:
       </p>
 

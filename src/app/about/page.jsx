@@ -4,12 +4,12 @@ import Quality from '@/components/icons/QualityIcon'
 
 export default function Example() {
   return (
-    <div className='bg-[#090A0B] relative h-full'>
+    <div className='bg-[#090A0B] relative h-full pb-14'>
       <div className='bg-white absolute h-[600px] 2xl:h-[650px] top-[500px] z-20 w-full rounded-xl'></div>
       <div className='h-[35vh] 3xl:h-[25vh] relative z-30 flex flex-col items-center justify-center pt-12 lg:pt-0'>
           <h2 className="text-center text-base/7 font-semibold text-[#425ACA]">About The Neutrons</h2>
           <p className="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Because your battery deserves a brain &#129504;
+            Because your battery deserves a brain &#129504; 
           </p>
       </div>
       <div className="rounded-4xl relative z-20 max-w-7xl mx-auto bg-gradient-to-t from-[#ffffff] to-white/70 border border-[#f4f4f4] backdrop-blur-[20px]">
@@ -71,10 +71,12 @@ export default function Example() {
                   </p>
                 </div>
                 <div className="flex flex-1 items-center justify-center px-8 max-lg:pb-12 max-lg:pt-10 sm:px-10 lg:pb-2">
-                  <img
-                    className="w-full max-lg:max-w-xs"
+                  <Image
                     src="/about/performance.png"
                     alt="Performance indicator"
+                    width={500}  
+                    height={500}    
+                    className="w-full max-lg:max-w-xs"
                   />
                 </div>
               </div>
@@ -90,10 +92,12 @@ export default function Example() {
                   </p>
                 </div>
                 <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
-                  <img
-                    className="h-[min(152px,40cqw)] object-cover"
+                  <Image
                     src="/about/security.png"
                     alt="Security Icon"
+                    width={500}      
+                    height={500}   
+                    className="object-cover h-[min(152px,40cqw)]"
                   />
                 </div>
               </div>

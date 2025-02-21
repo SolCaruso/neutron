@@ -14,7 +14,7 @@ const arrowVariants = {
 
 function Infineon() {
   return (
-    <section className="bg-[#090A0B] text-white pt-20 sm:pb-40">
+    <section className="bg-[#090A0B] text-white pt-20 sm:pb-16">
 
       {/* ================== 5-COLUMN DESKTOP (≥LG) ================== */}
       <div className="hidden lg:flex max-w-7xl mx-auto relative overflow-hidden">

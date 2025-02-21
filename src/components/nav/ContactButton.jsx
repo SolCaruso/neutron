@@ -10,20 +10,9 @@ export default function DownloadButton() {
               className="
                 items-center 
                 justify-center
-                gap-2
-                min-h-[40px]
-                sm:min-h-[43px]
-                px-3
                 hidden lg:inline-flex 
-                sm:px-[18px] py-1.5
-                text-[12px]
-                sm:text-[14px] 
                 font-semibold 
-                leading-[16px][#3558f2]
-                tracking-[0.2px]
-                whitespace-nowrap
                 cursor-pointer
-                border-none
                 rounded-md
                 transition-colors
                 duration-200
@@ -34,6 +23,8 @@ export default function DownloadButton() {
                 opacity-90
                 hover:opacity-100
                 text-black
+                px-3.5 py-2.5
+                text-sm 
               "
             >
               

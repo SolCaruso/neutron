@@ -4,7 +4,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Down from "@/components/icons/Down";
 import RightArrow from "@/components/icons/RightArrow";
-import Equ8 from "@/components/logos/ECU8";
 import Equ8ter from "@/components/logos/ECU8TR";
 import Energate from "@/components/logos/ENERG8TE";
 import Link from "next/link";

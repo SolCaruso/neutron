@@ -32,21 +32,29 @@ const tiers = [
   {
     name: 'BMS Controls',
     id: 'tier-hobby',
-    href: '/contact',
-    description: 'Elevate your battery management capabilities. Ensure reliable power and maximize energy efficiency.',
-    features: ['High-performance BMS and ECU design', 'Enhanced battery longevity', 'Tailored solutions for EVs and renewables', 'Industrial-grade safety and performance'],
+    href: '/solutions/ecu8tr',
+    buttonText: 'Discover BMS', 
+    description:
+      'Elevate your battery management capabilities. Ensure reliable power and maximize energy efficiency.',
+    features: [
+      'High-performance BMS and ECU design',
+      'Enhanced battery longevity',
+      'Tailored solutions for EVs and renewables',
+      'Industrial-grade safety and performance',
+    ],
     icon: <Battery className="h-20 w-20" aria-hidden="true" />,
   },
   {
     name: 'Safety-Critical Design',
     id: 'tier-team',
-    href: '/contact',
-    description: 'Drive safety and reliability with integrated systems that meet ISO 26262 standards.',
+    href: '/about',
+    buttonText: 'Explore safety', 
+    description:
+      'Drive safety and reliability with integrated systems that meet ISO 26262 standards.',
     features: [
       'Functional safety expertise for automotive and industrial control',
       'Compliance with ISO 26262 for highest reliability',
-      '	High-performance designs prioritizing occupant and environmental protection',
-
+      'High-performance designs prioritizing occupant and environmental protection',
     ],
     icon: <Safety className="h-20 w-20" aria-hidden="true" />,
   },
@@ -54,7 +62,9 @@ const tiers = [
     name: 'Advanced Design Solutions',
     id: 'tier-enterprise',
     href: '/contact',
-    description: 'Discover the next generation of innovation with tailored advanced design solutions.',
+    buttonText: 'Get in touch', 
+    description:
+      'Discover the next generation of innovation with tailored advanced design solutions.',
     features: [
       'Next-generation electronic systems built to your unique vision',
       'Bold prototypes leveraging cutting-edge engineering and technology',
@@ -81,7 +91,7 @@ export default function Example() {
           </p>
           <svg
             viewBox="0 0 1208 1024"
-            className="absolute -top-10 left-1/2 -z-10 h-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:-top-12 md:-top-20 lg:-top-12 xl:top-0"
+            className="absolute -top-10 left-1/2 h-[64rem] -translate-x-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:-top-12 md:-top-20 lg:-top-12 xl:top-0"
           >
             <ellipse cx={604} cy={512} rx={604} ry={512} fill="url(#6d1bd035-0dd1-437e-93fa-59d316231eb0)" />
             <defs>
@@ -94,7 +104,7 @@ export default function Example() {
         </div>
       </div>
 
-      <div className="flow-root bg-white pb-24 sm:pb-32">
+      <div className="flow-root bg-white pb-24 sm:pb-32 relative z-10">
         <div className="-mt-80">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -129,7 +139,7 @@ export default function Example() {
                     aria-describedby={tier.id}
                     className="mt-8 block rounded-md bg-[#425ACA] px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#425ACA]"
                   >
-                    Get started today
+                    {tier.buttonText}
                   </Link>
                 </div>
               ))}
