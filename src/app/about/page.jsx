@@ -1,14 +1,17 @@
 export default function Example() {
   return (
-    <div className='bg-[#090A0B]'>
-      <div className='bg-[#090A0B] h-[10vh]'></div>
-      <div className="bg-gray-50 pt-24 sm:py-32 max-w-8xl mx-auto rounded-4xl relative z-30">
-        <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+    <div className='bg-[#090A0B] relative h-full'>
+      <div className='bg-white absolute h-[600px] top-[500px] z-20 w-full rounded-b-xl'></div>
+      <div className='h-[32vh] 3xl:h-[25vh] relative z-30 flex flex-col items-center justify-center pt-12 lg:pt-0'>
           <h2 className="text-center text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
-          <p className="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
+          <p className="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">
             Everything you need to deploy your app
           </p>
-          <div className="mt-10 grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
+      </div>
+      <div className="rounded-4xl relative z-20 max-w-7xl mx-auto bg-gradient-to-t from-[#ffffff] to-white/70 border border-[#f4f4f4] backdrop-blur-[20px]">
+        <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+          
+          <div className="grid gap-4 my-8 lg:grid-cols-3 lg:grid-rows-2">
             <div className="relative lg:row-span-2">
               <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">

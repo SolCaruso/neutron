@@ -126,7 +126,7 @@ export default function MainNav({ isOpen, setIsOpen, secondaryNavReady }) {
             : "0 4px 4px rgba(0,0,0,0.25)",
         }}
         transition={{ duration: 0.3, ease: "easeOut" }}
-        className="backdrop-blur-[40px] rounded-xl lg:rounded-b-none lg:rounded-t-lg max-w-8xl mx-auto py-6 px-3.5 flex flex-col relative z-50"
+        className="backdrop-blur-[40px] rounded-xl lg:rounded-b-none lg:rounded-t-lg max-w-8xl mx-auto py-6 px-3.5 flex flex-col relative z-50 border-[#181818] border-t border-x"
         style={{ willChange: "transform, opacity" }}
       >
         {/* Top Navigation Row */}

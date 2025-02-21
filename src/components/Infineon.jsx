@@ -57,7 +57,7 @@ function Infineon() {
               className=" transition-colors"
             >
             <motion.div
-              className="p-12 pr-2 hover:bg-[#0C0D0F] cursor-pointer"
+              className="p-12 pr-2 pb-[50.5px] hover:bg-[#0C0D0F] cursor-pointer"
               initial="rest"
               whileHover="hover"
               animate="rest"
