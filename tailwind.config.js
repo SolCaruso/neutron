@@ -21,6 +21,7 @@ module.exports = {
         "2sm": "620px",
         "2md": "820px",
         '3md': '992px',
+        '4md': '1078px',
         "3xl": "2000px",
       },
       zIndex: {

@@ -91,7 +91,7 @@ export default function Example() {
                     width={500}
                     height={500}
                     priority
-                    className="w-full max-lg:max-w-xs"
+                    className="w-full max-lg:max-w-xs filter hue-rotate-[350deg]"
                   />
                 </div>
               </div>
@@ -115,14 +115,14 @@ export default function Example() {
                     Our safety-critical design ensures robust security. Neutron Controls is committed to protecting and empowering critical industrial and automotive control systems.
                   </p>
                 </div>
-                <div className="flex flex-1 items-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
+                <div className="flex items-center justify-center [container-type:inline-size] max-lg:py-6 lg:pb-2">
                   <Image
                     src="/about/security.png"
                     alt="Security Icon"
                     width={500}
                     height={500}
                     priority
-                    className="object-cover h-[min(152px,40cqw)]"
+                    className="object-cover h-[min(152px,40cqw)] filter hue-rotate-[350deg] "
                   />
                 </div>
               </div>

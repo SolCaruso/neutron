@@ -21,7 +21,7 @@ export default function BackgroundHero() {
         pointer-events-none
         overflow-hidden
         w-full 
-        sm:w-[1064px] 
+        4md:w-[1064px] 
         h-[420px]
         sm:h-[385px]
         bg-no-repeat 
