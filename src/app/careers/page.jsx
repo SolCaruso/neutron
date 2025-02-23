@@ -20,25 +20,26 @@ const sizes = {
 export function Dialog({ size = 'lg', className, children, ...props }) {
   return (
     <Headless.Dialog {...props}>
-      <Headless.DialogBackdrop
-        transition
-        className="fixed inset-0 flex w-screen justify-center overflow-y-auto bg-gray-900/25 px-2 py-2 transition duration-100 focus:outline-0 sm:px-6 sm:py-8 lg:px-8 lg:py-16 z-[80]"
-      />
-      <div className="fixed inset-0 w-screen overflow-y-auto pt-6 sm:pt-0 z-[100]">
-        <div className="grid min-h-full grid-rows-[1fr_auto] justify-items-center sm:grid-rows-[1fr_auto_1fr] sm:p-4">
-          <Headless.DialogPanel
-            transition
-            className={clsx(
-              className,
-              sizes[size],
-              'row-start-2 w-full min-w-0 rounded-t-3xl bg-white p-4 ring-1 shadow-lg ring-gray-950/10 sm:mb-auto sm:rounded-2xl',
-              'transition duration-100 will-change-transform data-closed:translate-y-12 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in sm:data-closed:translate-y-0 sm:data-closed:data-enter:scale-95'
-            )}
-          >
-            {children}
-          </Headless.DialogPanel>
-        </div>
-      </div>
+     <Headless.DialogBackdrop
+  transition
+  className="fixed inset-0 flex w-full justify-center overflow-y-auto bg-gray-900/60 px-0 sm:px-6 sm:py-8 lg:px-8 lg:py-16 z-[80]"
+/>
+<div className="fixed inset-0 w-full overflow-y-auto pt-6 sm:pt-0 z-[100] dialog-container">
+  <div className="grid min-h-full grid-rows-[1fr_auto] justify-items-center sm:grid-rows-[1fr_auto_1fr] sm:p-4">
+    <Headless.DialogPanel
+      transition
+      className={clsx(
+        className,
+        sizes[size], // e.g. "sm:max-w-lg" on larger screens
+        'row-start-2 w-full min-w-0 rounded-t-3xl bg-white p-4 ring-1 shadow-lg ring-gray-950/10 sm:mb-auto sm:rounded-2xl',
+        'transition duration-100 will-change-transform data-closed:translate-y-12 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in sm:data-closed:translate-y-0 sm:data-closed:data-enter:scale-95',
+        'mx-0 sm:mx-auto' // no horizontal margin on mobile; auto on small screens and up
+      )}
+    >
+      {children}
+    </Headless.DialogPanel>
+  </div>
+</div>
     </Headless.Dialog>
   )
 }
@@ -60,7 +61,7 @@ export function DialogBody({ className, ...props }) {
 function FileInput({ id, name, accept, onChange, fileName }) {
   return (
     <div className="mt-1">
-      <label htmlFor={id} className="cursor-pointer inline-block rounded-md bg-gray-200 px-3 py-2 text-sm font-medium text-gray-700">
+      <label htmlFor={id} className="cursor-pointer inline-block rounded-md bg-gray-100 hover:bg-gray-200 px-3 py-2 text-sm font-medium text-gray-700 mt-1">
         Choose File
       </label>
       <input
