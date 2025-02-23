@@ -125,3 +125,10 @@
   transform: translateY(0) translateZ(0);
 }
 
+:root {
+  --spacing: 1rem; /* Or your spacing scale */
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #0f0f10;
+  --color-white: #ffffff;
+  /* Define other variables as used by your button component */
+}
