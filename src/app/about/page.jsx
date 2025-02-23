@@ -11,7 +11,7 @@ export default function Example() {
       {/* Large static white background (edge-to-edge) */}
       <div className="bg-white absolute h-[600px] 2xl:h-[650px] top-[500px] z-20 w-full rounded-xl"></div>
       
-      <div className="h-[35vh] 3xl:h-[25vh] relative z-30 flex flex-col items-center justify-center pt-12 lg:pt-0">
+      <div className="h-[35vh] 3xl:h-[25vh] relative z-30 flex flex-col items-center justify-center pt-12">
         <h2 className="text-center text-base/7 font-semibold text-[#425ACA]">
           About The Neutrons
         </h2>

@@ -1,8 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import * as Headless from '@headlessui/react'
 import clsx from 'clsx'
+import { motion, AnimatePresence } from 'framer-motion'
+import Faq from '@/components/faq'
 
 // Tailwind theme Dialog components (light mode only)
 const sizes = {
@@ -18,28 +20,62 @@ const sizes = {
 }
 
 export function Dialog({ size = 'lg', className, children, ...props }) {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 640)
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  // Mobile: a slight 20px vertical lift using a simple tween transition.
+  const mobileAnimation = {
+    initial: { y: 20, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+    exit: { y: 20, opacity: 0 },
+    transition: { type: 'tween', duration: 0.4, ease: 'easeOut' },
+  }
+
+  // Desktop: fade only.
+  const desktopAnimation = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+    transition: { type: 'tween', duration: 0.2, ease: 'easeOut' },
+  }
+
+  const animation = isMobile ? mobileAnimation : desktopAnimation
+
   return (
     <Headless.Dialog {...props}>
-     <Headless.DialogBackdrop
-  transition
-  className="fixed inset-0 flex w-full justify-center overflow-y-auto bg-gray-900/60 px-0 sm:px-6 sm:py-8 lg:px-8 lg:py-16 z-[80]"
-/>
-<div className="fixed inset-0 w-full overflow-y-auto pt-6 sm:pt-0 z-[100] dialog-container">
-  <div className="grid min-h-full grid-rows-[1fr_auto] justify-items-center sm:grid-rows-[1fr_auto_1fr] sm:p-4">
-    <Headless.DialogPanel
-      transition
-      className={clsx(
-        className,
-        sizes[size], // e.g. "sm:max-w-lg" on larger screens
-        'row-start-2 w-full min-w-0 rounded-t-3xl bg-white p-4 ring-1 shadow-lg ring-gray-950/10 sm:mb-auto sm:rounded-2xl',
-        'transition duration-100 will-change-transform data-closed:translate-y-12 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in sm:data-closed:translate-y-0 sm:data-closed:data-enter:scale-95',
-        'mx-0 sm:mx-auto' // no horizontal margin on mobile; auto on small screens and up
-      )}
-    >
-      {children}
-    </Headless.DialogPanel>
-  </div>
-</div>
+      <Headless.DialogBackdrop
+        transition
+        className="fixed inset-0 flex w-full justify-center overflow-y-auto bg-gray-900/60 px-0 sm:px-6 sm:py-8 lg:px-8 lg:py-16 z-[80]"
+      />
+      <div className="fixed inset-0 w-full overflow-y-auto pt-6 sm:pt-0 z-[100] dialog-container">
+        <div className="grid min-h-full grid-rows-[1fr_auto] justify-items-center sm:grid-rows-[1fr_auto_1fr] sm:p-4">
+          <AnimatePresence>
+            {props.open && (
+              <Headless.DialogPanel
+                as={motion.div}
+                initial={animation.initial}
+                animate={animation.animate}
+                exit={animation.exit}
+                transition={animation.transition}
+                className={clsx(
+                  className,
+                  sizes[size],
+                  'row-start-2 w-full min-w-0 rounded-t-3xl bg-white p-4 ring-1 shadow-lg ring-gray-950/10 sm:mb-auto sm:rounded-2xl',
+                  'mx-0 sm:mx-auto'
+                )}
+              >
+                {children}
+              </Headless.DialogPanel>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
     </Headless.Dialog>
   )
 }
@@ -308,6 +344,7 @@ export default function Example() {
                 </div>
               </div>
             </div>
+            <Faq />
           </div>
         </div>
       </div>
