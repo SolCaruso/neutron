@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import * as Headless from '@headlessui/react'
 import clsx from 'clsx'
 import { motion, AnimatePresence } from 'framer-motion'
-import Faq from '@/components/faq'
+import Faq from '@/components/Faq'
 
 // Tailwind theme Dialog components (light mode only)
 const sizes = {
