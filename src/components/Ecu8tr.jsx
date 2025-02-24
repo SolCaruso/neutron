@@ -15,13 +15,13 @@ export default function Ecu8tr() {
                           flex flex-col-reverse lg:flex-row items-center 
                           justify-center lg:rounded-4xl lg:mx-4 py-20 xl:py-0 2xl:px-[90px] 3xl:px-40">
         <div className="lg:w-1/2 text-left px-12 lg:max-w-[50vw] pt-12 lg:pt-0">
-          <p className="text-[#E00000] font-bold lg:text-[14px] text-[12px] tracking-[6px] mb-6">
+          <p className="text-[#E00000] font-bold lg:text-[14px] text-[.75rem] tracking-[6px] mb-6 3xl:text-lg">
             ECU8TR&trade;
           </p>
-          <h2 className="3xl:text-5xl 2xl:text-4xl text-3xl font-bold xl:mb-10 mb-6">
+          <h2 className="3xl:text-6xl 2xl:text-4xl text-3xl font-bold xl:mb-10 mb-6">
             REVOLUTIONIZING QUALITY CONTROL
           </h2>
-          <p className="2xl:text-2xl text-xl xl:mb-10 mb-6">
+          <p className="2xl:text-2xl text-xl xl:mb-10 mb-6 3xl:text-3xl">
             ECU8TR™ is a cutting-edge tester crafted for the verification of
             cell monitor operations within battery modules or packs.
           </p>
@@ -49,42 +49,42 @@ export default function Ecu8tr() {
                 flex flex-col-reverse lg:flex-row items-center 
                 justify-center lg:rounded-4xl lg:mx-8 py-20 xl:py-0 lg:mb-4"
     >
-      <div className="max-w-8xl 3xl:max-w-[2000px] w-full mx-auto text-black sm:py-8 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-4xl font-bold mb-12">SPECIFICATIONS</h2>
+      <div className="max-w-8xl 3xl:max-w-[2400px] w-full mx-auto text-black sm:py-8 px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl sm:text-4xl font-bold mb-12 3xl:text-5xl">SPECIFICATIONS</h2>
 
         {/* Outer container with a solid border */}
         <div className="border-2 border-[#016DFF] rounded-md overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-[220px_minmax(0,1fr)]">
+          <div className="grid grid-cols-1 md:grid-cols-[220px_minmax(0,1fr)] 3xl:grid-cols-[260px_minmax(0,1fr)] ">  
             {/* 1) DIMENSIONS */}
-            <div className="p-4 pb-0 md:pb-4 md:border-b border-[#016DFF] font-semibold lg:text-xl">
+            <div className="p-4 pb-0 md:pb-4 md:border-b border-[#016DFF] font-semibold lg:text-xl 3xl:text-2xl">
               DIMENSIONS
             </div>
-            <div className="p-4 border-b border-[#016DFF] md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70">
+            <div className="p-4 border-b border-[#016DFF] md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70 3xl:text-2xl">
               <p className="mb-1">Standard 1U Chassis size</p>
               <p className="mb-1">8.000&#34; L x 16.600&#34; W x 1.750&#34; H</p>
               <p>203.20mm x 421.64mm x 44.45mm</p>
             </div>
 
             {/* 2) SAFETY CERTIFICATIONS */}
-            <div className="p-4 pb-0 md:pb-4 md:border-b border-[#016DFF] font-semibold lg:text-xl">
+            <div className="p-4 pb-0 md:pb-4 md:border-b border-[#016DFF] font-semibold lg:text-xl 3xl:text-2xl">
               SAFETY CERTIFICATIONS
             </div>
-            <div className="p-4 border-b border-[#016DFF] md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70">
+            <div className="p-4 border-b border-[#016DFF] md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70 3xl:text-2xl">
               UL 61010
             </div>
 
             {/* 3) POWER */}
-            <div className="p-4 pb-0 md:pb-4 md:border-b border-[#016DFF] font-semibold lg:text-xl">POWER</div>
-            <div className="p-4 border-b border-[#016DFF] md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70">
+            <div className="p-4 pb-0 md:pb-4 md:border-b border-[#016DFF] font-semibold lg:text-xl 3xl:text-2xl">POWER</div>
+            <div className="p-4 border-b border-[#016DFF] md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70 3xl:text-2xl">
               12V 36 W AC/DC External Desktop (Class I) Adapter International,<br />
               90 &#126; 264 VAC
             </div>
 
             {/* 4) INTERFACES */}
-            <div className="p-4 pb-0 md:pb-4 md:border-b border-[#016DFF] font-semibold lg:text-xl">
+            <div className="p-4 pb-0 md:pb-4 md:border-b border-[#016DFF] font-semibold lg:text-xl 3xl:text-2xl">
               INTERFACES
             </div>
-            <div className="p-4 border-b border-[#016DFF] md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70">
+            <div className="p-4 border-b border-[#016DFF] md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70 3xl:text-2xl">
               <p className="mb-1">
                 iso SPI and iso UART analog frontend communications options via
                 circular connectors
@@ -95,8 +95,8 @@ export default function Ecu8tr() {
             </div>
 
             {/* 5) INDICATORS */}
-            <div className="p-4 pb-0 md:pb-4 font-semibold lg:text-xl">INDICATORS</div>
-            <div className="p-4 md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70">
+            <div className="p-4 pb-0 md:pb-4 font-semibold lg:text-xl 3xl:text-2xl">INDICATORS</div>
+            <div className="p-4 md:border-l md:border-[#016DFF] lg:text-xl font-geist text-black/70 3xl:text-2xl">
               Large LED indicator to display test modes and test results
             </div>
           </div>
@@ -109,34 +109,33 @@ export default function Ecu8tr() {
             target="_blank"
             rel="noopener noreferrer"
             className="
-              inline-flex 
-              items-center 
-              justify-center
-              gap-2
-              min-h-[40px]
-              sm:min-h-[48px]
-              px-3
-              sm:px-6 
-              py-1.5
-              text-[14px]
-              sm:text-[16px] 
-              font-semibold 
-              leading-[16px]
-              tracking-[0.2px]
-              whitespace-nowrap
-              cursor-pointer
-              border-none
-              rounded-md
-              transition-colors
-              duration-200
-              ease-in-out
+                inline-flex 
+                items-center 
+                justify-center
+                gap-2
+                min-h-[40px]
+                sm:min-h-[48px]
+                px-3
+                sm:px-6 py-1.5
+                text-[.75rem]
+                sm:text-base 
+                3xl:text-lg
+                font-semibold 
+                leading-[16px]
+                tracking-[0.2px]
+                whitespace-nowrap
+                cursor-pointer
+                border-none
+                rounded-md
+                transition-colors
+                duration-200
+                ease-in-out
               bg-[#000]
               hover:bg-[#191919]
-              shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
-              opacity-90
-              hover:opacity-100
-              text-white
-              uppercase
+                shadow-[0_0_2px_rgba(0,0,0,0.5),_0_0_14px_rgba(255,255,255,0.19),_inset_0_-1px_0.4px_rgba(0,0,0,0.2)]
+                opacity-90
+                hover:opacity-100
+                text-white
             "
           >
           See our brochure

@@ -70,12 +70,12 @@ const Numbers = ({
   }, [activeTab, inView, timeValue, moneyValue, duration]);
 
   return (
-    <section ref={sectionRef} className="text-center sm:pt-36 pt-24 pb-6 sm:pb-12 max-w-4xl mx-auto">
-      <h2 className="sm:text-4xl text-2xl font-bold mb-2 uppercase px-2">
+    <section ref={sectionRef} className="text-center sm:pt-36 pt-24 pb-6 sm:pb-12 max-w-4xl 3xl:max-w-6xl mx-auto">
+      <h2 className="sm:text-4xl text-2xl 3xl:text-5xl font-bold mb-2 uppercase px-2">
         TRANSFORMING ENERGY MANAGEMENT <span className="hidden sm:block">& VEHICLE DEVELOPMENT</span>
       </h2>
 
-      <p className=" mb-8 pt-4 text-lg lg:text-xl text font-medium px-4">
+      <p className=" mb-8 pt-4 text-lg lg:text-xl text font-medium px-4 3xl:text-2xl">
         Canadian companies could collectively save:
       </p>
 
@@ -110,7 +110,7 @@ const Numbers = ({
             ? `$${displayNumber.toLocaleString()}`
             : displayNumber.toLocaleString()}
         </h1>
-        <p className="sm:text-xl px-4 font-medium mt-6 max-w-lg mx-auto">
+        <p className="sm:text-xl px-4 font-medium mt-6 max-w-lg mx-auto  3xl:text-2xl">
           {activeTab === "money"
             ? "Dollars annually through optimized battery systems"
             : "Hours annually through optimized battery systems"}
