@@ -49,7 +49,7 @@ export default function Ecu8tr() {
                 flex flex-col-reverse lg:flex-row items-center 
                 justify-center lg:rounded-4xl lg:mx-8 py-20 xl:py-0 lg:mb-4"
     >
-      <div className="max-w-8xl 3xl:max-w-[2400px] w-full mx-auto text-black sm:py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl 3xl:max-w-[2000px] 4xl:max-w-[2400px] w-full mx-auto text-black sm:py-8 px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl sm:text-4xl font-bold mb-12 3xl:text-5xl">SPECIFICATIONS</h2>
 
         {/* Outer container with a solid border */}

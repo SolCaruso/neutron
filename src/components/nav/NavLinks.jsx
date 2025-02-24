@@ -53,7 +53,7 @@ export default function NavLinks() {
         {/* Wrap "Solutions" + Dropdown in a single <li> with a ref */}
         <li ref={dropdownContainerRef} className="relative">
           <div
-            className="text-[0.75rem] 3xl:text-sm uppercase tracking-[3px] font-semibold hover:text-white inline-flex items-center cursor-pointer "
+            className="text-[0.75rem] 4xl:text-sm uppercase tracking-[3px] font-semibold hover:text-white inline-flex items-center cursor-pointer "
             onClick={(e) => {
               e.preventDefault();
               setIsOpen(!isOpen);
@@ -81,7 +81,7 @@ export default function NavLinks() {
               bg-gradient-to-t from-[#0f0e0e] to-black/90 
               shadow-[0px_-4px_4px_0px_rgba(0,0,0,0.25)] 
               backdrop-blur-[40px]
-              text-[16px] 
+              text-base
               w-64
               rounded-xl
               transition-all 
@@ -137,7 +137,7 @@ export default function NavLinks() {
                     transition={{ duration: 0.2 }}
                     className="mr-2"
                   >
-                    <Energate className="h-[14px]" />
+                    <Energate className="h-[0.75rem]" />
                   </motion.div>
                   <motion.div
                     variants={arrowVariants}
@@ -155,7 +155,7 @@ export default function NavLinks() {
         <li>
           <Link
             href="/services"
-            className="text-[0.75rem] 3xl:text-sm uppercase tracking-[3px] font-semibold hover:text-white"
+            className="text-[0.75rem] 4xl:text-sm uppercase tracking-[3px] font-semibold hover:text-white"
           >
             Services
           </Link>
@@ -163,7 +163,7 @@ export default function NavLinks() {
         <li>
           <Link
             href="/about"
-            className="text-[0.75rem] 3xl:text-sm uppercase tracking-[3px] font-semibold hover:text-white"
+            className="text-[0.75rem] 4xl:text-sm uppercase tracking-[3px] font-semibold hover:text-white"
           >
             About
           </Link>
@@ -171,7 +171,7 @@ export default function NavLinks() {
         <li>
           <Link
             href="/careers"
-            className="text-[0.75rem] 3xl:text-sm uppercase tracking-[3px] font-semibold hover:text-white"
+            className="text-[0.75rem] 4xl:text-sm uppercase tracking-[3px] font-semibold hover:text-white"
           >
             Careers
           </Link>
