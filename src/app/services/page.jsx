@@ -112,7 +112,7 @@ export default function Page() {
                   <Link
                     href={tier.href}
                     aria-describedby={tier.id}
-                    className="mt-8 block rounded-md bg-[#425ACA] px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#425ACA]"
+                    className="mt-8 block rounded-md bg-[#425ACA] px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#425ACA] 3xl:text-base"
                   >
                     {tier.buttonText}
                   </Link>
@@ -127,7 +127,7 @@ export default function Page() {
                 </div>
                 <Link
                   href="/solutions/ecu8tr"
-                  className="rounded-md px-3.5 py-2 text-sm/6 font-semibold text-[#425ACA] ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#425ACA]"
+                  className="rounded-md px-3.5 py-2 text-sm/6 font-semibold text-[#425ACA] ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#425ACA] 3xl:text-base"
                 >
                   See our solutions <span aria-hidden="true">&rarr;</span>
                 </Link>

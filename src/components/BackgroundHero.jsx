@@ -38,6 +38,7 @@ export default function BackgroundHero() {
         fill
         priority
         className="object-cover"
+        sizes="(max-width: 1064px) 100vw, 1064px"
       />
     </div>
   );

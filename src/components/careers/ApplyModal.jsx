@@ -56,7 +56,7 @@ export default function ApplyModal({ isOpen, onClose }) {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 3xl:text-base"
               >
                 Name
               </label>
@@ -75,7 +75,7 @@ export default function ApplyModal({ isOpen, onClose }) {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 3xl:text-base"
               >
                 Email
               </label>
@@ -94,7 +94,7 @@ export default function ApplyModal({ isOpen, onClose }) {
             <div>
               <label
                 htmlFor="phone"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 3xl:text-base"
               >
                 Phone Number
               </label>
@@ -113,7 +113,7 @@ export default function ApplyModal({ isOpen, onClose }) {
             <div>
               <label
                 htmlFor="position"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 3xl:text-base"
               >
                 Position
               </label>
@@ -131,7 +131,7 @@ export default function ApplyModal({ isOpen, onClose }) {
                   </option>
                 ))}
               </select>
-              <div className="mt-2 text-sm text-gray-600">
+              <div className="mt-2 text-sm text-gray-600 3xl:text-base">
                 {selectedJob?.description}
               </div>
             </div>
@@ -140,7 +140,7 @@ export default function ApplyModal({ isOpen, onClose }) {
             <div>
               <label
                 htmlFor="coverLetter"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 3xl:text-base"
               >
                 Upload Cover Letter
               </label>
@@ -159,7 +159,7 @@ export default function ApplyModal({ isOpen, onClose }) {
             <div>
               <label
                 htmlFor="resume"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 3xl:text-base"
               >
                 Upload Resume
               </label>
@@ -177,13 +177,13 @@ export default function ApplyModal({ isOpen, onClose }) {
               <button
                 type="button"
                 onClick={onClose}
-                className="rounded-md text-sm px-4 py-2 text-black/70 font-semibold hover:bg-gray-100"
+                className="rounded-md text-sm px-4 py-2 text-black/70 font-semibold hover:bg-gray-100 3xl:text-base"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="rounded-md bg-[#425ACA] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
+                className="rounded-md bg-[#425ACA] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 3xl:text-base"
               >
                 Submit <span aria-hidden="true">&rarr;</span>
               </button>

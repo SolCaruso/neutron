@@ -16,7 +16,7 @@ export default function Example() {
                 </div>
                 
                 <div className="relative mt-6">
-                    <p className="mx-auto max-w-2xl text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
+                    <p className="mx-auto max-w-2xl text-pretty text-lg font-medium text-gray-400 sm:text-xl/8 3xl:text-xl">
                         Advanced BMS controls and ESS solutions designed for efficiency, safety, and reliability.
                     </p>
 
