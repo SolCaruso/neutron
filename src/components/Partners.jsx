@@ -81,6 +81,13 @@ export default function Partners() {
             transform: translateX(-50%);
           }
         }
+        /* Disable animation if the user prefers reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+          .scroller[data-animated="true"] .scroller__inner {
+            animation: none;
+            transform: none;
+          }
+        }
       `}</style>
     </div>
   );

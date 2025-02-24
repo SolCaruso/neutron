@@ -8,7 +8,15 @@ export default function SecondaryNav({ setSecondaryNavReady }) {
 
   useEffect(() => {
     const scroller = scrollerRef.current;
-    if (!scroller || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!scroller) return;
+
+    // Check for reduced motion.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      // Immediately mark as ready without animation
+      setIsReady(true);
+      if (setSecondaryNavReady) setSecondaryNavReady(true);
+      return;
+    }
 
     // Duplicate the marquee items
     const scrollerInner = scroller.querySelector(".scroller__inner");
@@ -23,17 +31,13 @@ export default function SecondaryNav({ setSecondaryNavReady }) {
     // Enable marquee animation
     scroller.setAttribute("data-animated", "true");
 
-    // Once the duplication and attribute setup are done,
-    // mark everything as ready so the fade-in effect triggers.
+    // Once duplication is done, mark as ready
     setIsReady(true);
     if (setSecondaryNavReady) setSecondaryNavReady(true);
   }, [setSecondaryNavReady]);
 
   return (
     <div className="3md:px-4 hidden lg:block relative z-20">
-      {/* The container is initially hidden (opacity-0).
-          When isReady becomes true (everything is ready),
-          the transition moves it to opacity-100. */}
       <div
         className={`noise-bg sm:h-11 h-[2px] flex items-center text-white text-sm 3md:rounded-b-lg max-w-8xl mx-auto transition-opacity duration-700 ${
           isReady ? "opacity-100" : "opacity-0"

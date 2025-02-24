@@ -39,7 +39,7 @@ function Card({ image, onImageLoad }) {
         <Image 
           src={image.src}  
           alt={image.alt} 
-          fill 
+          fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 20vw"
           className="object-cover"
           style={{ opacity: isLoaded ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
