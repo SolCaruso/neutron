@@ -42,9 +42,8 @@ function Card({ image, onImageLoad }) {
         fill 
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 20vw"
         className="object-cover"
-        // Fade in the image when loaded. Until then, the image is fully transparent.
         style={{ opacity: isLoaded ? 1 : 0, transition: 'opacity 0.3s ease-in-out' }}
-        onLoadingComplete={() => {
+        onLoad={() => {
           setIsLoaded(true);
           if (onImageLoad) onImageLoad(image.src);
         }}

@@ -41,42 +41,40 @@ export default function Example() {
                   Our team is here to help with any questions you might have about optimizing energy storage and battery management systems. Feel free to reach out—we look forward to connecting with you.
                 </p>
                 <dl className="mt-10 space-y-4 text-base/7 text-gray-300">
-                  <div className="flex gap-x-4">
-                    <dt className="flex-none">
-                      <span className="sr-only">Address</span>
-                      <BuildingOffice2Icon aria-hidden="true" className="h-7 w-6 text-gray-400" />
-                    </dt>
-                    <dd>
+                <div className="flex gap-x-4">
+                  <dt className="flex-none">
+                    <span className="sr-only">Address</span>
+                    <BuildingOffice2Icon aria-hidden="true" className="h-7 w-6 text-gray-400" />
+                  </dt>
+                  <dd>
                     1145 Innovation Drive, Suite 101
-                      <br />
-                      Kanata, Ontario, K2K 3G8
-                    </dd>
-                  </div>
-                  <div className="flex gap-x-4">
-                    <dt className="flex-none">
-                      <span className="sr-only">Address</span>
-                      <BuildingOffice2Icon aria-hidden="true" className="h-7 w-6 text-gray-400" />
-                    </dt>
-                    <dd>
-                    <dd>
-                      5270 Solar Drive, Unit 21
-                      <br />
-                      Mississauga, Ontario, L4W 0G7
-                    </dd>
-                    </dd>
-                  </div>
-                  <div className="flex gap-x-4">
-                    <dt className="flex-none">
-                      <span className="sr-only">Email</span>
-                      <EnvelopeIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
-                    </dt>
-                    <dd>
-                      <a href="mailto:info@neutroncontrols.com" className="hover:text-white">
-                        info@neutroncontrols.com
-                      </a>
-                    </dd>
-                  </div>
-                </dl>
+                    <br />
+                    Kanata, Ontario, K2K 3G8
+                  </dd>
+                </div>
+                <div className="flex gap-x-4">
+                  <dt className="flex-none">
+                    <span className="sr-only">Address</span>
+                    <BuildingOffice2Icon aria-hidden="true" className="h-7 w-6 text-gray-400" />
+                  </dt>
+                  <dd>
+                    5270 Solar Drive, Unit 21
+                    <br />
+                    Mississauga, Ontario, L4W 0G7
+                  </dd>
+                </div>
+                <div className="flex gap-x-4">
+                  <dt className="flex-none">
+                    <span className="sr-only">Email</span>
+                    <EnvelopeIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
+                  </dt>
+                  <dd>
+                    <a href="mailto:info@neutroncontrols.com" className="hover:text-white">
+                      info@neutroncontrols.com
+                    </a>
+                  </dd>
+                </div>
+              </dl>
               </div>
             </div>
             <form action="#" method="POST" className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
