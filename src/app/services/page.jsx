@@ -15,17 +15,17 @@ import { useState, useEffect, useRef } from 'react'
 
 const features = [
   {
-    name: 'Seasoned Innovators.',
+    name: 'Seasoned Innovators. ',
     description: 'Collaborate with experts to deliver high-performance applications.',
     icon: Cog6ToothIcon,
   },
   {
-    name: 'Advanced Technologies.',
+    name: 'Advanced Technologies. ',
     description: 'Leverage cutting-edge Infineon solutions for faster time-to-market.',
     icon: CloudArrowUpIcon,
   },
   {
-    name: 'Specialized Support.',
+    name: 'Specialized Support. ',
     description: 'Rely on end-to-end guidance, from concept to deployment.',
     icon: FingerPrintIcon,
   },

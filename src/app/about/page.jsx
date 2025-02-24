@@ -137,7 +137,7 @@ export default function Example() {
               transition={{ duration: 0.2, delay: 0.1 }}
             >
               <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
-              <div className="relative">
+              <div className="relative h-full">
                 <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
                   <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                     <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
