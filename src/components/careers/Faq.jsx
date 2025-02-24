@@ -75,12 +75,12 @@ export default function Faq() {
           </h2>
           <dl className="mt-16 divide-y divide-white/10">
             {faqs.map((faq) => (
-              <Disclosure key={faq.question} as="div" className="hover:bg-[#0e0f10]">
+              <Disclosure key={faq.question} as="div" className="hover:bg-[#0e0f10] ">
                 {({ open }) => (
                   <>
                     <dt>
                       <DisclosureButton className="group flex w-full items-center justify-between text-left text-white p-6 rounded-md transition-colors duration-200">
-                        <span className="text-base font-semibold">{faq.question}</span>
+                        <span className="text-base font-semibold 3xl:text-xl">{faq.question}</span>
                         <span className="ml-6 flex h-7 items-center">
                           {open ? (
                             <MinusIcon className="h-6 w-6" />
@@ -94,7 +94,7 @@ export default function Faq() {
                     <DisclosurePanel
                       static
                       as={motion.dd}
-                      className="overflow-hidden text-gray-300"
+                      className="overflow-hidden text-gray-200 3xl:text-lg"
                       animate={open ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                     >

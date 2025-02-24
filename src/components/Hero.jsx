@@ -9,7 +9,7 @@ export default function Example() {
             <div className="mx-auto max-w-7xl px-6 pb-28 text-center pt-32 lg:px-8">
 
                 <div className="mx-auto max-w-4xl relative z-30">
-                    <h2 className="text-base/7 font-semibold text-[#425ACA]">Control your energy</h2>
+                    <h2 className="text-base/7 font-semibold text-[#425ACA] 3xl:text-lg">Control your energy</h2>
                     <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl">
                         Test your strength
                     </p>
@@ -23,11 +23,11 @@ export default function Example() {
                 <div className="mt-10 flex items-center justify-center gap-x-6">
                     <Link
                     href="/services"
-                    className="rounded-md bg-[#425ACA] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                    className="rounded-md bg-[#425ACA] px-3.5 py-2.5 text-sm font-semibold text-white 3xl:text-base shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                     >
                     Get started
                     </Link>
-                    <Link href="/about" className="text-sm/6 font-semibold text-white">
+                    <Link href="/about" className="text-sm/6 font-semibold text-white 3xl:text-base">
                     Learn more <span aria-hidden="true">→</span>
                     </Link>
                 </div>

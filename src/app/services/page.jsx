@@ -58,7 +58,7 @@ export default function Page() {
       {/* Header / Services Section */}
       <div className="mx-auto max-w-7xl px-6 pb-96 text-center pt-32 lg:px-8">
         <div className="mx-auto max-w-4xl relative z-30">
-          <h2 className="text-base/7 font-semibold text-[#425ACA]">Services</h2>
+          <h2 className="text-base/7 3xl:text-lg font-semibold text-[#425ACA]">Services</h2>
           <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl">
             Smarter energy solutions
           </p>
@@ -93,14 +93,14 @@ export default function Page() {
                   className="flex flex-col justify-between rounded-3xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10 sm:p-8 w-full"
                 >
                   <div>
-                    <h3 id={tier.id} className="text-base/7 font-semibold text-[#425ACA] pb-8">
+                    <h3 id={tier.id} className="text-base/7 3xl:text-lg font-semibold text-[#425ACA] pb-8">
                       {tier.name}
                     </h3>
-                    <div className="mt-4 flex items-center justify-center">
+                    <div className="mt-4 3xl:mt-6 flex items-center justify-center">
                       {tier.icon}
                     </div>
-                    <p className="mt-6 text-base/7 text-gray-600">{tier.description}</p>
-                    <ul role="list" className="mt-10 space-y-4 text-sm/6 text-gray-600">
+                    <p className="mt-6 3xl:mt-12 text-base/7 text-gray-600 3xl:text-lg">{tier.description}</p>
+                    <ul role="list" className="mt-10 space-y-4 text-sm/6 3xl:text-base text-gray-600">
                       {tier.features.map((feature) => (
                         <li key={feature} className="flex gap-x-3">
                           <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-[#425ACA]" />
@@ -120,8 +120,8 @@ export default function Page() {
               ))}
               <div className="flex flex-col items-start gap-x-8 gap-y-6 rounded-3xl p-8 ring-1 ring-gray-900/10 sm:gap-y-10 sm:p-10 lg:col-span-3 lg:flex-row lg:items-center">
                 <div className="lg:min-w-0 lg:flex-1">
-                  <h3 className="text-base/7 font-semibold text-[#425ACA]">Our AURIX Expertise</h3>
-                  <p className="mt-1 text-base/7 text-gray-600">
+                  <h3 className="text-base/7 font-semibold text-[#425ACA] 3xl:text-lg">Our AURIX Expertise</h3>
+                  <p className="mt-1 text-base/7 text-gray-600 3xl:text-lg">
                     Unleash the full potential of Infineon’s AURIX™-MCUs with expert design support and tailored training, equipping you to harness cutting-edge technology for maximum performance and reliability.
                   </p>
                 </div>

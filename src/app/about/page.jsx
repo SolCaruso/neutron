@@ -12,10 +12,10 @@ export default function Example() {
       <div className="bg-white absolute h-[600px] 2xl:h-[650px] top-[500px] z-20 w-full rounded-xl"></div>
       
       <div className="h-[35vh] 3xl:h-[25vh] relative z-30 flex flex-col items-center justify-center pt-12">
-        <h2 className="text-center text-base/7 font-semibold text-[#425ACA]">
+        <h2 className="text-center text-base/7 3xl:text-lg font-semibold text-[#425ACA]">
           About The Neutrons
         </h2>
-        <p className="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+        <p className="mx-auto mt-2 max-w-lg text-balance text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl 3xl:text-6xl 3xl:max-w-2xl">
           Because your battery deserves a brain &#129504;
         </p>
       </div>
@@ -40,10 +40,10 @@ export default function Example() {
               <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                 <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  <p className="mt-2 text-lg 3xl:text-2xl font-medium tracking-tight text-gray-950 max-lg:text-center">
                     Quality
                   </p>
-                  <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                  <p className="mt-2 max-w-lg text-sm/6 3xl:text-base text-gray-600 max-lg:text-center">
                     Equally, its ISO9001 certification affirms Neutron Controls’ dedication to quality, maintaining high operational standards that consistently satisfy customers, shareholders, and other key stakeholders.
                   </p>
                 </div>
@@ -77,10 +77,10 @@ export default function Example() {
               <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)]">
                 <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  <p className="mt-2 text-lg 3xl:text-2xl font-medium tracking-tight text-gray-950 max-lg:text-center">
                     Performance
                   </p>
-                  <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                  <p className="mt-2 max-w-lg text-sm/6 3xl:text-base text-gray-600 max-lg:text-center">
                     Leveraging semiconductor expertise and Canadian heritage, Neutron Controls drives superior performance in energy control and battery management.
                   </p>
                 </div>
@@ -108,10 +108,10 @@ export default function Example() {
               <div className="absolute inset-px rounded-lg bg-white"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
                 <div className="px-8 pt-8 sm:px-10 sm:pt-10">
-                  <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  <p className="mt-2 text-lg 3xl:text-2xl font-medium tracking-tight text-gray-950 max-lg:text-center">
                     Security
                   </p>
-                  <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                  <p className="mt-2 max-w-lg text-sm/6 3xl:text-base text-gray-600 max-lg:text-center">
                     Our safety-critical design ensures robust security. Neutron Controls is committed to protecting and empowering critical industrial and automotive control systems.
                   </p>
                 </div>
@@ -140,10 +140,10 @@ export default function Example() {
               <div className="relative h-full">
                 <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
                   <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                    <p className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">
+                  <p className="mt-2 text-lg 3xl:text-2xl font-medium tracking-tight text-gray-950 max-lg:text-center">
                       Environmental
                     </p>
-                    <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
+                    <p className="mt-2 max-w-lg text-sm/6 3xl:text-base text-gray-600 max-lg:text-center">
                       Neutron Controls shows its commitment to sustainability with ISO14001 certification, ensuring its operations not only meet environmental standards but also support stakeholder needs.
                     </p>
                   </div>

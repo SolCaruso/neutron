@@ -36,11 +36,11 @@ export default function Example() {
                     <rect fill="url(#54f88622-e7f8-4f1d-aaf9-c2f5e46dd1f2)" width="100%" height="100%" strokeWidth={0} />
                   </svg>
                 </div>
-                <h2 className="text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl relative z-30">Get in touch</h2>
-                <p className="mt-6 text-lg/8 text-gray-300 relative z-30">
+                <h2 className="text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl relative z-30 3xl:text-6xl">Get in touch</h2>
+                <p className="mt-6 text-lg/8 text-gray-300 relative z-30 3xl:text-xl">
                   Our team is here to help with any questions you might have about optimizing energy storage and battery management systems. Feel free to reach out—we look forward to connecting with you.
                 </p>
-                <dl className="mt-10 space-y-4 text-base/7 text-gray-300 relative z-30">
+                <dl className="mt-10 space-y-4 text-base/7 text-gray-300 relative z-30 3xl:text-lg">
                 <div className="flex gap-x-4">
                   <dt className="flex-none">
                     <span className="sr-only">Address</span>
@@ -81,7 +81,7 @@ export default function Example() {
               <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="first-name" className="block text-sm/6 font-semibold text-white">
+                    <label htmlFor="first-name" className="block text-sm/6 font-semibold text-white 3xl:text-base">
                       First name
                     </label>
                     <div className="mt-2.5">
@@ -95,7 +95,7 @@ export default function Example() {
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="last-name" className="block text-sm/6 font-semibold text-white">
+                    <label htmlFor="last-name" className="block text-sm/6 font-semibold text-white 3xl:text-base">
                       Last name
                     </label>
                     <div className="mt-2.5">
@@ -109,7 +109,7 @@ export default function Example() {
                     </div>
                   </div>
                   <div className="sm:col-span-2">
-                    <label htmlFor="email" className="block text-sm/6 font-semibold text-white">
+                    <label htmlFor="email" className="block text-sm/6 font-semibold text-white 3xl:text-base">
                       Email
                     </label>
                     <div className="mt-2.5">
@@ -123,7 +123,7 @@ export default function Example() {
                     </div>
                   </div>
                   <div className="sm:col-span-2">
-                    <label htmlFor="phone-number" className="block text-sm/6 font-semibold text-white">
+                    <label htmlFor="phone-number" className="block text-sm/6 font-semibold text-white 3xl:text-base">
                       Phone number
                     </label>
                     <div className="mt-2.5">
@@ -137,7 +137,7 @@ export default function Example() {
                     </div>
                   </div>
                   <div className="sm:col-span-2">
-                    <label htmlFor="message" className="block text-sm/6 font-semibold text-white">
+                    <label htmlFor="message" className="block text-sm/6 font-semibold text-white 3xl:text-base">
                       Message
                     </label>
                     <div className="mt-2.5">
@@ -154,7 +154,7 @@ export default function Example() {
                 <div className="mt-8 flex justify-end">
                   <button
                     type="submit"
-                    className="rounded-md bg-[#425ACA] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                    className="rounded-md bg-[#425ACA] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 3xl:text-base"
                   >
                     Send message
                   </button>

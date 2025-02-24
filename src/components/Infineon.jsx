@@ -17,7 +17,7 @@ function Infineon() {
     <section className="bg-[#090A0B] text-white pt-20 sm:pb-16">
 
       {/* ================== 5-COLUMN DESKTOP (≥LG) ================== */}
-      <div className="hidden lg:flex max-w-7xl mx-auto relative overflow-hidden">
+      <div className="hidden lg:flex max-w-7xl 3xl:max-w-8xl mx-auto relative overflow-hidden">
         {/*
           ========= FADE GRADIENTS ON ALL SIDES =========
           Adjust the widths/heights as needed.
@@ -59,11 +59,11 @@ function Infineon() {
               whileHover="hover"
               animate="rest"
             >
-              <p className="text-lg leading-relaxed max-w-xs font-geist text-[#8e8f90]">
+              <p className="text-lg 3xl:text-xl leading-relaxed max-w-xs font-geist text-[#8e8f90]">
                 As an Infineon Preferred Design House, Neutron Controls brings ideas to life,
                 uniting Infineon&apos;s advanced solutions with our expert guidance.
               </p>
-              <p className="inline-block font-medium text-white transition-colors font-geist pt-[56.5px]">
+              <p className="inline-block font-medium text-white transition-colors font-geist pt-[56.5px] 3xl:text-xl 3xl:pt-[60px]">
                 Learn more
               </p>
               <motion.span
@@ -159,7 +159,7 @@ function Infineon() {
         <div className="border-b border-[#1B1C1E] grid grid-cols-1 md:grid-cols-2">
           {/* LEFT COLUMN: big heading */}
           <div className="border-[#1B1C1E] p-8 flex items-center">
-            <p className="text-4xl md:text-5xl font-semibold leading-tight">
+            <p className="text-4xl md:text-5xl 3xl:text-6xl font-semibold leading-tight">
               Infineon&apos;s Preferred Design House.
             </p>
           </div>

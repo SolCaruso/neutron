@@ -86,17 +86,17 @@ export default function InfineonSection() {
     <div ref={infineonRef} className="bg-gradient-to-b from-gray-900 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-base/7 font-semibold text-[#425ACA]">Custom design</h2>
-          <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-balance sm:text-5xl">
+          <h2 className="text-base/7 3xl:text-lg font-semibold text-[#425ACA]">Custom design</h2>
+          <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-balance sm:text-5xl 3xl:text-6xl">
             Infineon's Preferred Design House
           </p>
-          <p className="mt-6 text-lg/8 text-gray-300">
+          <p className="mt-6 text-lg/8 text-gray-300 3xl:text-xl">
             Unlock your design potential with Neutron Controls, your Infineon Preferred Design House for North America.
           </p>
         </div>
       </div>
 
-      <div className="relative py-16">
+      <div className="relative py-16 3xl:py-20">
         <div className="mx-auto flex max-w-7xl justify-center px-6 lg:px-8">
           <div className="relative w-[342px] h-[343px]">
             {/* Gradient Shadow Effect */}
@@ -139,7 +139,7 @@ export default function InfineonSection() {
       <div className="mx-auto mt-16 max-w-5xl px-6 sm:mt-20 md:mt-24 lg:px-8">
         <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base/7 text-gray-300 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
           {features.map((feature) => (
-            <div key={feature.name} className="relative pl-9">
+            <div key={feature.name} className="relative pl-9 3xl:text-lg">
               <dt className="inline font-semibold text-white">
                 <feature.icon aria-hidden="true" className="absolute left-1 top-1 size-5 text-[#425ACA]" />
                 {feature.name}

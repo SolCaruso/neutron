@@ -25,6 +25,7 @@ export default function DownloadButton() {
                 text-black
                 px-3.5 py-2.5
                 text-sm 
+                3xl:text-base
               "
             >
               
