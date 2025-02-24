@@ -5,7 +5,7 @@ import useMeasure from "react-use-measure";
 import { animate, useMotionValue, useReducedMotion } from "framer-motion";
 import {useEffect} from "react";
 import { useState } from "react";
-import Card from '@/components/card'
+import Card from '@/components/Card'
 
 export default function SideScroll() {
 
