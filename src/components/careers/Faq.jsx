@@ -1,3 +1,5 @@
+'use client'
+
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { motion } from 'framer-motion'
 
