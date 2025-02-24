@@ -131,3 +131,7 @@
   scrollbar-color: #424242 rgba(0, 0, 0, 0.557);
 }
 
+html,
+body {
+  background-color: #090A0B;
+}

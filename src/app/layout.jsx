@@ -7,6 +7,7 @@ import Nav from '@/components/nav/Nav'
 import BackgroundHero from '@/components/BackgroundHero'
 import Footer from '@/components/Footer'
 
+
 const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['100','200','300','400','500','600','700','800','900'],
@@ -26,7 +27,7 @@ const geistMono = localFont({
 export const metadata = {
   title: {
     template: 'Neutron Controls',
-    default: 'Test Your Strength',
+    default: 'Neutron Controls',
   },
 }
 

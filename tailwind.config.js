@@ -23,6 +23,7 @@ module.exports = {
         '3md': '992px',
         '4md': '1078px',
         "3xl": "2000px",
+        "4xl": "3500px",
       },
       zIndex: {
         '-15': '-15',
