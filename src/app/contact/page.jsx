@@ -40,7 +40,7 @@ export default function Example() {
                 <p className="mt-6 text-lg/8 text-gray-300 relative z-30">
                   Our team is here to help with any questions you might have about optimizing energy storage and battery management systems. Feel free to reach out—we look forward to connecting with you.
                 </p>
-                <dl className="mt-10 space-y-4 text-base/7 text-gray-300">
+                <dl className="mt-10 space-y-4 text-base/7 text-gray-300 relative z-30">
                 <div className="flex gap-x-4">
                   <dt className="flex-none">
                     <span className="sr-only">Address</span>
