@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div>
       <main>
-        <div className="bg-[#090A0B] overflow-x-hidden relative min-h-[800px] 3xl:min-h-[1500px] xl:min-h-[850px]">
+        <div className="bg-[#090A0B] overflow-x-hidden relative min-h-[800px] 4xl:min-h-[1500px] 3xl:min-h-[1200px] xl:min-h-[850px]">
           <div className="px-12 pb-20 relative z-30">
             <div className="h-full w-full m-auto mt-28 max-w-7xl 3xl:max-w-8xl 3xl:mt-72 3xl:mb-24 xl:mb-20">
               <h1 className="text-white text-3xl sm:text-5xl 3xl:text-6xl text-left font-bold max-w-xl 3xl:max-w-2xl uppercase tracking-wider">
